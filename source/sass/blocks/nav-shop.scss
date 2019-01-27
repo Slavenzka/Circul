@@ -1,0 +1,27 @@
+.nav-shop__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-shop__item:not(:first-of-type) {
+  margin-left: 23px;
+}
+
+.nav-shop__button {
+  padding: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.nav-shop__icon use {
+  fill: none;
+  stroke: $color__icons;
+}
+
+.nav-shop__icon--fav use {
+  stroke-width: 40px;
+}

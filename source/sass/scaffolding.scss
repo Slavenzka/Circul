@@ -1,11 +1,21 @@
 html {
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  font-family: $font__main;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 .visually-hidden {
@@ -20,12 +30,26 @@ html {
   font-size: 0;
 }
 
-.grid-page {
-  display: grid;
-  margin: 0 auto;
-  min-width: $width__mobile;
-}
-
 .container {
   padding: 0 100% * 16 / 375;
+}
+
+.page-container--back {
+  transform: translateX(0);
+}
+
+.page-container--shift {
+  transform: translateX(324px);
+}
+
+.grid-main {
+  height: 100vh;
+  background-color: blue;
+  transition-duration: 0.5s;
+}
+
+.footer {
+  height: 50vh;
+  background-color: green;
+  transition-duration: 0.5s;
 }

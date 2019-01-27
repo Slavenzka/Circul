@@ -1,11 +1,33 @@
 .header {
-  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color__darkest;
+  z-index: 3;
 }
 
-.grid-main {
-  background-color: blue;
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition-duration: 0.5s;
 }
 
-.footer {
-  background-color: green;
+.header__logo {
+  order: 2;
+}
+
+.header__logo-icon use {
+  fill: $color__lightest;
+}
+
+.header__nav {
+  order: 1;
+}
+
+.header__nav-shop {
+  order: 3;
 }

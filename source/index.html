@@ -9,25 +9,155 @@
 </head>
 
 <body>
+  <svg style="display: none">
+    <symbol id="search">
+      <path d="M13.7846 12.9231L10.0154 9.15385C10.7692 8.18462 11.2 7 11.2 5.6C11.2 2.47692 8.72308 0 5.6 0C2.47692 0 0 2.47692 0 5.6C0 8.72308 2.47692 11.2 5.6 11.2C6.89231 11.2 8.18462 10.7692 9.15385 9.90769L13.0308 13.7846L13.7846 12.9231ZM5.6 1.18462C8.07692 1.18462 10.0154 3.12308 10.0154 5.6C10.0154 8.07692 8.07692 10.0154 5.6 10.0154C3.12308 10.0154 1.18462 8.07692 1.18462 5.6C1.18462 3.12308 3.12308 1.18462 5.6 1.18462ZM12.9231 13.7846L13.7846 12.9231L12.9231 13.7846Z"/>
+    </symbol>
+    <symbol id="burger">
+      <rect width="16" height="1"/>
+      <rect y="5.47168" width="16" height="1"/>
+      <rect y="10.9438" width="16" height="1"/>
+    </symbol>
+    <symbol id="logo">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M29.267 7.51129L29.2806 3.14341L32.7358 3.15551C33.7633 3.15261 35.4978 3.43915 35.4918 5.27023C35.4865 6.93916 34.0478 7.52847 32.7035 7.52363L29.267 7.51129ZM38.1777 5.25915C38.1802 3.99463 37.7628 2.85256 37.0017 2.04327C36.0466 1.0285 34.5652 0.471866 32.8562 0.459765L26.6216 0.4375L26.5737 15.7248L29.2417 15.7234L29.258 10.0982L32.1164 10.1779L35.9045 15.5738L39.2075 15.5849L35.0173 9.66043C37.0067 8.97553 38.1704 7.38259 38.1777 5.25915Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M53.949 11.1739C52.8056 12.3071 51.7523 13.0083 50.0369 13.0026C50.0257 13.0026 50.0142 13.0024 50.0025 13.0024C47.4084 12.9741 45.4635 10.7637 45.4726 7.84616C45.482 4.91541 47.458 2.71167 50.0687 2.72022C51.497 2.72877 52.6266 3.25131 53.8573 4.47789L54.2996 4.91859L56.1254 2.88047L55.6896 2.44881C54.4236 1.19365 52.8777 0.0303375 50.1668 0.000534099C50.1441 0.000289809 50.1209 4.55187e-05 50.0978 4.55187e-05C48.0503 -0.0070389 46.1639 0.813044 44.7869 2.30883C43.4434 3.76871 42.7002 5.73207 42.6934 7.83737C42.6866 9.97393 43.4182 11.9556 44.753 13.4174C46.0925 14.8842 47.9303 15.7018 49.9328 15.7238C49.9517 15.7238 49.9709 15.7238 49.9899 15.724C52.3488 15.7326 54.0826 14.9714 55.7865 13.1798L56.1984 12.7469L54.3904 10.7364L53.949 11.1739Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1992 11.1841C10.0615 12.3063 9.01348 13.0006 7.30672 12.9951C7.29555 12.9951 7.28414 12.9948 7.27249 12.9948C4.69141 12.9667 2.75623 10.778 2.76531 7.88883C2.77463 4.98664 4.74077 2.80438 7.33839 2.81285C8.75944 2.82131 9.88339 3.33876 11.1079 4.55338L11.548 4.98979L13.3647 2.97154L12.9311 2.54408C11.6714 1.30115 10.1332 0.149182 7.43595 0.11967C7.41337 0.119428 7.39031 0.119186 7.36726 0.119186C5.3301 0.11217 3.45314 0.92426 2.08308 2.40547C0.746315 3.85112 0.00679907 5.79535 4.65636e-05 7.88012C-0.00670594 9.99586 0.721168 11.9582 2.04932 13.4058C3.38212 14.8582 5.21065 15.6679 7.20311 15.6897C7.22197 15.6897 7.24106 15.6897 7.25992 15.6899C9.607 15.6984 11.3321 14.9446 13.0275 13.1704L13.4373 12.7418L11.6383 10.7509L11.1992 11.1841Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M69.5454 0.469576L69.5163 9.11985C69.512 10.428 69.1909 11.4298 68.5613 12.0959C67.9668 12.7256 67.1062 13.0425 66.0038 13.0384H65.9635C64.8551 13.0266 63.9905 12.6846 63.3941 12.0221C62.7779 11.3376 62.4546 10.2912 62.4589 8.99637L62.4868 0.446182L59.7123 0.4375L59.6841 9.08681C59.6775 11.1314 60.2777 12.8283 61.4204 13.9941C62.5121 15.1074 64.0561 15.705 65.8903 15.7243C65.9115 15.7245 65.9332 15.7245 65.9547 15.7248C67.8403 15.7315 69.422 15.137 70.5292 14.0064C71.6746 12.837 72.2834 11.109 72.2903 9.0094L72.3178 0.479222L69.5454 0.469576Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2969 15.7166L21.2908 15.7248L21.3464 0.446932L18.3532 0.4375L18.2969 15.7166Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M88 12.6437L80.0039 12.6176L80.0461 0.446284L77.1595 0.4375L77.1089 15.2536L87.9914 15.288L88 12.6437Z"/>
+    </symbol>
+    <symbol id="fav">
+      <path d="M140,20C 73,20 20,74 20,140 20,275 156,310 248,443 336,311 477,270 477,140 477,74 423,20 357,20 309,20 267,48 248,89 229,48 188,20 140,20Z"/>
+    </symbol>
+    <symbol id="cart">
+      <path d="M11.1243 5.6V15.2H0.891892V5.6H1.94595H2.75676H9.24324H10.0541H11.1243ZM6 0C3.76216 0 2.3 2.144 2.3 4.8H0V7.6V9V10.4V16H12V10.4V4.8H9.7C9.7 2.144 8.23784 0 6 0ZM3 4.8C3 2.512 4.11892 0.64 6 0.64C7.88108 0.64 9 2.512 9 4.8H3Z"/>
+    </symbol>
+  </svg>
 
-  <div class="grid-page">
-    <header class="header">
-      <div class="container">
-        header
+  <header class="header">
+    <h1 class="visually-hidden">
+      Circul shop main page
+    </h1>
+    <div class="container">
+      <a class="header__logo">
+        <svg class="header__logo-icon" width="88" height="16" viewbox="0 0 88 16">
+          <use xlink:href="#logo"></use>
+        </svg>
+      </a>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--menu">
+            <button class="nav__button nav__button--menu">
+              Toggle menu
+              <svg class="nav__icon nav__icon--menu" width="16" height="12" viewbox="0 0 16 12">
+                <use xlink:href="#burger"></use>
+              </svg>
+            </button>
+            <div class="nav__submenu submenu submenu--open">
+              <header class="submenu__header">
+                <h2 class="submenu__title">
+                  Menu
+                </h2>
+                <button class="submenu__btn">
+                  Close menu
+                </button>
+              </header>
+              <ul class="submenu__list">
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    <img src="img/submenu__img--1.jpg" alt="Illustration for women catalog" class="submenu__img">
+                    <span class="submenu__category">
+                      women
+                    </span>
+                  </a>
+                </li>
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    <img src="img/submenu__img--2.jpg" alt="Illustration for men catalog" class="submenu__img">
+                    <span class="submenu__category">
+                      men
+                    </span>
+                  </a>
+                </li>
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    <img src="img/submenu__img--3.jpg" alt="Illustration for About us link" class="submenu__img">
+                    <span class="submenu__category">
+                      about us
+                    </span>
+                  </a>
+                </li>
+                <li class="submenu__item">
+                  <a href="#" class="submenu__link">
+                    <img src="img/submenu__img--4.jpg" alt="Illustration for FAQ link" class="submenu__img">
+                    <span class="submenu__category">
+                      faq
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <footer class="submenu__footer subfooter">
+                <ul class="subfooter__list">
+                  <li class="subfooter__item">
+                    <a href="#" class="subfooter__link">
+                      English
+                    </a>
+                  </li>
+                  <li class="subfooter__item">
+                    <a href="#" class="subfooter__link">
+                      Sign in
+                    </a>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+          </li>
+          <li class="nav__item nav__item--search">
+            <button class="nav__button nav__button--search">
+              Search Circul shop
+              <svg class="nav__icon nav__icon--search" width="14" height="14" viewbox="0 0 14 14">
+                <use xlink:href="#search"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__nav-shop">
+        <ul class="nav-shop__list">
+          <li class="nav-shop__item">
+            <button class="nav-shop__button nav-shop__button--fav">
+              Favourite items
+              <svg class="nav-shop__icon nav-shop__icon--fav" width="16" height="16" viewbox="0 0 497 470">
+                <use xlink:href="#fav"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="nav-shop__item">
+            <button class="nav-shop__button nav-shop__button--cart">
+              Cart contents
+              <svg class="nav-shop__icon nav-shop__icon--cart" width="12" height="16" viewbox="0 0 12 16">
+                <use xlink:href="#cart"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <div class="grid-main">
-        main
-      </div>
-    </main>
+  <main>
+    <div class="grid-main container">
+      main
+    </div>
+  </main>
 
-    <footer class="footer">
+  <footer class="footer">
+    <div class="container">
       footer
-    </footer>
-  </div>
+    </div>
+  </footer>
 
+  <script src="js/menu-operation.js"></script>
 </body>
 
 </html>
