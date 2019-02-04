@@ -1,0 +1,104 @@
+.promo {
+  margin-top: 50px;
+}
+
+.promo__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: calc(100vh - 50px);
+  list-style: none;
+}
+
+.promo__item {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.promo__item--1 {
+  background-image: url("../img/promo__item-bg--1.jpg");
+}
+
+.promo__item--2 {
+  background: red;
+}
+
+.promo__item--3 {
+  background: grey;
+}
+
+.promo__slogan {
+  margin: 0 auto;
+  margin-top: 64px;
+  width: 286px;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 46px;
+  color: $color__lightest;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.promo__item--3 .promo__slogan {
+  color: $color__darkest2;
+}
+
+@media (min-width: $width__tablet) {
+  .promo__item--1 {
+    background-position: 80% 50%;
+    background-image: url("../img/promo__item-bg--1@tablet-plus.jpg");
+  }
+
+  .promo__item--2 {
+    background-position: 80% 50%;
+    background-image: url("../img/promo__item-bg--2@tablet-plus.jpg");
+  }
+
+  .promo__item--3 {
+    background-position: 50% 50%;
+    background-image: url("../img/promo__item-bg--3@tablet-plus.jpg");
+  }
+
+  .promo__slogan {
+    width: 800px;
+    font-size: 80px;
+    line-height: 100px;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .promo {
+    margin-top: 102px;
+  }
+
+  .promo__list {
+    height: calc(100vh - 102px);
+  }
+
+  .promo__slogan {
+    width: 950px;
+    font-size: 100px;
+    line-height: 130px;
+  }
+
+  .promo__item--1 .promo__slogan {
+    text-align: left;
+  }
+
+  .promo__item--3 .promo__slogan {
+    width: 1000px;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .promo__slogan {
+    width: 1155px;
+    font-size: 120px;
+    line-height: 170px;
+  }
+
+  .promo__item--3 .promo__slogan {
+    width: 1155px;
+  }
+}

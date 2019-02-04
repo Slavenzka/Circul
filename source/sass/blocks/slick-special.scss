@@ -1,0 +1,35 @@
+// Slick settings for section.profile slider
+
+.promo__list .slick-list,
+.promo__list .slick-track {
+  height: 100%;
+}
+
+.promo__list .slick-dots {
+  position: absolute;
+  bottom: 51px;
+  left: calc(50% - 45px);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.promo__list .slick-dots > li {
+  font-size: 0;
+}
+
+.promo__list .slick-dots > li:not(:last-of-type) {
+  margin-right: 24px;
+}
+
+.promo__list .slick-dots > li > button {
+  margin: 0;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+  font-size: 0;
+  line-height: 0;
+  background-color: $color__lightest;
+  border: none;
+  border-radius: 50%;
+}
