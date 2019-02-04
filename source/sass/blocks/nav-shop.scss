@@ -10,11 +10,13 @@
   margin-left: 23px;
 }
 
-.nav-shop__button {
-  padding: 0;
+.nav-shop__item--tablet-plus {
+  display: none;
+}
+
+.nav-shop__link {
   font-size: 0;
   background-color: transparent;
-  border: none;
 }
 
 .nav-shop__icon use {
@@ -24,4 +26,80 @@
 
 .nav-shop__icon--fav use {
   stroke-width: 40px;
+}
+
+@media (min-width: $width__tablet) {
+  .nav-shop {
+    width: 40%;
+  }
+
+  .nav-shop__list {
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .nav-shop__item {
+    height: 100%;
+  }
+
+  .nav-shop__item--tablet-plus {
+    display: block;
+  }
+
+  .nav-shop__item:not(:first-of-type) {
+    margin-left: 0;
+  }
+
+  .nav-shop__item:not(.nav-shop__item--faq) {
+    margin-left: 23px;
+  }
+
+  .nav-shop__item--faq {
+    order: 1;
+    margin-left: 0;
+  }
+
+  .nav-shop__item--whishlist {
+    order: 2;
+  }
+
+  .nav-shop__item--sign {
+    order: 3;
+  }
+
+  .nav-shop__item--bag {
+    order: 4;
+  }
+
+  .nav-shop__link {
+    display: block;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 50px;
+    color: $color__icons;
+    letter-spacing: 1.42px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .nav-shop__item:hover .nav-shop__link,
+  .nav-shop__item--selected .nav-shop__link {
+    color: $color__lightest;
+  }
+
+  .nav-shop__icon {
+    display: none;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .nav-shop__link {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 102px;
+    color: $color__icons;
+    letter-spacing: 1.42px;
+    text-transform: uppercase;
+  }
 }

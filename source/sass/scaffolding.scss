@@ -53,3 +53,9 @@ a {
   background-color: green;
   transition-duration: 0.5s;
 }
+
+@media (min-width: $width__tablet) {
+  .container {
+    padding: 0 100% * 15 / 768;
+  }
+}

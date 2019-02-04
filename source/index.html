@@ -32,6 +32,9 @@
     <symbol id="cart">
       <path d="M11.1243 5.6V15.2H0.891892V5.6H1.94595H2.75676H9.24324H10.0541H11.1243ZM6 0C3.76216 0 2.3 2.144 2.3 4.8H0V7.6V9V10.4V16H12V10.4V4.8H9.7C9.7 2.144 8.23784 0 6 0ZM3 4.8C3 2.512 4.11892 0.64 6 0.64C7.88108 0.64 9 2.512 9 4.8H3Z"/>
     </symbol>
+    <symbol id="back">
+      <path d="M7 13L1 6.99971L7 1"/>
+    </symbol>
   </svg>
 
   <header class="header">
@@ -40,19 +43,19 @@
     </h1>
     <div class="container">
       <a class="header__logo">
-        <svg class="header__logo-icon" width="88" height="16" viewbox="0 0 88 16">
+        <svg class="header__logo-icon" viewbox="0 0 88 16">
           <use xlink:href="#logo"></use>
         </svg>
       </a>
       <nav class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item nav__item--menu">
-            <button class="nav__button nav__button--menu">
+            <a class="nav__link nav__link--menu">
               Toggle menu
               <svg class="nav__icon nav__icon--menu" width="16" height="12" viewbox="0 0 16 12">
                 <use xlink:href="#burger"></use>
               </svg>
-            </button>
+            </a>
             <div class="nav__submenu submenu submenu--open">
               <header class="submenu__header">
                 <h2 class="submenu__title">
@@ -62,44 +65,146 @@
                   Close menu
                 </button>
               </header>
-              <ul class="submenu__list">
-                <li class="submenu__item">
-                  <a href="#" class="submenu__link">
-                    <img src="img/submenu__img--1.jpg" alt="Illustration for women catalog" class="submenu__img">
-                    <span class="submenu__category">
-                      women
-                    </span>
-                  </a>
-                </li>
-                <li class="submenu__item">
-                  <a href="#" class="submenu__link">
-                    <img src="img/submenu__img--2.jpg" alt="Illustration for men catalog" class="submenu__img">
-                    <span class="submenu__category">
-                      men
-                    </span>
-                  </a>
-                </li>
-                <li class="submenu__item">
-                  <a href="#" class="submenu__link">
-                    <img src="img/submenu__img--3.jpg" alt="Illustration for About us link" class="submenu__img">
-                    <span class="submenu__category">
-                      about us
-                    </span>
-                  </a>
-                </li>
-                <li class="submenu__item">
-                  <a href="#" class="submenu__link">
-                    <img src="img/submenu__img--4.jpg" alt="Illustration for FAQ link" class="submenu__img">
-                    <span class="submenu__category">
-                      faq
-                    </span>
-                  </a>
-                </li>
-              </ul>
+              <div class="submenu__content submenu__content--top">
+                <ul class="submenu__list submenu__list--topLvl">
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link submenu__link--trigger">
+                      <img src="img/submenu__img--1.jpg" alt="Illustration for women catalog" class="submenu__img">
+                      <span class="submenu__category">
+                        women
+                      </span>
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link submenu__link--trigger">
+                      <img src="img/submenu__img--2.jpg" alt="Illustration for men catalog" class="submenu__img">
+                      <span class="submenu__category">
+                        men
+                      </span>
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link">
+                      <img src="img/submenu__img--3.jpg" alt="Illustration for About us link" class="submenu__img">
+                      <span class="submenu__category">
+                        about us
+                      </span>
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#" class="submenu__link">
+                      <img src="img/submenu__img--4.jpg" alt="Illustration for FAQ link" class="submenu__img">
+                      <span class="submenu__category">
+                        faq
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__content submenu__content--low submenu__content--women submenu__content--hidden">
+                <button class="submenu__back" type="button">
+                  <svg class="submenu__icon" width="6" height="12" viewbox="0 0 8 14">
+                    <use xlink:href="#back"></use>
+                  </svg>
+                  Back
+                </button>
+                <ul class="submenu__list submenu__list--lowLvl low-lvl">
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      All
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Shoes
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Boots
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Sneakers
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Slippers
+                    </a>
+                  </li>
+                  <li class="low-lvl__item low-lvl__item--sale">
+                    <a href="#" class="low-lvl__link">
+                      Sale
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__content submenu__content--low submenu__content--men submenu__content--hidden">
+                <button class="submenu__back" type="button">
+                  <svg class="submenu__icon" width="6" height="12" viewbox="0 0 8 14">
+                    <use xlink:href="#back"></use>
+                  </svg>
+                  Back
+                </button>
+                <ul class="submenu__list submenu__list--lowLvl low-lvl">
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      All
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Shoes
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Boots
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Sneakers
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Slippers
+                    </a>
+                  </li>
+                  <li class="low-lvl__item low-lvl__item--sale">
+                    <a href="#" class="low-lvl__link">
+                      Sale
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__content submenu__content--low submenu__content--lang submenu__content--hidden">
+                <button class="submenu__back" type="button">
+                  <svg class="submenu__icon" width="6" height="12" viewbox="0 0 8 14">
+                    <use xlink:href="#back"></use>
+                  </svg>
+                  Back
+                </button>
+                <ul class="submenu__list submenu__list--lowLvl low-lvl">
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      English
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Russian
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <footer class="submenu__footer subfooter">
                 <ul class="subfooter__list">
                   <li class="subfooter__item">
-                    <a href="#" class="subfooter__link">
+                    <a href="#" class="subfooter__link submenu__link--trigger">
                       English
                     </a>
                   </li>
@@ -113,32 +218,62 @@
             </div>
           </li>
           <li class="nav__item nav__item--search">
-            <button class="nav__button nav__button--search">
+            <a class="nav__link nav__link--search">
               Search Circul shop
               <svg class="nav__icon nav__icon--search" width="14" height="14" viewbox="0 0 14 14">
                 <use xlink:href="#search"></use>
               </svg>
-            </button>
+            </a>
+          </li>
+          <li class="nav__item nav__item--tablet-plus">
+            <a href="#" class="nav__link">
+              Men
+            </a>
+          </li>
+          <li class="nav__item nav__item--tablet-plus">
+            <a href="#" class="nav__link">
+              Women
+            </a>
+          </li>
+          <li class="nav__item nav__item--tablet-plus">
+            <a href="#" class="nav__link">
+              Stores
+            </a>
+          </li>
+          <li class="nav__item nav__item--tablet-plus">
+            <a href="#" class="nav__link">
+              About us
+            </a>
           </li>
         </ul>
       </nav>
-      <div class="header__nav-shop">
+      <div class="header__nav-shop nav-shop">
         <ul class="nav-shop__list">
-          <li class="nav-shop__item">
-            <button class="nav-shop__button nav-shop__button--fav">
-              Favourite items
+          <li class="nav-shop__item nav-shop__item--whishlist">
+            <a class="nav-shop__link nav-shop__link--fav">
+              Whishlist
               <svg class="nav-shop__icon nav-shop__icon--fav" width="16" height="16" viewbox="0 0 497 470">
                 <use xlink:href="#fav"></use>
               </svg>
-            </button>
+            </a>
           </li>
-          <li class="nav-shop__item">
-            <button class="nav-shop__button nav-shop__button--cart">
-              Cart contents
+          <li class="nav-shop__item nav-shop__item--bag">
+            <a class="nav-shop__link nav-shop__link--cart">
+              Bag (<span class="nav-shop__counter">99</span>)
               <svg class="nav-shop__icon nav-shop__icon--cart" width="12" height="16" viewbox="0 0 12 16">
                 <use xlink:href="#cart"></use>
               </svg>
-            </button>
+            </a>
+          </li>
+          <li class="nav-shop__item nav-shop__item--faq nav-shop__item--tablet-plus">
+            <a class="nav-shop__link">
+              FAQ
+            </a>
+          </li>
+          <li class="nav-shop__item nav-shop__item--sign nav-shop__item--tablet-plus">
+            <a class="nav-shop__link">
+              Sign in
+            </a>
           </li>
         </ul>
       </div>

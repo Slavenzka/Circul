@@ -1,33 +1,64 @@
 (function () {
   'use strict';
 
+  const mobileMax = window.matchMedia('(max-width: 767px)');
+
   function OperateMenu () {
-    let header = document.querySelector('.header');
-    let triggerOpen = header.querySelector('.nav__button--menu');
-    let triggerClose = header.querySelector('.submenu__btn');
+    const header = document.querySelector('.header');
+    const triggerOpen = header.querySelector('.nav__link--menu');
+    const triggerClose = header.querySelector('.submenu__btn');
 
-    this.openMenu = function () {
-      let headerContainer = header.querySelector('.header > .container');
-      let mainContainer = document.querySelector('.grid-main');
-      let footerContainer = document.querySelector('.footer');
+    this.toggleMenu = function () {
+      const headerContainer = header.querySelector('.header > .container');
+      const mainContainer = document.querySelector('.grid-main');
+      const footerContainer = document.querySelector('.footer');
 
-      function shiftBodyLeft () {
+      function shiftBodyRight () {
         headerContainer.style.transform = "translateX(324px)";
         mainContainer.style.transform = "translateX(324px)";
         footerContainer.style.transform = "translateX(324px)";
       }
 
-      function shiftBodyRight () {
+      function shiftBodyLeft () {
         headerContainer.style.transform = "translateX(0)";
         mainContainer.style.transform = "translateX(0)";
         footerContainer.style.transform = "translateX(0)";
       }
 
-      triggerOpen.addEventListener('click', shiftBodyLeft);
-      triggerClose.addEventListener('click', shiftBodyRight);
+      triggerOpen.addEventListener('click', shiftBodyRight);
+      triggerClose.addEventListener('click', shiftBodyLeft);
+    }
+
+    this.changeMenuLvl = function () {
+      const submenus = header.querySelectorAll('.submenu__content:not(.submenu__content--top)');
+      const topLvl = header.querySelector('.submenu__content--top');
+      const topLvlLinks = header.querySelectorAll('.submenu__link--trigger');
+      const backBtns = header.querySelectorAll('.submenu__back');
+
+      topLvlLinks.forEach((item, index) => {
+        item.addEventListener('click', function () {
+          topLvl.classList.add('submenu__content--hidden');
+          submenus.forEach(item => {
+            item.classList.add('submenu__content--hidden');
+          });
+          submenus[index].classList.remove('submenu__content--hidden');
+        });
+      });
+
+      backBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          topLvl.classList.remove('submenu__content--hidden');
+          submenus.forEach(sub => {
+            sub.classList.add('submenu__content--hidden');
+          });
+        });
+      });
     }
   }
 
-  var mainMenu = new OperateMenu;
-  mainMenu.openMenu();
+  if (mobileMax.matches) {
+    var mainMenu = new OperateMenu;
+    mainMenu.toggleMenu();
+    mainMenu.changeMenuLvl();
+  }
 })();
