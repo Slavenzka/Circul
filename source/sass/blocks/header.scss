@@ -1,11 +1,59 @@
 .header {
-  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color__darkest;
+  z-index: 3;
 }
 
-.grid-main {
-  background-color: blue;
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  transition-duration: 0.5s;
 }
 
-.footer {
-  background-color: green;
+.header__logo {
+  order: 2;
+}
+
+.header__logo-icon {
+  width: 88px;
+  height: 16px;
+}
+
+.header__logo-icon use {
+  fill: $color__lightest;
+}
+
+.header__nav {
+  order: 1;
+}
+
+.header__nav-shop {
+  order: 3;
+}
+
+@media (min-width: $width__tablet) {
+  .header > .container {
+    align-items: stretch;
+  }
+
+  .header__logo {
+    align-self: center;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .header > .container {
+    min-height: 102px;
+    align-items: stretch;
+  }
+
+  .header__logo-icon {
+    width: 201px;
+    height: 36px;
+  }
 }

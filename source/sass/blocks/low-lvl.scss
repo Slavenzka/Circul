@@ -1,0 +1,19 @@
+.low-lvl__item:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.low-lvl__item--sale {
+  margin-top: 36px;
+}
+
+.low-lvl__link {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: $color__black;
+  text-transform: uppercase;
+}
+
+.low-lvl__item--sale .low-lvl__link {
+  color: $color__highlight;
+}

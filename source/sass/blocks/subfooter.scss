@@ -1,0 +1,22 @@
+.subfooter {
+  padding: 16px 0 21px 0;
+  border-top: 1px solid $color__separators;
+}
+
+.subfooter__list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subfooter__link {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 11px;
+  color: $color__font-submenu;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
