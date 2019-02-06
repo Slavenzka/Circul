@@ -1,7 +1,7 @@
 $width__mobile: 375px;
 $width__tablet: 768px;
 $width__notebook: 1260px;
-$width__desktop: 1925px;
+$width__desktop: 1920px;
 
 $font__main: "Museo Sans", "Arial", sans-serif;
 
@@ -13,3 +13,6 @@ $color__darkest: rgb(26, 26, 26);
 $color__darkest2: #0f0f0f;
 $color__black: rgb(0, 0, 0);
 $color__highlight: #cf3434;
+
+$retina__dpi: 144dpi;
+$retina__dppx: 1.5dppx;
