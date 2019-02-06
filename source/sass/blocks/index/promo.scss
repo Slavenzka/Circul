@@ -11,21 +11,34 @@
 }
 
 .promo__item {
+  background-color: $color__separators;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
 
 .promo__item--1 {
-  background-image: url("../img/promo__item-bg--1.jpg");
+  background-image: url("../img/promo__item-bg--1@1x.jpg");
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/promo__item-bg--1@2x.jpg");
+  }
 }
 
 .promo__item--2 {
-  background: red;
+  background-image: url("../img/promo__item-bg--2@1x.jpg");
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/promo__item-bg--2@2x.jpg");
+  }
 }
 
 .promo__item--3 {
-  background: grey;
+  background-image: url("../img/promo__item-bg--3@1x.jpg");
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/promo__item-bg--3@2x.jpg");
+  }
 }
 
 .promo__slogan {
@@ -45,21 +58,6 @@
 }
 
 @media (min-width: $width__tablet) {
-  .promo__item--1 {
-    background-position: 80% 50%;
-    background-image: url("../img/promo__item-bg--1@tablet-plus.jpg");
-  }
-
-  .promo__item--2 {
-    background-position: 80% 50%;
-    background-image: url("../img/promo__item-bg--2@tablet-plus.jpg");
-  }
-
-  .promo__item--3 {
-    background-position: 50% 50%;
-    background-image: url("../img/promo__item-bg--3@tablet-plus.jpg");
-  }
-
   .promo__slogan {
     width: 800px;
     font-size: 80px;

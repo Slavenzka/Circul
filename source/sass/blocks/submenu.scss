@@ -76,19 +76,31 @@
 }
 
 .submenu__content--women {
-  background-image: url("../img/submenu__bg--women.jpg");
+  background-image: url("../img/submenu__bg--women@1x.jpg");
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/submenu__bg--women@2x.jpg");
+  }
 }
 
 .submenu__content--men {
-  background-image: url("../img/submenu__bg--men.jpg");
+  background-image: url("../img/submenu__bg--men@1x.jpg");
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/submenu__bg--men@2x.jpg");
+  }
 }
 
 .submenu__content--lang {
   padding-bottom: 395px;
-  background-image: url("../img/submenu__bg--lang.jpg");
+  background-image: url("../img/submenu__bg--lang@1x.jpg");
   background-repeat: no-repeat;
   background-size: 100% 347px;
   background-position: 0 100%;
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/submenu__bg--lang@2x.jpg");
+  }
 }
 
 .submenu__content--hidden {

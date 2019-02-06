@@ -42,12 +42,6 @@ a {
   transform: translateX(324px);
 }
 
-.grid-main {
-  height: 100vh;
-  background-color: blue;
-  transition-duration: 0.5s;
-}
-
 .footer {
   height: 50vh;
   background-color: green;
@@ -57,5 +51,11 @@ a {
 @media (min-width: $width__tablet) {
   .container {
     padding: 0 100% * 15 / 768;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .container {
+    padding: 0 100% * 46 / 1920;
   }
 }
