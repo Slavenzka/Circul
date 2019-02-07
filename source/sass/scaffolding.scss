@@ -42,10 +42,12 @@ a {
   transform: translateX(324px);
 }
 
-.footer {
-  height: 50vh;
-  background-color: green;
+.main-container {
   transition-duration: 0.5s;
+}
+
+.slide-up {
+  // transform: translateY(300px);
 }
 
 @media (min-width: $width__tablet) {

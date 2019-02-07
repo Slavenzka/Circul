@@ -10,7 +10,7 @@
 
     this.toggleMenu = function () {
       const headerContainer = header.querySelector('.header > .container');
-      const mainContainer = document.querySelector('.grid-main');
+      const mainContainer = document.querySelector('.main-container');
       const footerContainer = document.querySelector('.footer');
 
       function shiftBodyRight () {
