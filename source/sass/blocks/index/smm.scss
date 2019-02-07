@@ -1,0 +1,71 @@
+.smm__instagram {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 48px;
+}
+
+.smm__invitation {
+  margin: 0;
+  font-weight: 300;
+  line-height: normal;
+  color: $color__black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.smm__invitation--instagram {
+  font-size: 9px;
+}
+
+.smm__link {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: inherit;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 46px;
+  color: $color__darkest2;
+  text-transform: uppercase;
+}
+
+.smm__img {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.smm__newsletter {
+  padding-bottom: 48px;
+}
+
+.smm__invitation:not(.smm__invitation--instagram) {
+  margin-top: 32px;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.smm__email {
+  margin-top: 32px;
+  padding: 12px 16px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 14px;
+  color: $color__underline;
+  text-transform: uppercase;
+  border: none;
+  border-bottom: 1px solid $color__underline;
+}
+
+.smm__email::placeholder {
+  color: $color__placeholder;
+  text-transform: uppercase;
+}
+
+@media (min-width: $width__tablet) {
+  .smm {
+    display: none;
+  }
+}
