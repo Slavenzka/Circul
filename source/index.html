@@ -57,14 +57,14 @@
               </svg>
             </a>
             <div class="nav__submenu submenu submenu--open">
-              <header class="submenu__header">
+              <div class="submenu__header">
                 <h2 class="submenu__title">
                   Menu
                 </h2>
                 <button class="submenu__btn">
                   Close menu
                 </button>
-              </header>
+              </div>
               <div class="submenu__content submenu__content--top">
                 <ul class="submenu__list submenu__list--topLvl">
                   <li class="submenu__item">
@@ -209,7 +209,7 @@
                   </li>
                 </ul>
               </div>
-              <footer class="submenu__footer subfooter">
+              <div class="submenu__footer subfooter">
                 <ul class="subfooter__list">
                   <li class="subfooter__item">
                     <a href="#" class="subfooter__link submenu__link--trigger">
@@ -222,7 +222,7 @@
                     </a>
                   </li>
                 </ul>
-              </footer>
+              </div>
             </div>
           </li>
           <li class="nav__item nav__item--search">
@@ -289,185 +289,279 @@
   </header>
 
   <main>
-    <link rel="stylesheet" href="jQuery/slick/slick.css">
-    <section class="promo">
-      <h2 class="visually-hidden">
-        Circul shoes promotion
-      </h2>
-      <ul class="promo__list">
-        <li class="promo__item promo__item--1">
-          <p class="promo__slogan">
-            Genuine shoes<br>are made by men,<br>not by<br>machines
-          </p>
-        </li>
-        <li class="promo__item promo__item--2">
-          <p class="promo__slogan">
-            You never get<br>a second chance<br>to make<br>a first impression
-          </p>
-        </li>
-        <li class="promo__item promo__item--3">
-          <p class="promo__slogan">
-            It is better to buy one pair of good shoes than trees pairs of bad ones
-          </p>
-        </li>
-      </ul>
-    </section>
-    <section class="products">
-      <div class="container">
-        <ul class="products__list">
-          <li class="products__item products__item--1">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--light">
-                <span class="products__highlight">
-                  Men
-                </span>
-              </p>
-              <p class="products__hook products__hook--light">
-                Shop now
-              </p>
-            </a>
+    <div class="main-container">
+      <link rel="stylesheet" href="jQuery/slick/slick.css">
+      <section class="promo">
+        <h2 class="visually-hidden">
+          Circul shoes promotion
+        </h2>
+        <ul class="promo__list">
+          <li class="promo__item promo__item--1">
+            <p class="promo__slogan">
+              Genuine shoes<br>are made by men,<br>not by<br>machines
+            </p>
           </li>
-          <li class="products__item products__item--2">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--light">
-                <span class="products__highlight">
-                  Women
-                </span>
-              </p>
-              <p class="products__hook products__hook--light">
-                Shop now
-              </p>
-            </a>
+          <li class="promo__item promo__item--2">
+            <p class="promo__slogan">
+              You never get<br>a second chance<br>to make<br>a first impression
+            </p>
           </li>
-          <li class="products__item products__item--3">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--dark">
-                Women's
-                <span class="products__highlight">
-                  New in
-                </span>
-              </p>
-              <p class="products__hook products__hook--dark">
-                Discover
-              </p>
-            </a>
-          </li>
-          <li class="products__item products__item--4">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--light">
-                Men's
-                <span class="products__highlight">
-                  Shoes
-                </span>
-              </p>
-              <p class="products__hook products__hook--light">
-                Shop now
-              </p>
-            </a>
-          </li>
-          <li class="products__item products__item--5">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--light">
-                Women's
-                <span class="products__highlight">
-                  Slippers
-                </span>
-              </p>
-              <p class="products__hook products__hook--light">
-                Shop now
-              </p>
-            </a>
-          </li>
-          <li class="products__item products__item--6">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--light">
-                Men's
-                <span class="products__highlight">
-                  Boots
-                </span>
-              </p>
-              <p class="products__hook products__hook--light">
-                Shop now
-              </p>
-            </a>
-          </li>
-          <li class="products__item products__item--7">
-            <a href="#" class="products__link">
-              <p class="products__name products__name--dark">
-                Women's
-                <span class="products__highlight">
-                  Sneakers
-                </span>
-              </p>
-              <p class="products__hook products__hook--dark">
-                Shop now
-              </p>
-            </a>
+          <li class="promo__item promo__item--3">
+            <p class="promo__slogan">
+              It is better to buy one pair of good shoes than trees pairs of bad ones
+            </p>
           </li>
         </ul>
-      </div>
-    </section>
-    <section class="gender">
-      <ul class="gender__list">
-        <li class="gender__item">
-          <picture>
-            <img class="gender__img" src="img/gender__item--1@1x.png" srcset="img/gender__item--1@1x.png 1x, img/gender__item--1@2x.png 2x" alt="Foto of men's shoes">
-          </picture>
-        </li>
-        <li class="gender__item">
-          <picture>
-            <img class="gender__img" src="img/gender__item--2@1x.png" srcset="img/gender__item--2@1x.png 1x, img/gender__item--2@2x.png 2x" alt="Foto of men's shoes">
-          </picture>
-        </li>
-        <li class="gender__item">
-          <picture>
-            <img class="gender__img" src="img/gender__item--3@1x.png" srcset="img/gender__item--3@1x.png 1x, img/gender__item--3@2x.png 2x" alt="Foto of women's shoes">
-          </picture>
-        </li>
-        <li class="gender__item">
-          <picture>
-            <img class="gender__img" src="img/gender__item--4@1x.png" srcset="img/gender__item--4@1x.png 1x, img/gender__item--4@2x.png 2x" alt="Foto of women's shoes">
-          </picture>
-        </li>
-      </ul>
-      <a href="#" class="gender__link gender__link--men">
-        Men
-      </a>
-      <a href="#" class="gender__link gender__link--women">
-        Women
-      </a>
-    </section>
-    <section class="smm">
-      <div class="smm__instagram">
-        <p class="smm__invitation smm__invitation--instagram">
-          Follow us in Instagram
-        </p>
-        <a href="#" class="smm__link">
-          #circulmark
-        </a>
-        <picture>
-          <img src="img/smm__img@1x.jpg" srcset="img/smm__img@1x.jpg 1x, img/smm__img@2x.jpg 2x" alt="Instagram photo example" class="smm__img">
-        </picture>
-      </div>
-      <div class="smm__newsletter">
+      </section>
+      <section class="products">
         <div class="container">
-          <p class="smm__invitation">
-            Subscribe to newsletter
-          </p>
-          <form action="#">
-            <input type="text" class="smm__email" placeholder="Enter e-mail adress">
-            <button class="smm__btn visually-hidden" type="submit">
-              Send email
-            </button>
-          </form>
+          <h2 class="visually-hidden">
+            Our popular products
+          </h2>
+          <ul class="products__list">
+            <li class="products__item products__item--1">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--light">
+                  <span class="products__highlight">
+                    Men
+                  </span>
+                </p>
+                <p class="products__hook products__hook--light">
+                  Shop now
+                </p>
+              </a>
+            </li>
+            <li class="products__item products__item--2">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--light">
+                  <span class="products__highlight">
+                    Women
+                  </span>
+                </p>
+                <p class="products__hook products__hook--light">
+                  Shop now
+                </p>
+              </a>
+            </li>
+            <li class="products__item products__item--3">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--dark">
+                  Women's
+                  <span class="products__highlight">
+                    New in
+                  </span>
+                </p>
+                <p class="products__hook products__hook--dark">
+                  Discover
+                </p>
+              </a>
+            </li>
+            <li class="products__item products__item--4">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--light">
+                  Men's
+                  <span class="products__highlight">
+                    Shoes
+                  </span>
+                </p>
+                <p class="products__hook products__hook--light">
+                  Shop now
+                </p>
+              </a>
+            </li>
+            <li class="products__item products__item--5">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--light">
+                  Women's
+                  <span class="products__highlight">
+                    Slippers
+                  </span>
+                </p>
+                <p class="products__hook products__hook--light">
+                  Shop now
+                </p>
+              </a>
+            </li>
+            <li class="products__item products__item--6">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--light">
+                  Men's
+                  <span class="products__highlight">
+                    Boots
+                  </span>
+                </p>
+                <p class="products__hook products__hook--light">
+                  Shop now
+                </p>
+              </a>
+            </li>
+            <li class="products__item products__item--7">
+              <a href="#" class="products__link">
+                <p class="products__name products__name--dark">
+                  Women's
+                  <span class="products__highlight">
+                    Sneakers
+                  </span>
+                </p>
+                <p class="products__hook products__hook--dark">
+                  Shop now
+                </p>
+              </a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="gender">
+        <h2 class="visually-hidden">
+          Gender selection
+        </h2>
+        <ul class="gender__list slide-up">
+          <li class="gender__item">
+            <picture>
+              <img class="gender__img" src="img/gender__item--1@1x.png" srcset="img/gender__item--1@1x.png 1x, img/gender__item--1@2x.png 2x" alt="Foto of men's shoes">
+            </picture>
+          </li>
+          <li class="gender__item">
+            <picture>
+              <img class="gender__img" src="img/gender__item--2@1x.png" srcset="img/gender__item--2@1x.png 1x, img/gender__item--2@2x.png 2x" alt="Foto of men's shoes">
+            </picture>
+          </li>
+          <li class="gender__item">
+            <picture>
+              <img class="gender__img" src="img/gender__item--3@1x.png" srcset="img/gender__item--3@1x.png 1x, img/gender__item--3@2x.png 2x" alt="Foto of women's shoes">
+            </picture>
+          </li>
+          <li class="gender__item">
+            <picture>
+              <img class="gender__img" src="img/gender__item--4@1x.png" srcset="img/gender__item--4@1x.png 1x, img/gender__item--4@2x.png 2x" alt="Foto of women's shoes">
+            </picture>
+          </li>
+        </ul>
+        <a href="#" class="gender__link gender__link--men">
+          Men
+        </a>
+        <a href="#" class="gender__link gender__link--women">
+          Women
+        </a>
+      </section>
+      <section class="smm">
+        <h2 class="visually-hidden">
+          Follow our news and updates
+        </h2>
+        <div class="smm__instagram">
+          <p class="smm__invitation smm__invitation--instagram">
+            Follow us in Instagram
+          </p>
+          <a href="#" class="smm__link">
+            #circulmark
+          </a>
+          <picture>
+            <img src="img/smm__img@1x.jpg" srcset="img/smm__img@1x.jpg 1x, img/smm__img@2x.jpg 2x" alt="Instagram photo example" class="smm__img">
+          </picture>
+        </div>
+        <div class="smm__newsletter">
+          <div class="container">
+            <p class="smm__invitation">
+              Subscribe to newsletter
+            </p>
+            <form action="#">
+              <input type="text" class="smm__email" placeholder="Enter e-mail adress">
+              <button class="smm__btn visually-hidden" type="submit">
+                Send email
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container">
-      footer
+      <dl class="footer__list">
+        <dt class="footer__item footer__item--1">
+          Shop
+        </dt>
+        <dd class="footer__content">
+          <ul class="footer__submenu">
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Man
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Woman
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                About us
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Shops
+              </a>
+            </li>
+          </ul>
+        </dd>
+        <dt class="footer__item footer__item--2">
+          Customer services
+        </dt>
+        <dd class="footer__content">
+          <ul class="footer__submenu">
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Wishlist
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Sign in
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                FAQ
+              </a>
+            </li>
+          </ul>
+        </dd>
+        <dt class="footer__item footer__item--3">
+          Social
+        </dt>
+        <dd class="footer__content">
+          <ul class="footer__submenu">
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Instagram
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Facebook
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Telegram
+              </a>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="footer__credits">
+        <p class="footer__copyright">
+          © CIRCUL mark 2016
+          <span class="footer__origin">
+            Made in Ukraine
+          </span>
+        </p>
+        <p class="footer__designer">
+          Design Blablabla
+        </p>
+      </div>
     </div>
   </footer>
 
@@ -476,6 +570,8 @@
   <script src="jQuery/jquery-migrate-1.4.1.min.js"></script>
   <script src="jQuery/slick/slick.min.js"></script>
   <script src="js/jquery-init.js"></script>
+  <script src="js/intersection-init.js"></script>
+  <script src="js/accordeon-footer-mobile.js"></script>
 </body>
 
 </html>

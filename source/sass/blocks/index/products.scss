@@ -8,13 +8,30 @@
 }
 
 .products__item {
-  background-color: $color__separators;
-  background-size: cover;
-  background-position: 50% 70%;
-  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.5s;
+    background-size: cover;
+    background-color: $color__separators;
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+  }
 }
 
-.products__item--1 {
+.products__item:hover::before {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.products__item--1::before {
   background-image: url("../img/product__item-bg--1@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -22,7 +39,7 @@
   }
 }
 
-.products__item--2 {
+.products__item--2::before {
   background-image: url("../img/product__item-bg--2@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -30,7 +47,7 @@
   }
 }
 
-.products__item--3 {
+.products__item--3::before {
   background-image: url("../img/product__item-bg--3@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -38,7 +55,7 @@
   }
 }
 
-.products__item--4 {
+.products__item--4::before {
   background-image: url("../img/product__item-bg--4@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -46,7 +63,7 @@
   }
 }
 
-.products__item--5 {
+.products__item--5::before {
   background-image: url("../img/product__item-bg--5@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -54,7 +71,7 @@
   }
 }
 
-.products__item--6 {
+.products__item--6::before {
   background-image: url("../img/product__item-bg--6@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -62,7 +79,7 @@
   }
 }
 
-.products__item--7 {
+.products__item--7::before {
   background-image: url("../img/product__item-bg--7@1x.jpg");
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -72,6 +89,7 @@
 
 
 .products__link {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,12 +155,6 @@
     margin: 44px 0;
     grid-auto-rows: 350px;
     grid-gap: 44px;
-  }
-
-  .products__item:hover {
-    transition-property: box-shadow;
-    transition-duration: 0.3s;
-    box-shadow: 0 0 10px 0 $color__black;
   }
 
   .products__link {

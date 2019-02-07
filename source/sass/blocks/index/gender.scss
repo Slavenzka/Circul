@@ -1,10 +1,21 @@
 .gender {
+  position: relative;
   display: none;
   padding-bottom: 68px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 46.5%;
+    background-color: $color__products-bg;
+    z-index: -1;
+  }
 }
 
 .gender__list {
-  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: baseline;
@@ -13,17 +24,6 @@
   padding: 0;
   width: 100%;
   list-style: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-    background-color: $color__products-bg;
-    z-index: -1;
-  }
 }
 
 .gender__item {
