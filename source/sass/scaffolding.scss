@@ -46,13 +46,13 @@ a {
   transition-duration: 0.5s;
 }
 
-.slide-up {
-  // transform: translateY(300px);
-}
-
 @media (min-width: $width__tablet) {
   .container {
     padding: 0 100% * 15 / 768;
+  }
+
+  .slide-up {
+    // transform: translateY(150px);
   }
 }
 
