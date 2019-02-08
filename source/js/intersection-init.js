@@ -62,7 +62,7 @@
               }
               console.log(window.screen.height);
               entry.target.style.transform = 'translateY(' + actualShift + 'px)';
-              entry.target.style.transitionDuration = '0.5s';
+              entry.target.style.transitionDuration = '1s';
             }
           let delta = 0;
           let actualShift = 0;
