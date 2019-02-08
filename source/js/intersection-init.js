@@ -57,6 +57,10 @@
                 actualShift = shift;
                 entry.target.style.opacity = '0';
               }
+              if (entry.target.getBoundingClientRect().top < window.screen.height / 1.5) {
+                actualShift = 0;
+              }
+              console.log(window.screen.height);
               entry.target.style.transform = 'translateY(' + actualShift + 'px)';
               entry.target.style.transitionDuration = '0.5s';
             }
