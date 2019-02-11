@@ -4,7 +4,7 @@
   window.addEventListener("load", function (event) {
     var elements = document.querySelectorAll('.slide-up');
     let tablet = window.matchMedia('(min-width: 768px)');
-    const shift = 150;
+    const shift = 250;
 
     function initialShift () {
       function handleInit (entries, observerInit) {
@@ -23,7 +23,7 @@
       var optionsInit = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.5
+        threshold: 1.0
       };
 
       elements.forEach(item => {
@@ -46,9 +46,8 @@
           function makeShift () {
               let newCoord = entry.target.getBoundingClientRect().top;
               delta = oldCoord - newCoord;
-              console.log(getTranslation(entry));
               oldCoord = newCoord;
-              let actualShift = getTranslation(entry) - delta;
+              let actualShift = getTranslation(entry) - delta / 5;
               if (actualShift <= 0) {
                 actualShift = 0;
                 entry.target.style.opacity = '1';
@@ -60,9 +59,8 @@
               if (entry.target.getBoundingClientRect().top < window.screen.height / 1.5) {
                 actualShift = 0;
               }
-              console.log(window.screen.height);
               entry.target.style.transform = 'translateY(' + actualShift + 'px)';
-              entry.target.style.transitionDuration = '1s';
+              entry.target.style.transitionDuration = '0.8s';
             }
           let delta = 0;
           let actualShift = 0;
@@ -73,8 +71,8 @@
 
       var options = {
         root: null,
-        rootMargin: "10px",
-        threshold: 1
+        rootMargin: "0px",
+        threshold: 1.0
       };
 
       var observer = new IntersectionObserver(handleIntersect, options);
