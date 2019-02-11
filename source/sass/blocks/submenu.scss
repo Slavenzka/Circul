@@ -167,3 +167,72 @@
 .submenu__footer {
   margin-top: auto;
 }
+
+@media (min-width: $width__tablet) {
+  .submenu {
+    top: 50px;
+    left: 0;
+    padding: 0 100% * 15 / 768;
+    height: auto;
+    width: 100%;
+    transform: translateY(-110%);
+    transition-duration: 0.2s;
+    z-index: -1;
+  }
+
+  .submenu--open {
+    transform: translateY(0);
+  }
+
+  .submenu__content {
+    margin-top: 0;
+  }
+
+  .submenu__content:not(.submenu__content--top):not(.submenu__content--lang) {
+    padding-bottom: 69px;
+    background-repeat: no-repeat;
+    background-size: 303px 455px;
+    background-position: 0 36px;
+  }
+
+  .submenu__content--men {
+    background-image: url("../img/submenu__bg--menTabletPlus@1x.jpg");
+
+    @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+      background-image: url("../img/submenu__bg--menTabletPlus@2x.jpg");
+    }
+  }
+
+  .submenu__content--women {
+    background-image: url("../img/submenu__bg--womenTabletPlus@1x.jpg");
+
+    @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+      background-image: url("../img/submenu__bg--womenTabletPlus@2x.jpg");
+    }
+  }
+
+  .submenu__header,
+  .submenu__content--top,
+  .submenu__footer {
+    display: none;
+  }
+
+  .submenu__back {
+    display: none;
+  }
+
+  .submenu__list {
+    margin-top: 36px;
+    margin-left: auto;
+    padding-top: 48px;
+    width: 100% * 582 / 1920;
+    border-top: 1px solid $color__underline;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .submenu {
+    top: 102px;
+    padding: 0 100% * 46 / 1920;
+  }
+}
