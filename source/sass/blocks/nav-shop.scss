@@ -30,16 +30,14 @@
 
 @media (min-width: $width__tablet) {
   .nav-shop {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 40%;
   }
 
   .nav-shop__list {
     justify-content: flex-end;
-    height: 100%;
-  }
-
-  .nav-shop__item {
-    height: 100%;
   }
 
   .nav-shop__item--tablet-plus {
@@ -76,14 +74,51 @@
     font-family: inherit;
     font-size: 12px;
     font-weight: 300;
-    line-height: 50px;
+    line-height: normal;
     color: $color__icons;
     letter-spacing: 1.42px;
     text-transform: uppercase;
     cursor: pointer;
   }
 
-  .nav-shop__item:hover .nav-shop__link,
+  .nav-shop__item .nav-shop__link {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      transform: translateX(-100%);
+      background-color: transparent;
+    }
+  }
+
+  .nav-shop__item:hover > .nav-shop__link {
+    &::before {
+      background-color: $color__underline;
+    }
+
+    &::after {
+      background-color: $color__footer-bg;
+      transform: translateX(0);
+      transition-duration: 1s;
+      transition-property: transform;
+    }
+  }
+
   .nav-shop__item--selected .nav-shop__link {
     color: $color__lightest;
   }
@@ -97,7 +132,7 @@
   .nav-shop__link {
     font-size: 18px;
     font-weight: 700;
-    line-height: 102px;
+    line-height: normal;
     color: $color__icons;
     letter-spacing: 1.42px;
     text-transform: uppercase;

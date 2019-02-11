@@ -26,9 +26,48 @@
   background-color: transparent;
 }
 
-.nav__item:hover .nav__link,
-.nav__item--selected .nav__link {
+.nav__item--men:hover .nav__link,
+.nav__item--women:hover .nav__link,
+li.nav__item--selected > .nav__link {
   color: $color__lightest;
+}
+
+.nav__item:not(.nav__item--men):not(.nav__item--women) .nav__link {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    transform: translateX(-100%);
+    background-color: transparent;
+  }
+}
+
+.nav__item:not(.nav__item--men):not(.nav__item--women):hover > .nav__link {
+  &::before {
+    background-color: $color__underline;
+  }
+
+  &::after {
+    background-color: $color__footer-bg;
+    transform: translateX(0);
+    transition-duration: 1s;
+    transition-property: transform;
+  }
 }
 
 .nav__icon use,
@@ -43,23 +82,11 @@
     width: 40%;
   }
 
-  .nav__submenu {
-    display: none;
-  }
-
-  .nav__list {
-    height: 100%;
-  }
-
-  .nav__item {
-    height: 100%;
-  }
-
   .nav__item:not(:first-of-type):not(.nav__item--tablet-plus) {
     margin-left: 0;
   }
 
-  .nav__item:not(.nav__item--tablet-plus) {
+  .nav__item--search {
     display: none;
   }
 
@@ -73,22 +100,36 @@
   }
 
   .nav__item--tablet-plus .nav__link {
+    position: relative;
     display: block;
     font-family: inherit;
     font-size: 12px;
     font-weight: 300;
-    line-height: 50px;
+    line-height: normal;
     color: $color__icons;
     letter-spacing: 1.42px;
     text-transform: uppercase;
   }
+
+  .nav__link--menu {
+    display: none;
+  }
 }
 
 @media (min-width: $width__notebook) {
+  .nav__item {
+    height: auto;
+  }
+
+  .nav__item:not(.nav__item--search) {
+    display: flex;
+    align-items: center;
+  }
+
   .nav__item--tablet-plus .nav__link {
     font-size: 18px;
     font-weight: 700;
-    line-height: 102px;
+    line-height: normal;
     color: $color__icons;
     letter-spacing: 1.42px;
     text-transform: uppercase;
