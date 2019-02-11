@@ -93,6 +93,9 @@
           restoreImages();
           document.removeEventListener('click', checkCloseCondition);
         }
+        if (evt.target.classList.contains('nav__link--men') || (evt.target.classList.contains('nav__link--women'))) {
+          restoreImages();
+        }
       }
 
       function switchMenuImages (evt) {
