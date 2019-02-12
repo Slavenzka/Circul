@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circul main</title>
+  <title>Circul catalog</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/normalize.min.css">
 </head>
@@ -38,9 +38,6 @@
   </svg>
 
   <header class="header">
-    <h1 class="visually-hidden">
-      Circul shop main page
-    </h1>
     <div class="container">
       <a class="header__logo">
         <svg class="header__logo-icon" viewbox="0 0 88 16">
@@ -321,160 +318,388 @@
   <main>
     <div class="main-container">
       <link rel="stylesheet" href="jQuery/slick/slick.css">
-      <section class="promo">
-        <h2 class="visually-hidden">
-          Circul shoes promotion
-        </h2>
-        <ul class="promo__list">
-          <li class="promo__item promo__item--1">
-            <p class="promo__slogan">
-              Genuine shoes<br>are made by men,<br>not by<br>machines
-            </p>
-          </li>
-          <li class="promo__item promo__item--2">
-            <p class="promo__slogan">
-              You never get<br>a second chance<br>to make<br>a first impression
-            </p>
-          </li>
-          <li class="promo__item promo__item--3">
-            <p class="promo__slogan">
-              It is better to buy one pair of good shoes than trees pairs of bad ones
-            </p>
-          </li>
-        </ul>
+      <section class="banner">
+        <div class="container">
+          <h1 class="banner__title">
+            Men's
+            <span class="banner__highlight">
+              shoes
+            </span>
+          </h1>
+        </div>
       </section>
-      <section class="products">
+      <section class="filter">
         <div class="container">
           <h2 class="visually-hidden">
-            Our popular products
+            Filter and sort options
           </h2>
-          <ul class="products__list">
-            <li class="products__item products__item--1">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--light">
-                  <span class="products__highlight">
-                    Men
+          <div class="filter__block filter__block--price">
+            <input type="checkbox" class="filter__element filter__element--trigger" id="price" name="filter-price">
+            <label for="price">
+              Sort
+            </label>
+            <ul class="filter__list">
+              <li class="filter__item">
+                <input type="radio" class="filter__element" name="price-options" id="fromMinToMax">
+                <label for="fromMinToMax">
+                  By price, low to high
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="radio" class="filter__element" name="price-options" id="fromMaxToMin">
+                <label for="fromMaxToMin">
+                  By price, hight to low
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="filter__block filter__block--color">
+            <input type="checkbox" class="filter__element filter__element--trigger" id="color" name="filter-color">
+            <label for="color">
+              Color
+            </label>
+            <ul class="filter__list">
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="black">
+                <label for="black">
+                  Black
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="white">
+                <label for="white">
+                  White
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="transparency">
+                <label for="transparency">
+                  Transparency
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="red">
+                <label for="red">
+                  Red
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="pink">
+                <label for="pink">
+                  Pink
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="blue">
+                <label for="blue">
+                  Blue
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="green">
+                <label for="green">
+                  Green
+                </label>
+              </li>
+              <li class="filter__item">
+                <input type="checkbox" class="filter__element" name="color-options" id="brown">
+                <label for="brown">
+                  Brown
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="catalog">
+        <div class="container">
+          <h2 class="visually-hidden">
+            Catalog of Circul goods
+          </h2>
+          <ul class="catalog__list">
+            <li class="catalog__item catalog__item--1">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, catalog__item--1@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--light">
-                  Shop now
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
-            <li class="products__item products__item--2">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--light">
-                  <span class="products__highlight">
-                    Women
+            <li class="catalog__item catalog__item--2">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--2@1x.png" srcset="img/catalog__item--2@1x.png 1x, catalog__item--2@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--light">
-                  Shop now
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
-            <li class="products__item products__item--3">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--dark">
-                  Women's
-                  <span class="products__highlight">
-                    New in
+            <li class="catalog__item catalog__item--3">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--3@1x.png" srcset="img/catalog__item--3@1x.png 1x, catalog__item--3@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--dark">
-                  Discover
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
-            <li class="products__item products__item--4">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--light">
-                  Men's
-                  <span class="products__highlight">
-                    Shoes
+            <li class="catalog__item catalog__item--4">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--4@1x.png" srcset="img/catalog__item--4@1x.png 1x, catalog__item--4@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--light">
-                  Shop now
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
-            <li class="products__item products__item--5">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--light">
-                  Women's
-                  <span class="products__highlight">
-                    Slippers
+            <li class="catalog__item catalog__item--5">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--5@1x.png" srcset="img/catalog__item--5@1x.png 1x, catalog__item--5@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--light">
-                  Shop now
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
-            <li class="products__item products__item--6">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--light">
-                  Men's
-                  <span class="products__highlight">
-                    Boots
+            <li class="catalog__item catalog__item--6">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--6@1x.png" srcset="img/catalog__item--6@1x.png 1x, catalog__item--6@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--light">
-                  Shop now
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
-            <li class="products__item products__item--7">
-              <a href="#" class="products__link">
-                <p class="products__name products__name--dark">
-                  Women's
-                  <span class="products__highlight">
-                    Sneakers
+            <li class="catalog__item catalog__item--7">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--7@1x.png" srcset="img/catalog__item--7@1x.png 1x, catalog__item--7@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
                   </span>
-                </p>
-                <p class="products__hook products__hook--dark">
-                  Shop now
-                </p>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
+              </a>
+            </li>
+            <li class="catalog__item catalog__item--8">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--8@1x.png" srcset="img/catalog__item--8@1x.png 1x, catalog__item--8@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
+                  </span>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
+              </a>
+            </li>
+            <li class="catalog__item catalog__item--9">
+              <button class="catalog__like" type="button">
+                Add to favourites
+                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <a class="catalog__link" href="#">
+                <div class="catalog__frame">
+                  <picture>
+                    <img src="img/catalog__item--9@1x.png" srcset="img/catalog__item--9@1x.png 1x, catalog__item--9@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
+                  </picture>
+                </div>
+              </a>
+              <dl class="catalog__info">
+                <dt class="catalog__name">
+                  Celebration derby
+                </dt>
+                <dd class="catalog__price">
+                  <span class="catalog__currency">
+                    &#8364;
+                  </span>
+                  <span class="catalog__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <a href="#" class="catalog__more">
+                Read more
               </a>
             </li>
           </ul>
         </div>
       </section>
-      <section class="gender">
-        <h2 class="visually-hidden">
-          Gender selection
-        </h2>
-        <ul class="gender__list slide-up">
-          <li class="gender__item">
-            <picture>
-              <img class="gender__img" src="img/gender__item--1@1x.png" srcset="img/gender__item--1@1x.png 1x, img/gender__item--1@2x.png 2x" alt="Foto of men's shoes">
-            </picture>
-          </li>
-          <li class="gender__item">
-            <picture>
-              <img class="gender__img" src="img/gender__item--2@1x.png" srcset="img/gender__item--2@1x.png 1x, img/gender__item--2@2x.png 2x" alt="Foto of men's shoes">
-            </picture>
-          </li>
-          <li class="gender__item">
-            <picture>
-              <img class="gender__img" src="img/gender__item--3@1x.png" srcset="img/gender__item--3@1x.png 1x, img/gender__item--3@2x.png 2x" alt="Foto of women's shoes">
-            </picture>
-          </li>
-          <li class="gender__item">
-            <picture>
-              <img class="gender__img" src="img/gender__item--4@1x.png" srcset="img/gender__item--4@1x.png 1x, img/gender__item--4@2x.png 2x" alt="Foto of women's shoes">
-            </picture>
-          </li>
-        </ul>
-        <a href="#" class="gender__link gender__link--men slide-up">
-          Men
-        </a>
-        <a href="#" class="gender__link gender__link--women slide-up">
-          Women
-        </a>
-      </section>
-      <section class="smm">
+      <section class="smm smm-catalog">
         <h2 class="visually-hidden">
           Follow our news and updates
         </h2>
@@ -503,6 +728,7 @@
           </div>
         </div>
       </section>
+
     </div>
   </main>
 
@@ -600,7 +826,6 @@
   <script src="jQuery/jquery-migrate-1.4.1.min.js"></script>
   <script src="jQuery/slick/slick.min.js"></script>
   <script src="js/jquery-init.js"></script>
-  <script src="js/intersection-init.js"></script>
   <script src="js/accordeon-footer-mobile.js"></script>
 </body>
 
