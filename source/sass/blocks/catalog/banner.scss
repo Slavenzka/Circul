@@ -1,0 +1,73 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: 180px;
+  background-image: url("../img/banner__bg--mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+
+  @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+    background-image: url("../img/banner__bg--mobile@2x.jpg");
+  }
+}
+
+.banner__title {
+  margin: 0;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 300;
+  line-height: 11px;
+  color: $color__lightest;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.banner__highlight {
+  display: block;
+  margin-top: 3px;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+@media (min-width: $width__tablet) {
+  .banner {
+    height: 220px;
+    background-image: url("../img/banner__bg@1x.jpg");
+    background-position: 50% 50%;
+
+    @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
+      background-image: url("../img/banner__bg@2x.jpg");
+    }
+  }
+
+  .banner__title {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .banner__highlight {
+    margin-top: 1px;
+    font-size: 48px;
+    line-height: 54px;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .banner {
+    margin-top: 102px;
+    height: 404px;
+  }
+
+  .banner__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .banner__highlight {
+    font-size: 68px;
+    line-height: 82px;
+  }
+}
