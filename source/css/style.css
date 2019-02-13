@@ -1396,6 +1396,9 @@ li.nav__item--selected > .nav__link {
   color: #a2a2a2;
   text-transform: uppercase; }
 
+.smm__success {
+  width: 100%; }
+
 @media (max-width: 767px) {
   .smm > .container {
     padding: 0; } }
@@ -1428,11 +1431,16 @@ li.nav__item--selected > .nav__link {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 50px;
     padding: 0; }
-  .smm__invitation {
+  .smm__invitation:not(.smm__invitation--instagram) {
     margin: 0 auto; }
   .smm__form {
-    width: 300px; } }
+    width: 300px; }
+  .smm__email {
+    margin-top: 0; } }
 
 @media (min-width: 1260px) {
   .smm__instagram {
@@ -1463,7 +1471,6 @@ li.nav__item--selected > .nav__link {
   .smm__form {
     width: 41.66667%; }
   .smm__email {
-    margin-top: 32px;
     padding: 12px 16px;
     font-size: 18px;
     font-weight: 300;
