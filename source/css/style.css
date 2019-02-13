@@ -214,14 +214,12 @@ a {
   font-size: 0;
   background-color: transparent; }
 
-.nav__item--men:hover .nav__link,
-.nav__item--women:hover .nav__link,
 li.nav__item--selected > .nav__link {
   color: white; }
 
-.nav__item:not(.nav__item--men):not(.nav__item--women) .nav__link {
+.nav__item:not(.nav__item--selected) .nav__link {
   position: relative; }
-  .nav__item:not(.nav__item--men):not(.nav__item--women) .nav__link::before {
+  .nav__item:not(.nav__item--selected) .nav__link::before {
     content: "";
     position: absolute;
     bottom: -3px;
@@ -229,7 +227,7 @@ li.nav__item--selected > .nav__link {
     height: 2px;
     width: 100%;
     background-color: transparent; }
-  .nav__item:not(.nav__item--men):not(.nav__item--women) .nav__link::after {
+  .nav__item:not(.nav__item--selected) .nav__link::after {
     content: "";
     position: absolute;
     bottom: -3px;
@@ -240,10 +238,10 @@ li.nav__item--selected > .nav__link {
             transform: translateX(-100%);
     background-color: transparent; }
 
-.nav__item:not(.nav__item--men):not(.nav__item--women):hover > .nav__link::before {
+.nav__item:not(.nav__item--selected):hover > .nav__link::before {
   background-color: #707070; }
 
-.nav__item:not(.nav__item--men):not(.nav__item--women):hover > .nav__link::after {
+.nav__item:not(.nav__item--selected):hover > .nav__link::after {
   background-color: #1a1a1a;
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -1353,8 +1351,16 @@ li.nav__item--selected > .nav__link {
   color: #0f0f0f;
   text-transform: uppercase; }
 
-.smm__img {
+.smm__list {
+  margin: 0;
   margin-top: 16px;
+  padding: 0;
+  list-style: none; }
+
+.smm__item:not(.smm__item--mobile) {
+  display: none; }
+
+.smm__img {
   width: 100%; }
 
 .smm__newsletter {
@@ -1390,9 +1396,84 @@ li.nav__item--selected > .nav__link {
   color: #a2a2a2;
   text-transform: uppercase; }
 
+@media (max-width: 767px) {
+  .smm > .container {
+    padding: 0; } }
+
 @media (min-width: 768px) {
-  .smm {
-    display: none; } }
+  .smm:not(.smm--catalog) {
+    display: none; }
+  .smm__invitation--instagram {
+    font-size: 12px; }
+  .smm__link {
+    margin-top: 6px;
+    font-size: 35px;
+    line-height: 49px; }
+  .smm__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%; }
+  .smm__item {
+    width: 24.39024%; }
+  .smm__item:not(.smm__item--mobile) {
+    display: block; }
+  .smm__newsletter > .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 0; }
+  .smm__invitation {
+    margin: 0 auto; }
+  .smm__form {
+    width: 300px; } }
+
+@media (min-width: 1260px) {
+  .smm__instagram {
+    margin-top: 124px;
+    padding-top: 64px;
+    border-top: 1px solid #707070; }
+  .smm__invitation--instagram {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 1px; }
+  .smm__link {
+    margin-top: 6px;
+    font-size: 68px;
+    line-height: 82px; }
+  .smm__list {
+    margin-top: 48px; }
+  .smm__item {
+    width: 24.16667%; }
+  .smm__newsletter {
+    margin-top: 80px;
+    padding-bottom: 149px; }
+  .smm__invitation:not(.smm__invitation--instagram) {
+    margin: 0;
+    margin-right: auto;
+    margin-left: 155px;
+    font-size: 36px;
+    line-height: 43px; }
+  .smm__form {
+    width: 41.66667%; }
+  .smm__email {
+    margin-top: 32px;
+    padding: 12px 16px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px; } }
+
+@media (min-width: 1920px) {
+  .smm__item {
+    width: 425px; }
+  .smm__form {
+    width: 805px; } }
 
 .banner {
   display: -webkit-box;
@@ -1702,7 +1783,9 @@ li.nav__item--selected > .nav__link {
     margin-bottom: 0;
     width: 100%; }
   .catalog__info {
-    padding: 0; } }
+    padding: 0; }
+  .catalog__more {
+    width: 100%; } }
 
 @media (min-width: 1260px) {
   .catalog > .container {
@@ -1710,7 +1793,9 @@ li.nav__item--selected > .nav__link {
   .catalog__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 580px);
-    grid-gap: 44px 0; }
+    grid-gap: 44px 10px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
   .catalog__like,
   .catalog__more {
     display: none; }
