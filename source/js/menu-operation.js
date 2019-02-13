@@ -84,17 +84,28 @@
       }
 
       function checkCloseCondition (evt) {
+        const esc_key = 27;
         let contentActive = header.querySelector('.submenu--open');
-        let classString = evt.target.className.split(' ').reduce((total, actual) => total += '.' + actual, '.' + evt.target.className.split(' ')[0]);
-        if (!contentActive.querySelector(classString) &&
-        (!evt.target.classList.contains('nav__link--men') && (!evt.target.classList.contains('nav__link--women')))) {
-          contentActive.classList.remove('submenu--open');
-          restoreTriggerColor();
-          restoreImages();
-          document.removeEventListener('click', checkCloseCondition);
-        }
-        if (evt.target.classList.contains('nav__link--men') || (evt.target.classList.contains('nav__link--women'))) {
-          restoreImages();
+        if (contentActive) {
+          let classString = evt.target.className.split(' ').reduce((total, actual) => total += '.' + actual, '.' + evt.target.className.split(' ')[0]);
+          if (!contentActive.querySelector(classString) &&
+          (!evt.target.classList.contains('nav__link--men') && (!evt.target.classList.contains('nav__link--women')))) {
+            contentActive.classList.remove('submenu--open');
+            restoreTriggerColor();
+            restoreImages();
+            document.removeEventListener('click', checkCloseCondition);
+          }
+          if (evt.target.classList.contains('nav__link--men') || (evt.target.classList.contains('nav__link--women'))) {
+            restoreImages();
+          }
+
+          document.addEventListener('keydown', function (evt) {
+            if (evt.keyCode === esc_key) {
+              contentActive.classList.remove('submenu--open');
+              restoreTriggerColor();
+              restoreImages();
+            }
+          });
         }
       }
 

@@ -26,13 +26,11 @@
   background-color: transparent;
 }
 
-.nav__item--men:hover .nav__link,
-.nav__item--women:hover .nav__link,
 li.nav__item--selected > .nav__link {
   color: $color__lightest;
 }
 
-.nav__item:not(.nav__item--men):not(.nav__item--women) .nav__link {
+.nav__item:not(.nav__item--selected) .nav__link {
   position: relative;
 
   &::before {
@@ -57,7 +55,7 @@ li.nav__item--selected > .nav__link {
   }
 }
 
-.nav__item:not(.nav__item--men):not(.nav__item--women):hover > .nav__link {
+.nav__item:not(.nav__item--selected):hover > .nav__link {
   &::before {
     background-color: $color__underline;
   }
