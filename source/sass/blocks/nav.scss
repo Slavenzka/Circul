@@ -24,6 +24,7 @@
 .nav__link {
   font-size: 0;
   background-color: transparent;
+  cursor: pointer;
 }
 
 li.nav__item--selected > .nav__link {

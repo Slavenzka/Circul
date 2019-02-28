@@ -1,3 +1,16 @@
+.smm--sent .smm__newsletter {
+  padding-bottom: 25px;
+}
+
+.smm--sent .smm__invitation,
+.smm--sent .smm__form {
+  display: none;
+}
+
+.smm--sent .smm__success {
+  display: block;
+}
+
 .smm__instagram {
   display: flex;
   flex-direction: column;
@@ -74,8 +87,21 @@
   text-transform: uppercase;
 }
 
+.smm:not(.smm--sent) .smm__success {
+  display: none;
+}
+
 .smm__success {
-  width: 100%;
+  margin: 20px auto 0 auto;
+  padding: 10px 0;
+  width: 290px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: normal;
+  color: $color__black;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid $color__underline;
 }
 
 @media (max-width: 767px) {
@@ -113,6 +139,10 @@
     display: block;
   }
 
+  .smm--sent .smm__newsletter {
+    padding-bottom: 50px;
+  }
+
   .smm__newsletter > .container {
     display: flex;
     justify-content: flex-end;
@@ -131,6 +161,13 @@
 
   .smm__email {
     margin-top: 0;
+  }
+
+  .smm__success {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 500px;
+    font-size: 28px;
   }
 }
 
@@ -161,6 +198,10 @@
     width: 100% * 290 / 1200;
   }
 
+  .smm--sent .smm__newsletter {
+    padding-bottom: 85px;
+  }
+
   .smm__newsletter {
     margin-top: 80px;
     padding-bottom: 149px;
@@ -183,6 +224,13 @@
     font-size: 18px;
     font-weight: 300;
     line-height: 22px;
+  }
+
+  .smm__success {
+    margin: 0 auto;
+    padding: 16px 63px;
+    width: 805px;
+    font-size: 36px;
   }
 }
 
