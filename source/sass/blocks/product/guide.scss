@@ -1,0 +1,36 @@
+.guide {
+  margin-top: 12px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.guide__headings {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: $color__black;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.guide__row {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: $color__placeholder;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 1px;
+  border-top: 1px solid $color__underline;
+}
+
+.guide__headings th,
+.guide__row td {
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+.guide__headings th:not(:last-of-type) {
+  padding-right: 80px;
+}

@@ -1,0 +1,127 @@
+.order__size {
+  position: relative;
+  margin-top: 74px;
+  font-size: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 180px;
+    width: 8px;
+    height: 14px;
+    background-image: url("../img/arrow.svg");
+    background-size: cover;
+    transform: rotate(-90deg);
+    z-index: 2;
+  }
+}
+
+.order__select {
+  position: relative;
+  padding: 16px 16px 18px 16px;
+  width: 200px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: $color__placeholder;
+  letter-spacing: 1px;
+  border: 1px solid $color__placeholder;
+  outline: none;
+  appearance: none;
+}
+
+.order__select:focus {
+  background-color: white;
+}
+
+.order__link {
+  margin-left: 48px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: $color__black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.order__btn {
+  margin-top: 24px;
+}
+
+.order__btn--passive {
+  color: $color__lightest;
+  background-color: $color__social;
+  pointer-events: none;
+}
+
+.order__btn:not(.order__btn--passive):hover {
+  color: $color__black;
+  background-color: $color__lightest;
+  outline: 1px solid $color__placeholder;
+}
+
+.order__like {
+  display: none;
+}
+
+.order__fav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: $width__notebook) {
+  .order__buttons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .order__btn {
+    margin-top: 48px;
+    width: 80%;
+    padding: 16px 30px 18px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .order__like {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    font-size: 0;
+    background-color: transparent;
+    border: 1px solid $color__placeholder;
+    cursor: pointer;
+  }
+
+  .order__icon use {
+    fill: none;
+    stroke-width: 20;
+    stroke: $color__placeholder;
+    transition-duration: 0.2s;
+  }
+
+  .order__like:hover .order__icon use {
+    fill: $color__placeholder;
+  }
+
+  .order__fav:checked + .order__like .order__icon use {
+    fill: $color__black;
+    stroke: $color__black;
+    transition-duration: 0.2s;
+  }
+}
