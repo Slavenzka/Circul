@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circul catalog</title>
+  <title>Circul product</title>
   <link rel="preload" href="fonts/exljbris - MuseoSansCyrl-300.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/exljbris - MuseoSansCyrl-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
@@ -36,6 +36,15 @@
     </symbol>
     <symbol id="back">
       <path d="M7 13L1 6.99971L7 1"/>
+    </symbol>
+    <symbol id="instagram">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.50775C0 3.3485 3.45805 0 7.75341 0H25.1986C29.4939 0 32.952 3.3485 32.952 7.50775V24.4002C32.952 28.5594 29.4939 31.9079 25.1986 31.9079H7.75341C3.45805 31.9079 0 28.5594 0 24.4002V7.50775ZM28.1062 6.56927C28.1062 5.53264 27.2383 4.69233 26.1678 4.69233C25.0973 4.69233 24.2295 5.53264 24.2295 6.56927C24.2295 7.60585 25.0973 8.44621 26.1678 8.44621C27.2383 8.44621 28.1062 7.60585 28.1062 6.56927ZM16.4758 7.97693C21.014 7.97693 24.7138 11.5595 24.7138 15.9539C24.7138 20.3484 21.014 23.9309 16.4758 23.9309C11.9375 23.9309 8.23779 20.3484 8.23779 15.9539C8.23779 11.5595 11.9375 7.97693 16.4758 7.97693ZM10.1768 15.9539C10.1768 12.5739 12.9857 9.85387 16.4764 9.85387C19.9671 9.85387 22.776 12.5739 22.776 15.9539C22.776 19.334 19.9671 22.054 16.4764 22.054C12.9857 22.054 10.1768 19.334 10.1768 15.9539Z"/>
+    </symbol>
+    <symbol id="telegram">
+      <path d="M36.7275 3.44428L31.3028 26.7566C30.8935 28.4019 29.8262 28.8114 28.3096 28.0363L20.0441 22.4861L16.0558 25.9815C15.6144 26.3837 15.2453 26.72 14.3947 26.72L14.9885 19.0492L30.3077 6.4351C30.9738 5.89398 30.1633 5.59416 29.2725 6.13529L10.3342 17.0017L2.18102 14.6763C0.407554 14.1717 0.375455 13.0602 2.55016 12.2851L34.4405 1.08965C35.917 0.58509 37.209 1.38947 36.7275 3.44428Z"/>
+    </symbol>
+    <symbol id="facebook">
+      <path d="M35.3535 3.42857V28.5714C35.3535 30.4643 33.6933 32 31.647 32H25.0603V19.3429H29.7397L30.4115 14.5143H25.0603V11.4286C25.0603 10.0286 25.4773 9.07857 27.6471 9.07857H30.4115V4.76429C29.9328 4.70714 28.2957 4.57143 26.3807 4.57143C22.3963 4.57143 19.6628 6.82143 19.6628 10.9571V14.5214H14.9679V19.35H19.6705V32H4.46624C2.41996 32 0.759766 30.4643 0.759766 28.5714V3.42857C0.759766 1.53571 2.41996 0 4.46624 0H31.647C33.6933 0 35.3535 1.53571 35.3535 3.42857Z"/>
     </symbol>
   </svg>
 
@@ -288,7 +297,7 @@
         <ul class="nav-shop__list">
           <li class="nav-shop__item nav-shop__item--whishlist">
             <a class="nav-shop__link nav-shop__link--fav">
-              Whishlist
+              Whishlist(99)
               <svg class="nav-shop__icon nav-shop__icon--fav" width="16" height="16" viewbox="0 0 497 470">
                 <use xlink:href="#fav"></use>
               </svg>
@@ -320,438 +329,444 @@
   <main>
     <div class="main-container">
       <link rel="stylesheet" href="jQuery/slick/slick.css">
-      <section class="banner">
-        <div class="container">
-          <h1 class="banner__title">
-            Men's
-            <span class="banner__highlight">
-              shoes
-            </span>
-          </h1>
-        </div>
-      </section>
-      <section class="filter">
+      <section class="card">
         <div class="container">
           <h2 class="visually-hidden">
-            Filter and sort options
+            Detailed information about product
           </h2>
-          <div class="filter__block filter__block--price">
-            <input type="checkbox" class="filter__element filter__element--trigger" id="price" name="filter-price">
-            <label for="price">
-              Sort
-            </label>
-            <ul class="filter__list">
-              <li class="filter__item">
-                <input type="radio" class="filter__element" name="price-options" id="fromMinToMax">
-                <label for="fromMinToMax">
-                  By price, low to high
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="radio" class="filter__element" name="price-options" id="fromMaxToMin">
-                <label for="fromMaxToMin">
-                  By price, hight to low
-                </label>
-              </li>
-            </ul>
-          </div>
-          <div class="filter__block filter__block--color">
-            <input type="checkbox" class="filter__element filter__element--trigger" id="color" name="filter-color">
-            <label for="color">
-              Color
-            </label>
-            <ul class="filter__list">
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="black">
-                <label for="black">
-                  Black
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="white">
-                <label for="white">
-                  White
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="transparency">
-                <label for="transparency">
-                  Transparency
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="red">
-                <label for="red">
-                  Red
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="pink">
-                <label for="pink">
-                  Pink
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="blue">
-                <label for="blue">
-                  Blue
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="green">
-                <label for="green">
-                  Green
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="brown">
-                <label for="brown">
-                  Brown
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="catalog">
-        <div class="container">
-          <h2 class="visually-hidden">
-            Catalog of Circul goods
-          </h2>
-          <ul class="catalog__list">
-            <li class="catalog__item catalog__item--1">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
+          <ul class="card__controls">
+            <li class="card__control card__control--back">
+              <a href="#" class="card__link">
+                Back
+                <svg class="card__icon" viewbox="0 0 8 14">
+                  <use xlink:href="#back"></use>
                 </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, catalog__item--1@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
               </a>
             </li>
-            <li class="catalog__item catalog__item--2">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
+            <li class="card__control card__control--next">
+              <a href="#" class="card__link">
+                Next
+                <svg class="card__icon" viewbox="0 0 8 14">
+                  <use xlink:href="#back"></use>
                 </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--2@1x.png" srcset="img/catalog__item--2@1x.png 1x, catalog__item--2@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--3">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--3@1x.png" srcset="img/catalog__item--3@1x.png 1x, catalog__item--3@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--4">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--4@1x.png" srcset="img/catalog__item--4@1x.png 1x, catalog__item--4@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--5">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--5@1x.png" srcset="img/catalog__item--5@1x.png 1x, catalog__item--5@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--6">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--6@1x.png" srcset="img/catalog__item--6@1x.png 1x, catalog__item--6@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--7">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--7@1x.png" srcset="img/catalog__item--7@1x.png 1x, catalog__item--7@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--8">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--8@1x.png" srcset="img/catalog__item--8@1x.png 1x, catalog__item--8@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
-              </a>
-            </li>
-            <li class="catalog__item catalog__item--9">
-              <button class="catalog__like" type="button">
-                Add to favourites
-                <svg class="catalog__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
-              <a class="catalog__link" href="#">
-                <div class="catalog__frame">
-                  <picture>
-                    <img src="img/catalog__item--9@1x.png" srcset="img/catalog__item--9@1x.png 1x, catalog__item--9@2x.png 2x" alt="Foto of catalog item" class="catalog__img">
-                  </picture>
-                </div>
-              </a>
-              <dl class="catalog__info">
-                <dt class="catalog__name">
-                  Celebration derby
-                </dt>
-                <dd class="catalog__price">
-                  <span class="catalog__currency">
-                    &#8364;
-                  </span>
-                  <span class="catalog__value">
-                    155
-                  </span>
-                </dd>
-              </dl>
-              <a href="#" class="catalog__more">
-                Read more
               </a>
             </li>
           </ul>
-        </div>
-      </section>
-      <!-- .smm--sent - класс для сокрытия компонентов запроса почты пользователя и вывода сообщения об успешной отправке. Вешается на section.smm -->
-      <section class="smm smm--catalog">
-        <div class="container">
-          <h2 class="visually-hidden">
-            Follow our news and updates
-          </h2>
-          <div class="smm__instagram">
-            <p class="smm__invitation smm__invitation--instagram">
-              Follow us in Instagram
-            </p>
-            <a href="#" class="smm__link">
-              #circulmark
-            </a>
-            <ul class="smm__list">
-              <li class="smm__item">
+          <div class="card__slider">
+            <ul class="card__list">
+              <li class="card__item cards__item--1">
                 <picture>
-                  <img src="img/smm__img--1@1x.jpg" srcset="img/smm__img--1@1x.jpg 1x, img/smm__img--1@2x.jpg 2x" alt="Instagram photo example" class="smm__img">
+                  <img src="img/card__item--1@1x.png" srcset="img/card__item--1@1x.png 1x, img/card__item--1@2x.png 2x" alt="Product photo" class="card__img">
                 </picture>
               </li>
-              <li class="smm__item">
+              <li class="card__item cards__item--2">
                 <picture>
-                  <img src="img/smm__img--2@1x.jpg" srcset="img/smm__img--2@1x.jpg 1x, img/smm__img--2@2x.jpg 2x" alt="Instagram photo example" class="smm__img">
+                  <img src="img/card__item--2@1x.png" srcset="img/card__item--2@1x.png 1x, img/card__item--2@2x.png 2x" alt="Product photo" class="card__img">
                 </picture>
               </li>
-              <li class="smm__item smm__item--mobile">
+              <li class="card__item cards__item--3">
                 <picture>
-                  <img src="img/smm__img--3@1x.jpg" srcset="img/smm__img--3@1x.jpg 1x, img/smm__img--3@2x.jpg 2x" alt="Instagram photo example" class="smm__img">
-                </picture>
-              </li>
-              <li class="smm__item">
-                <picture>
-                  <img src="img/smm__img--4@1x.jpg" srcset="img/smm__img--4@1x.jpg 1x, img/smm__img--4@2x.jpg 2x" alt="Instagram photo example" class="smm__img">
+                  <img src="img/card__item--3@1x.png" srcset="img/card__item--3@1x.png 1x, img/card__item--3@2x.png 2x" alt="Product photo" class="card__img">
                 </picture>
               </li>
             </ul>
           </div>
-          <div class="smm__newsletter">
-            <div class="container">
-              <p class="smm__invitation">
-                Subscribe to newsletter
-              </p>
-              <form class="smm__form" action="#">
-                <input type="text" class="smm__email" placeholder="Enter e-mail adress">
-                <button class="smm__btn visually-hidden" type="submit">
-                  Send email
-                </button>
+          <div class="card__info info">
+            <div class="info__product">
+              <button class="info__like" type="button">
+                Add to favourites
+                <svg class="info__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <use xlink:href="#fav"></use>
+                </svg>
+              </button>
+              <dl class="info__product">
+                <dt class="info__name">
+                  Celebration derby
+                </dt>
+                <dd class="info__price">
+                  <span class="info__currency">
+                    &#8364;
+                  </span>
+                  <span class="info__value">
+                    155
+                  </span>
+                </dd>
+              </dl>
+              <ul class="info__social">
+                <li class="info__network info__network--instagram">
+                  <a href="#" class="info__link" aria-label="Our instagram">
+                    <svg class="info__logo" width="33" height="32" viewBox="0 0 33 32">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="info__network info__network--telegram">
+                  <a href="#" class="info__link" aria-label="Our telegram">
+                    <svg class="info__logo" width="37" height="29" viewBox="0 0 37 29">
+                      <use xlink:href="#telegram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="info__network info__network--facebook">
+                  <a href="#" class="info__link" aria-label="Our facebook">
+                    <svg class="info__logo" width="36" height="32" viewBox="0 0 36 32">
+                      <use xlink:href="#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <form action="#" class="info__order order">
+                <div class="order__size">
+                  <select name="size-select" class="order__select">
+                    <option value="36">
+                      36
+                    </option>
+                    <option value="37">
+                      37
+                    </option>
+                    <option value="38">
+                      38
+                    </option>
+                    <option value="39">
+                      39
+                    </option>
+                  </select>
+                  <a href="#" class="order__link">
+                    Size guide
+                  </a>
+                </div>
+                <div class="order__buttons">
+                  <button class="btn order__btn" type="button">
+                    Add to bag
+                  </button>
+                  <input type="checkbox" class="order__fav" name="order-like" id="add-to-fav">
+                  <label for="add-to-fav" class="order__like">
+                    Add to favourites
+                    <svg class="order__icon" width="28" height="28" viewbox="0 0 497 470">
+                      <use xlink:href="#fav"></use>
+                    </svg>
+                  </label>
+                </div>
               </form>
-              <p class="smm__success">
-                Thank you! You will start to receive your e-mails shortly
-              </p>
             </div>
+            <div class="info__options options">
+              <input type="checkbox" class="options__trigger options__trigger--details" id="details" name="options" checked>
+              <label for="details">
+                Details
+              </label>
+              <div class="options__content options__content--details">
+                <ul class="options__list">
+                  <li class="options__item">
+                    Upper: python
+                  </li>
+                  <li class="options__item">
+                    Lining: leather
+                  </li>
+                  <li class="options__item">
+                    Sole: leather
+                  </li>
+                  <li class="options__item">
+                    Heel height: 55mm
+                  </li>
+                </ul>
+              </div>
+              <input type="checkbox" class="options__trigger options__trigger--size" id="size" name="options">
+              <label for="size">
+                Size guide
+              </label>
+              <div class="options__content options__content--size">
+                <table class="options__size guide">
+                  <tr class="guide__headings">
+                    <th>
+                      US
+                    </th>
+                    <th>
+                      UK
+                    </th>
+                    <th>
+                      EU
+                    </th>
+                    <th>
+                      CM
+                    </th>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      7,5
+                    </td>
+                    <td>
+                      6,5
+                    </td>
+                    <td>
+                      38
+                    </td>
+                    <td>
+                      25,5
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      8
+                    </td>
+                    <td>
+                      7
+                    </td>
+                    <td>
+                      39
+                    </td>
+                    <td>
+                      26
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      8,5
+                    </td>
+                    <td>
+                      7,5
+                    </td>
+                    <td>
+                      40
+                    </td>
+                    <td>
+                      26,5
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      9,5
+                    </td>
+                    <td>
+                      8,5
+                    </td>
+                    <td>
+                      41
+                    </td>
+                    <td>
+                      27,3
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      10
+                    </td>
+                    <td>
+                      9
+                    </td>
+                    <td>
+                      42
+                    </td>
+                    <td>
+                      28
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      10,5
+                    </td>
+                    <td>
+                      9,5
+                    </td>
+                    <td>
+                      43
+                    </td>
+                    <td>
+                      28,6
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      11,5
+                    </td>
+                    <td>
+                      10,5
+                    </td>
+                    <td>
+                      44
+                    </td>
+                    <td>
+                      29,5
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      12
+                    </td>
+                    <td>
+                      11
+                    </td>
+                    <td>
+                      45
+                    </td>
+                    <td>
+                      30
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      13
+                    </td>
+                    <td>
+                      12
+                    </td>
+                    <td>
+                      46
+                    </td>
+                    <td>
+                      30,8
+                    </td>
+                  </tr>
+                  <tr class="guide__row">
+                    <td>
+                      14
+                    </td>
+                    <td>
+                      13
+                    </td>
+                    <td>
+                      47
+                    </td>
+                    <td>
+                      31,5
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <input type="checkbox" class="options__trigger options__trigger--payment" id="payment" name="options">
+              <label for="payment">
+                Delivery & payment
+              </label>
+              <div class="options__content options__content--payment">
+                <dl class="options__payment">
+                  <dt class="options__type">
+                    Credit card:
+                  </dt>
+                  <dd class="options__descriptor">
+                    You can pay via your visa/mastercard online right after making order.
+                  </dd>
+                  <dt class="options__type">
+                    Paypal:
+                  </dt>
+                  <dd class="options__descriptor">
+                    You can use your paypal account to pay for your online order too.
+                  </dd>
+                </dl>
+              </div>
+              <input type="checkbox" class="options__trigger options__trigger--guarantee" id="guarantee" name="options">
+              <label for="guarantee">
+                Guarantees & returns
+              </label>
+              <div class="options__content options__content--guarantee">
+                <p class="options__descriptor options__descriptor--guarantee">
+                  Complimentary ground shipping and returns.
+                </p>
+                <p class="options__descriptor options__descriptor--guarantee">
+                  Complimentary express shipping with orders over $500.
+                </p>
+                <p class="options__descriptor options__descriptor--guarantee">
+                  Overnight and same day delivery (Manhattan only for same day): $35.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="advice">
+        <div class="container">
+          <h2 class="visually-hidden">
+            Items which you may also like
+          </h2>
+          <input type="checkbox" class="options__trigger options__trigger--advice advice__trigger" id="more" name="options" checked>
+          <label for="more">
+            You may also like
+          </label>
+          <div class="options__content options__content--advice advice__content">
+            <ul class="advice__list">
+              <li class="advice__item">
+                <button class="advice__like" type="button">
+                  Add to favourites
+                  <svg class="advice__icon" width="19" height="19" viewbox="0 0 497 470">
+                    <use xlink:href="#fav"></use>
+                  </svg>
+                </button>
+                <a href="#" class="advice__link">
+                  <div class="advice__frame">
+                    <picture>
+                      <img src="img/advice__item--1@1x.png" srcset="img/advice__item--1@1x.png 1x, img/advice__item--1@2x.png 2x" alt="Photo of an item you may also like" class="advice__img">
+                    </picture>
+                  </div>
+                  <dl class="advice__info">
+                    <dt class="advice__name">
+                      Celebration derby
+                    </dt>
+                    <dd class="advice__price">
+                      <span class="advice__currency">
+                        &#8364;
+                      </span>
+                      <span class="advice__value">
+                        155
+                      </span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li class="advice__item">
+                <a href="#" class="advice__link">
+                  <button class="advice__like" type="button">
+                    Add to favourites
+                    <svg class="advice__icon" width="19" height="19" viewbox="0 0 497 470">
+                      <use xlink:href="#fav"></use>
+                    </svg>
+                  </button>
+                  <div class="advice__frame">
+                    <picture>
+                      <img src="img/advice__item--2@1x.png" srcset="img/advice__item--2@1x.png 1x, img/advice__item--2@2x.png 2x" alt="Photo of an item you may also like" class="advice__img">
+                    </picture>
+                  </div>
+                  <dl class="advice__info">
+                    <dt class="advice__name">
+                      Celebration derby#2
+                    </dt>
+                    <dd class="advice__price">
+                      <span class="advice__currency">
+                        &#8364;
+                      </span>
+                      <span class="advice__value">
+                        155
+                      </span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li class="advice__item">
+                <button class="advice__like" type="button">
+                  Add to favourites
+                  <svg class="advice__icon" width="19" height="19" viewbox="0 0 497 470">
+                    <use xlink:href="#fav"></use>
+                  </svg>
+                </button>
+                <a href="#" class="advice__link">
+                  <div class="advice__frame">
+                    <picture>
+                      <img src="img/advice__item--3@1x.png" srcset="img/advice__item--3@1x.png 1x, img/advice__item--3@2x.png 2x" alt="Photo of an item you may also like" class="advice__img">
+                    </picture>
+                  </div>
+                  <dl class="advice__info">
+                    <dt class="advice__name">
+                      Celebration derby#3
+                    </dt>
+                    <dd class="advice__price">
+                      <span class="advice__currency">
+                        &#8364;
+                      </span>
+                      <span class="advice__value">
+                        155
+                      </span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -853,6 +868,63 @@
   <script src="jQuery/slick/slick.min.js"></script>
   <script src="js/jquery-init.js"></script>
   <script src="js/accordeon-footer-mobile.js"></script>
+  <script>
+    $('.card__list').slick({
+      arrows: true,
+      dots: true,
+      vertical: true,
+      verticalSwiping: true,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            arrows: false,
+            vertical: false,
+            verticalSwiping: false
+          }
+        }
+      ]
+    });
+
+    // var startSlide = $('.card__list').slick('slickCurrentSlide');
+    // let totalCount = $('li.card__item:not(.slick-cloned)').length - 1;
+    //
+    // if (startSlide === 0) {
+    //   $('.card__list .slick-prev').addClass('arrow-block');
+    // }
+    //
+    // $('.card__list').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    //   if (currentSlide === 0) {
+    //     $('.card__list .slick-prev').addClass('arrow-block');
+    //   } else {
+    //     $('.card__list .slick-prev').removeClass('arrow-block');
+    //   }
+    //
+    //   if (currentSlide === totalCount) {
+    //     $('.card__list .slick-next').addClass('arrow-block');
+    //   } else {
+    //     $('.card__list .slick-next').removeClass('arrow-block');
+    //   }
+    // });
+
+
+    let tablet = window.matchMedia('(max-width: 767px)');
+
+    if (tablet.matches) {
+      $('.advice__list').slick({
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    }
+
+  </script>
 </body>
 
 </html>

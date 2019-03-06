@@ -1,0 +1,126 @@
+.info {
+  position: relative;
+  margin-top: 24px;
+}
+
+.info__like {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.info__icon use {
+  fill: none;
+  stroke: $color__black;
+  stroke-width: 20;
+}
+
+.info__like--active use {
+  fill: $color__black;
+}
+
+.info__product {
+  margin: 0;
+  padding: 0;
+}
+
+.info__name {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: $color__black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info__price {
+  margin: 0;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 14px;
+  color: $color__black;
+}
+
+.info__social {
+  display: none;
+}
+
+@media (min-width: $width__notebook) {
+  .info {
+    margin-top: 0;
+    padding-right: 50px;
+  }
+
+  .info__like {
+    display: none;
+  }
+
+  .info__name {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .info__price {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .info__social {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: 110px;
+    padding: 0;
+    line-height: 0;
+    list-style: none;
+
+    &::before {
+      content: "contact:";
+      position: absolute;
+      top: -38px;
+      left: 0;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 22px;
+      color: $color__placeholder;
+      text-transform: uppercase;
+    }
+  }
+
+  .info__network:not(:first-of-type) {
+    margin-left: 48px;
+  }
+
+  .info__link {
+    display: block;
+  }
+
+  .info__logo use {
+    fill: $color__social;
+    transition-duration: 0.3s;
+  }
+
+  .info__link:hover .info__logo use {
+    fill: $color__filter-active;
+  }
+
+  .info__link:active .info__logo use {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .info {
+    margin-top: 0;
+    padding-right: 28%;
+  }
+}
