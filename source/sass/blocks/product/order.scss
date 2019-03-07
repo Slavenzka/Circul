@@ -14,6 +14,7 @@
     background-size: cover;
     transform: rotate(-90deg);
     z-index: 2;
+    pointer-events: none;
   }
 }
 
@@ -36,6 +37,7 @@
 }
 
 .order__link {
+  display: none;
   margin-left: 48px;
   font-size: 18px;
   font-weight: 500;
@@ -62,7 +64,31 @@
 }
 
 .order__like {
-  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.order__icon use {
+  fill: none;
+  stroke-width: 20;
+  stroke: $color__black;
+  transition-duration: 0.2s;
+}
+
+.order__fav:checked + .order__like .order__icon use {
+  fill: $color__black;
+  stroke: $color__black;
+  transition-duration: 0.2s;
 }
 
 .order__fav {
@@ -77,6 +103,10 @@
 }
 
 @media (min-width: $width__notebook) {
+  .order__link {
+    display: inline-block;
+  }
+
   .order__buttons {
     position: relative;
     display: flex;
@@ -96,32 +126,17 @@
   }
 
   .order__like {
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: static;
     width: 56px;
     height: 56px;
-    font-size: 0;
-    background-color: transparent;
     border: 1px solid $color__placeholder;
-    cursor: pointer;
-  }
-
-  .order__icon use {
-    fill: none;
-    stroke-width: 20;
-    stroke: $color__placeholder;
-    transition-duration: 0.2s;
   }
 
   .order__like:hover .order__icon use {
     fill: $color__placeholder;
   }
 
-  .order__fav:checked + .order__like .order__icon use {
-    fill: $color__black;
-    stroke: $color__black;
-    transition-duration: 0.2s;
+  .order__icon use {
+    stroke: $color__placeholder;
   }
 }

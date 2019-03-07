@@ -373,12 +373,6 @@
           </div>
           <div class="card__info info">
             <div class="info__product">
-              <button class="info__like" type="button">
-                Add to favourites
-                <svg class="info__icon" width="19" height="19" viewbox="0 0 497 470">
-                  <use xlink:href="#fav"></use>
-                </svg>
-              </button>
               <dl class="info__product">
                 <dt class="info__name">
                   Celebration derby
@@ -682,13 +676,14 @@
           </label>
           <div class="options__content options__content--advice advice__content">
             <ul class="advice__list">
-              <li class="advice__item">
-                <button class="advice__like" type="button">
+              <li class="advice__item advice__item--1">
+                <input type="checkbox" class="advice__fav" name="advice-like" id="more-fav1">
+                <label for="more-fav1" class="advice__like">
                   Add to favourites
-                  <svg class="advice__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <svg class="advice__icon" width="20" height="20" viewbox="0 0 497 470">
                     <use xlink:href="#fav"></use>
                   </svg>
-                </button>
+                </label>
                 <a href="#" class="advice__link">
                   <div class="advice__frame">
                     <picture>
@@ -710,14 +705,15 @@
                   </dl>
                 </a>
               </li>
-              <li class="advice__item">
+              <li class="advice__item advice__item--2">
+                <input type="checkbox" class="advice__fav" name="advice-like" id="more-fav2">
+                <label for="more-fav2" class="advice__like">
+                  Add to favourites
+                  <svg class="advice__icon" width="20" height="20" viewbox="0 0 497 470">
+                    <use xlink:href="#fav"></use>
+                  </svg>
+                </label>
                 <a href="#" class="advice__link">
-                  <button class="advice__like" type="button">
-                    Add to favourites
-                    <svg class="advice__icon" width="19" height="19" viewbox="0 0 497 470">
-                      <use xlink:href="#fav"></use>
-                    </svg>
-                  </button>
                   <div class="advice__frame">
                     <picture>
                       <img src="img/advice__item--2@1x.png" srcset="img/advice__item--2@1x.png 1x, img/advice__item--2@2x.png 2x" alt="Photo of an item you may also like" class="advice__img">
@@ -738,13 +734,14 @@
                   </dl>
                 </a>
               </li>
-              <li class="advice__item">
-                <button class="advice__like" type="button">
+              <li class="advice__item advice__item--3">
+                <input type="checkbox" class="advice__fav" name="advice-like" id="more-fav3">
+                <label for="more-fav3" class="advice__like">
                   Add to favourites
-                  <svg class="advice__icon" width="19" height="19" viewbox="0 0 497 470">
+                  <svg class="advice__icon" width="20" height="20" viewbox="0 0 497 470">
                     <use xlink:href="#fav"></use>
                   </svg>
-                </button>
+                </label>
                 <a href="#" class="advice__link">
                   <div class="advice__frame">
                     <picture>
@@ -925,6 +922,7 @@
     }
 
   </script>
+  <script src="js/modal.js" async></script>
 </body>
 
 </html>
