@@ -33,9 +33,9 @@
 .advice .slick-arrow {
   position: absolute;
   top: 148px;
-  padding: 0;
-  width: 6px;
-  height: 12px;
+  padding: 5px;
+  width: 16px;
+  height: 22px;
   font-size: 0;
   background-color: transparent;
   border: none;
@@ -48,10 +48,10 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 5px;
+    left: 5px;
+    width: 6px;
+    height: 12px;
     background-image: url("../img/arrow.svg");
     background-size: cover;
   }
@@ -63,14 +63,52 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 5px;
+    left: 5px;
+    width: 6px;
+    height: 12px;
     background-image: url("../img/arrow.svg");
     background-size: cover;
     transform: rotate(180deg);
   }
+}
+
+.advice__fav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.advice__like {
+  position: absolute;
+  bottom: 19px;
+  right: -5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  line-height: 20;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.advice__icon use {
+  fill: none;
+  stroke-width: 20;
+  stroke: $color__black;
+  transition-duration: 0.2s;
+}
+
+.advice__fav:checked + .advice__like .advice__icon use {
+  fill: $color__black;
+  stroke: $color__black;
+  transition-duration: 0.2s;
 }
 
 .advice__info {
@@ -88,28 +126,6 @@
 
 .advice__name {
   position: relative;
-}
-
-.advice__like {
-  position: absolute;
-  bottom: 21px;
-  right: 1px;
-  margin: 0;
-  padding: 5px;
-  font-size: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.advice__icon use {
-  fill: none;
-  stroke: $color__black;
-  stroke-width: 20;
-}
-
-.advice__like--active use {
-  fill: $color__black;
 }
 
 .advice__price {
@@ -168,6 +184,11 @@
     line-height: 43px;
   }
 
+  .advice__fav,
+  .advice__like {
+    display: none;
+  }
+
   .advice__info {
     display: flex;
     justify-content: space-between;
@@ -178,10 +199,6 @@
 
   .advice__name {
     width: 75%;
-  }
-
-  .advice__like {
-    display: none;
   }
 
   .advice__link:hover .advice__frame {

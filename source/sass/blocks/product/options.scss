@@ -143,8 +143,9 @@
 
   .options__trigger--size,
   .options__trigger--size + label,
-  .options__content--size {
+  div.options__content--size {
     display: none;
+    padding-bottom: 0;
   }
 
   .options__item,

@@ -34,3 +34,31 @@
 .guide__headings th:not(:last-of-type) {
   padding-right: 80px;
 }
+
+@media (min-width: $width__notebook) {
+  .guide {
+    margin-top: 20px;
+  }
+
+  .guide__headings th,
+  .guide__row td {
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    color: $color__placeholder;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .guide {
+    margin-top: 30px;
+  }
+
+  .guide__headings th,
+  .guide__row td {
+    padding: 16px 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
