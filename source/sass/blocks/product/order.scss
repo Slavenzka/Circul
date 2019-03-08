@@ -1,13 +1,13 @@
 .order__size {
   position: relative;
-  margin-top: 74px;
+  margin-top: 24px;
   font-size: 0;
 
   &::before {
     content: "";
     position: absolute;
-    top: 22px;
-    left: 180px;
+    top: 18px;
+    right: 16px;
     width: 8px;
     height: 14px;
     background-image: url("../img/arrow.svg");
@@ -20,13 +20,14 @@
 
 .order__select {
   position: relative;
-  padding: 16px 16px 18px 16px;
-  width: 200px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
+  padding: 14px 30px 13px 12px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
   color: $color__placeholder;
   letter-spacing: 1px;
+  background-color: $color__products-bg;
   border: 1px solid $color__placeholder;
   outline: none;
   appearance: none;
@@ -104,6 +105,38 @@
 }
 
 @media (min-width: $width__notebook) {
+  .order__size {
+    margin-top: 74px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 180px;
+      width: 8px;
+      height: 14px;
+      background-image: url("../img/arrow.svg");
+      background-size: cover;
+      transform: rotate(-90deg);
+      z-index: 2;
+      pointer-events: none;
+    }
+  }
+
+  .order__select {
+    position: relative;
+    padding: 16px 16px 18px 16px;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $color__placeholder;
+    letter-spacing: 1px;
+    border: 1px solid $color__placeholder;
+    outline: none;
+    appearance: none;
+  }
+
   .order__link {
     display: inline-block;
   }

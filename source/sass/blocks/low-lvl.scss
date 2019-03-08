@@ -52,7 +52,7 @@
 
 @media (min-width: $width__tablet) {
   .low-lvl__item:not(:last-of-type) {
-    margin-bottom: 36px;
+    margin-bottom: 20px;
   }
 
   .low-lvl__item--sale {
@@ -60,12 +60,16 @@
   }
 
   .low-lvl__link {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 
 @media (min-width: $width__notebook) {
+  .low-lvl__item:not(:last-of-type) {
+    margin-bottom: 36px;
+  }
+
   .low-lvl__img {
     position: absolute;
     top: 36px;
@@ -73,5 +77,10 @@
     width: 666px;
     height: 456px;
     object-fit: cover;
+  }
+
+  .low-lvl__link {
+    font-size: 24px;
+    line-height: 29px;
   }
 }
