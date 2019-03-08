@@ -221,7 +221,8 @@ a {
     height: 20px;
     font-size: 0;
     background-color: transparent;
-    border: none; }
+    border: none;
+    cursor: pointer; }
     .modal__btn::before {
       content: "";
       position: absolute;
@@ -410,7 +411,7 @@ li.nav__item--selected > .nav__link {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 40%; }
+    width: 41%; }
   .nav__item:not(:first-of-type):not(.nav__item--tablet-plus) {
     margin-left: 0; }
   .nav__item--search {
@@ -494,7 +495,7 @@ li.nav__item--selected > .nav__link {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 40%; }
+    width: 41%; }
   .nav-shop__list {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -755,6 +756,7 @@ li.nav__item--selected > .nav__link {
     left: 0;
     padding: 0 1.95313%;
     height: auto;
+    min-height: 476px;
     width: 100%;
     -webkit-transform: translateY(-110%);
             transform: translateY(-110%);
@@ -846,14 +848,16 @@ li.nav__item--selected > .nav__link {
 
 @media (min-width: 768px) {
   .low-lvl__item:not(:last-of-type) {
-    margin-bottom: 36px; }
+    margin-bottom: 20px; }
   .low-lvl__item--sale {
     margin-top: 52px; }
   .low-lvl__link {
-    font-size: 24px;
-    line-height: 29px; } }
+    font-size: 18px;
+    line-height: 22px; } }
 
 @media (min-width: 1260px) {
+  .low-lvl__item:not(:last-of-type) {
+    margin-bottom: 36px; }
   .low-lvl__img {
     position: absolute;
     top: 36px;
@@ -861,7 +865,10 @@ li.nav__item--selected > .nav__link {
     width: 666px;
     height: 456px;
     -o-object-fit: cover;
-       object-fit: cover; } }
+       object-fit: cover; }
+  .low-lvl__link {
+    font-size: 24px;
+    line-height: 29px; } }
 
 .subfooter {
   padding: 16px 0 21px 0;
@@ -2539,7 +2546,8 @@ li.nav__item--selected > .nav__link {
   list-style: none; }
 
 .advice__item {
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid #707070; }
 
 .advice__frame {
   height: 351px;
@@ -2599,8 +2607,8 @@ li.nav__item--selected > .nav__link {
 
 .advice__like {
   position: absolute;
-  bottom: 19px;
-  right: -5px;
+  top: -5px;
+  right: -4px;
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -2632,11 +2640,11 @@ li.nav__item--selected > .nav__link {
   line-height: 19px;
   color: black;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #707070; }
+  letter-spacing: 1px; }
 
 .advice__name {
-  position: relative; }
+  position: relative;
+  padding-right: 80px; }
 
 .advice__price {
   display: none;
@@ -2671,7 +2679,9 @@ li.nav__item--selected > .nav__link {
   .advice__img {
     margin: 0 auto;
     padding-top: 0;
-    width: 100%; } }
+    width: 100%; }
+  .advice__name {
+    padding-right: 40px; } }
 
 @media (min-width: 1260px) {
   .advice__content {
@@ -2702,13 +2712,13 @@ li.nav__item--selected > .nav__link {
 
 .order__size {
   position: relative;
-  margin-top: 74px;
+  margin-top: 24px;
   font-size: 0; }
   .order__size::before {
     content: "";
     position: absolute;
-    top: 22px;
-    left: 180px;
+    top: 18px;
+    right: 16px;
     width: 8px;
     height: 14px;
     background-image: url("../img/arrow.svg");
@@ -2720,13 +2730,14 @@ li.nav__item--selected > .nav__link {
 
 .order__select {
   position: relative;
-  padding: 16px 16px 18px 16px;
-  width: 200px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
+  padding: 14px 30px 13px 12px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
   color: #a2a2a2;
   letter-spacing: 1px;
+  background-color: #eaeaea;
   border: 1px solid #a2a2a2;
   outline: none;
   -webkit-appearance: none;
@@ -2804,6 +2815,35 @@ li.nav__item--selected > .nav__link {
   pointer-events: none; }
 
 @media (min-width: 1260px) {
+  .order__size {
+    margin-top: 74px; }
+    .order__size::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 180px;
+      width: 8px;
+      height: 14px;
+      background-image: url("../img/arrow.svg");
+      background-size: cover;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+      z-index: 2;
+      pointer-events: none; }
+  .order__select {
+    position: relative;
+    padding: 16px 16px 18px 16px;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #a2a2a2;
+    letter-spacing: 1px;
+    border: 1px solid #a2a2a2;
+    outline: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
   .order__link {
     display: inline-block; }
   .order__buttons {

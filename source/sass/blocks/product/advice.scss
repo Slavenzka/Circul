@@ -17,6 +17,7 @@
 
 .advice__item {
   position: relative;
+  border-bottom: 1px solid $color__underline;
 }
 
 .advice__frame {
@@ -86,8 +87,8 @@
 
 .advice__like {
   position: absolute;
-  bottom: 19px;
-  right: -5px;
+  top: -5px;
+  right: -4px;
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -121,11 +122,11 @@
   color: $color__black;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-bottom: 1px solid $color__underline;
 }
 
 .advice__name {
   position: relative;
+  padding-right: 80px;
 }
 
 .advice__price {
@@ -170,6 +171,10 @@
     margin: 0 auto;
     padding-top: 0;
     width: 100%;
+  }
+
+  .advice__name {
+    padding-right: 40px;
   }
 }
 
