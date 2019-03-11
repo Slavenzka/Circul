@@ -1,12 +1,16 @@
 .banner {
+  position: relative;
+}
+
+.banner > .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  width: 100%;
   height: 180px;
   background-image: url("../img/banner__bg--mobile@1x.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: 0 0;
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -33,14 +37,9 @@
 }
 
 @media (min-width: $width__tablet) {
-  .banner {
+  .banner > .container {
     height: 220px;
     background-image: url("../img/banner__bg@1x.jpg");
-    background-position: 50% 50%;
-
-    @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
-      background-image: url("../img/banner__bg@2x.jpg");
-    }
   }
 
   .banner__title {
@@ -57,11 +56,15 @@
 
 @media (min-width: $width__notebook) {
   .banner {
-    margin-top: 102px;
+    overflow: hidden;
+  }
+
+  .banner > .container {
     height: 404px;
   }
 
   .banner__title {
+    position: relative;
     font-size: 18px;
     line-height: 22px;
   }
@@ -69,5 +72,9 @@
   .banner__highlight {
     font-size: 68px;
     line-height: 82px;
+  }
+
+  .imageHolder > .banner__title {
+    margin-top: 149px;
   }
 }
