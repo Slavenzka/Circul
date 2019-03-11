@@ -1,7 +1,3 @@
-.promo {
-  margin-top: 50px;
-}
-
 .promo__list {
   position: relative;
   margin: 0;
@@ -66,10 +62,6 @@
 }
 
 @media (min-width: $width__notebook) {
-  .promo {
-    margin-top: 102px;
-  }
-
   .promo__list {
     height: calc(100vh - 102px);
   }

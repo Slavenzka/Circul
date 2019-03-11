@@ -31,7 +31,7 @@
 
 html {
   box-sizing: border-box;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 *,
@@ -42,7 +42,7 @@ html {
 
 body {
   font-family: $font__main;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 a {
@@ -62,6 +62,7 @@ a {
 }
 
 .container {
+  width: 100%;
   padding: 0 100% * 16 / 375;
 }
 
@@ -74,6 +75,7 @@ a {
 }
 
 .main-container {
+  padding-top: 50px;
   transition-duration: 0.5s;
 }
 
@@ -99,6 +101,10 @@ a {
 }
 
 @media (min-width: $width__notebook) {
+  .main-container {
+    padding-top: 102px;
+  }
+
   .container {
     padding: 0 100% * 46 / 1920;
   }

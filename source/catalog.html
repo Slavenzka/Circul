@@ -325,7 +325,6 @@
 
   <main>
     <div class="main-container">
-      <link rel="stylesheet" href="jQuery/slick/slick.css">
       <section class="banner">
         <div class="container">
           <h1 class="banner__title">
@@ -865,9 +864,18 @@
   <script src="js/menu-operation.js"></script>
   <script src="jQuery/jquery-3.3.1.min.js"></script>
   <script src="jQuery/jquery-migrate-1.4.1.min.js"></script>
-  <script src="jQuery/slick/slick.min.js"></script>
-  <script src="js/jquery-init.js"></script>
+  <script src="jQuery/parallax/parally.min.js"></script>
   <script src="js/accordeon-footer-mobile.js"></script>
+  <script>
+    const desktop = window.matchMedia('(min-width: 1260px)');
+
+    if (desktop.matches) {
+      $('.banner > .container').parally({
+        speed: 0.5,
+        offset: -51
+      });
+    }
+  </script>
 </body>
 
 </html>
