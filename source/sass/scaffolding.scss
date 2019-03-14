@@ -94,6 +94,15 @@ a {
   border: none;
 }
 
+a.link--opened:not([href]) {
+  color: $color__lightest;
+  pointer-events: none;
+
+  &::before {
+    display: none;
+  }
+}
+
 @media (min-width: $width__tablet) {
   .container {
     padding: 0 100% * 15 / 768;

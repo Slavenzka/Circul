@@ -1,3 +1,7 @@
+.smm--tablet-plus {
+  display: none;
+}
+
 .smm--sent .smm__newsletter {
   padding-bottom: 25px;
 }
@@ -111,8 +115,12 @@
 }
 
 @media (min-width: $width__tablet) {
-  .smm:not(.smm--catalog) {
+  .smm:not(.smm--catalog):not(.smm--tablet-plus):not(.smm--all) {
     display: none;
+  }
+
+  .smm--tablet-plus {
+    display: block;
   }
 
   .smm__invitation--instagram {
@@ -178,6 +186,10 @@
     border-top: 1px solid $color__underline;
   }
 
+  .smm--all .smm__instagram {
+    margin-top: 0;
+  }
+
   .smm__invitation--instagram {
     font-size: 18px;
     line-height: 22px;
@@ -235,6 +247,10 @@
 }
 
 @media (min-width: $width__desktop) {
+  .smm--faq .smm__instagram {
+    margin-top: 0;
+  }
+
   .smm__item {
     width: 425px;
   }
