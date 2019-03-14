@@ -1,0 +1,137 @@
+@mixin font($weight) {
+  font-size: 12px;
+  font-weight: $weight;
+  line-height: 18px;
+  font-style: normal;
+  color: $color__black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about__contacts {
+  margin-top: 24px;
+}
+
+.about__email {
+  @include font(300);
+}
+
+.about__owner {
+  margin: 0;
+  margin-top: 5px;
+
+  @include font(700);
+}
+
+.about__frame {
+  margin-top: 48px;
+  height: 278px;
+}
+
+.about__img {
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .about__contacts {
+    padding: 0 100% * 16 / 375;
+  }
+}
+
+@media (min-width: $width__tablet) {
+  .about > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding-top: 48px;
+  }
+
+  .about__wrapper {
+    grid-column: 2 / 3;
+    grid-row: 1  / 2;
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  .about__heading {
+    margin: 0;
+  }
+
+  .about__frame--1 {
+    grid-column: 1 / 2;
+    grid-row: 1  / 2;
+    margin: 0;
+    height: 450px;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .about > .container {
+    padding-top: 124px;
+    padding-bottom: 124px;
+  }
+
+  .about__heading {
+    font-size: 50px;
+    line-height: normal;
+  }
+
+  .about p.about__descriptor {
+    margin-top: 48px;
+    font-size: 18px;
+  }
+
+  .about__frame--1 {
+    width: 97.6%;
+    height: 664px;
+  }
+
+  .about__contacts {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  .about__email {
+    order: 2;
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  .about__owner {
+    order: 1;
+    margin: 0;
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .about > .container {
+    padding-bottom: 231px;
+  }
+
+  .about__wrapper {
+    width: 68.93%;
+  }
+
+  .about__heading {
+    font-size: 68px;
+  }
+
+  .about p.about__descriptor {
+    margin-top: 64px;
+  }
+
+  .about__contacts {
+    margin-top: 59px;
+  }
+
+  .about__owner {
+    margin-top: 0;
+    font-size: 40px;
+  }
+}
