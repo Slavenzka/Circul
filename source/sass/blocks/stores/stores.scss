@@ -1,0 +1,287 @@
+.stores > .container {
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 228px;
+}
+
+.stores__heading {
+  position: relative;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 46px;
+  color: $color__black;
+  text-transform: uppercase;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -59px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color__underline;
+  }
+}
+
+.stores__back {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  width: 60px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: $color__placeholder;
+  text-transform: uppercase;
+  vertical-align: center;
+}
+
+.stores__back svg {
+  margin-right: 12px;
+  fill: none;
+  stroke: $color__placeholder;
+}
+
+.stores__list {
+  margin: 0;
+  padding: 0;
+  padding-top: 48px;
+  padding-bottom: 58px;
+  list-style: none;
+}
+
+.stores__contacts {
+  margin: 0;
+  padding: 0;
+}
+
+.stores__location {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 34px;
+  color: $color__black;
+  text-transform: uppercase;
+}
+
+.stores__item:not(:first-of-type) .stores__contacts {
+  margin-top: 48px;
+}
+
+.stores__location--city .stores__country {
+  position: relative;
+
+  &::after {
+    content: ",";
+    margin-left: -5px;
+  }
+}
+
+.stores__address {
+  margin: 0;
+  margin-top: 16px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.stores__contact {
+  margin: 0;
+  color: $color__black;
+}
+
+.stores__icon {
+  display: none;
+}
+
+.stores__frame {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 228px;
+  font-size: 0;
+}
+
+.stores__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stores__frame--map {
+  display: none;
+}
+
+@media (min-width: $width__tablet) {
+  .stores > .container {
+    padding-bottom: 50px;
+  }
+
+  .stores__heading {
+    text-align: left;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .stores__back {
+    display: none;
+  }
+
+  .stores__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .stores__item--active .stores__country,
+  .stores__item--active .stores__icon use,
+  .stores__item--active .stores__city,
+  .stores__item--active .stores__contact {
+    color: $color__black;
+    fill: $color__black;
+  }
+
+  .stores__item {
+    width: 230px;
+    cursor: pointer;
+  }
+
+  .stores__item:not(:first-of-type) .stores__contacts {
+    margin-top: 0;
+  }
+
+  .stores__location--city .stores__country {
+    position: relative;
+
+    &::after {
+      content: ",";
+      display: none;
+    }
+  }
+
+  .stores__country {
+    color: $color__social;
+    transition-duration: 0.5s;
+  }
+
+  .stores__icon use {
+    transition-duration: 0.5s;
+  }
+
+  .stores__city {
+    display: block;
+    font-size: 16px;
+    line-height: normal;
+    color: $color__social;
+    transition-duration: 0.5s;
+  }
+
+  .stores__address {
+    font-size: 10px;
+  }
+
+  .stores__location:not(.stores__location--city) + .stores__address {
+    margin-top: calc(16px + 19px);
+  }
+
+  .stores__frame:not(.stores__frame--active) {
+    display: none;
+  }
+
+  .stores__contact {
+    display: block;
+    color: $color__social;
+    transition-duration: 0.5s;
+  }
+
+  .stores__frame--map {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 300px;
+  }
+
+  .stores__map {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .stores > .container {
+    margin: 0 auto;
+    padding: 60px 0;
+    width: 90%;
+  }
+
+  .stores__item {
+    width: 320px;
+    cursor: pointer;
+  }
+
+  .stores__heading {
+    font-size: 68px;
+    line-height: normal;
+  }
+
+  .stores__location {
+    font-size: 0;
+  }
+
+  .stores__country {
+    font-size: 40px;
+  }
+
+  .stores__icon {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .stores__icon use {
+    fill: $color__social;
+  }
+
+  .stores__address {
+    font-size: 14px;
+    line-height: normal;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .stores > .container {
+    margin: 0 auto;
+    padding: 88px 0 124px 0;
+    width: 78.959%;
+  }
+
+  .stores__list {
+    padding-top: 88px;
+    padding-bottom: 89px;
+  }
+
+  .stores__city {
+    font-size: 24px;
+    line-height: normal;
+  }
+
+  .stores__address {
+    margin-top: 36px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  .stores__location:not(.stores__location--city) + .stores__address {
+    margin-top: calc(36px + 29px);
+  }
+
+  .stores__frame--map {
+    height: 429px;
+  }
+}

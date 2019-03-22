@@ -65,16 +65,26 @@
 }
 
 .options__content {
-  display: none;
-  padding-bottom: 12px;
+  padding: 0;
+  max-height: 0;
+  transition-duration: 0.5s;
+  overflow: hidden;
 }
 
 .options__trigger--details:checked ~ .options__content--details,
-.options__trigger--size:checked ~ .options__content--size,
 .options__trigger--payment:checked ~ .options__content--payment,
-.options__trigger--guarantee:checked ~ .options__content--guarantee,
+.options__trigger--guarantee:checked ~ .options__content--guarantee {
+  padding-bottom: 12px;
+  max-height: 150px;
+}
+
+.options__trigger--size:checked ~ .options__content--size {
+  padding-bottom: 12px;
+  max-height: 500px;
+}
+
 .options__trigger--advice:checked ~ .options__content--advice {
-  display: block;
+  max-height: 450px;
 }
 
 .options__list {
@@ -129,6 +139,17 @@
   margin-top: 20px;
 }
 
+@media (min-width: $width__tablet) {
+  .options {
+    border-bottom: 1px solid $color__underline;
+  }
+
+  .options__content--advice {
+    padding-bottom: 12px;
+    max-height: 1000px;
+  }
+}
+
 @media (min-width: $width__notebook) {
   .options {
     margin-top: 64px;
@@ -139,6 +160,15 @@
     font-size: 18px;
     font-weight: 300;
     line-height: 22px;
+    cursor: pointer;
+
+    &::before {
+      top: 25px;
+    }
+
+    &::after {
+      top: 19px;
+    }
   }
 
   .options__trigger--size,
@@ -156,7 +186,18 @@
     line-height: 22px;
   }
 
-  .options__content {
+  .options__trigger--details:checked ~ .options__content--details,
+  .options__trigger--payment:checked ~ .options__content--payment,
+  .options__trigger--guarantee:checked ~ .options__content--guarantee {
     padding-bottom: 25px;
+    max-height: 300px;
+  }
+
+  .options__content--advice {
+    padding-bottom: 25px;
+  }
+
+  .options__content--size {
+    max-height: 800px;
   }
 }

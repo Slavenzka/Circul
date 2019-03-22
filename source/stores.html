@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 rules</title>
+  <title>Our stores</title>
   <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-300.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
@@ -37,12 +37,12 @@
     <symbol id="back">
       <path d="M7 13L1 6.99971L7 1"/>
     </symbol>
+    <symbol id="pin">
+      <path d="M9.4993 0C4.2615 0 0 4.36284 0 9.72562C0 14.9935 8.97339 28.3566 9.35558 28.9227C9.3881 28.9714 9.44195 29 9.4993 29C9.55665 29 9.6105 28.9714 9.64302 28.9227C10.0252 28.3566 19 14.9939 19 9.72562C19 4.36284 14.7381 0 9.4993 0ZM9.4993 14.6785C6.83197 14.6785 4.66223 12.4566 4.66223 9.72526C4.66223 6.99464 6.83197 4.77277 9.4993 4.77277C12.1663 4.77277 14.3367 6.99464 14.3367 9.72526C14.3367 12.4562 12.1663 14.6785 9.4993 14.6785Z"/>
+    </symbol>
   </svg>
 
   <header class="header">
-    <h1 class="visually-hidden">
-      Circul FAQ topic
-    </h1>
     <div class="container">
       <a href="index.html" class="header__logo">
         <svg class="header__logo-icon" viewbox="0 0 88 16">
@@ -258,7 +258,7 @@
             </div>
           </li>
           <li class="nav__item nav__item--search nav__item--tablet-plus">
-            <a href="stores.html" class="nav__link nav__link--search">
+            <a class="nav__link nav__link--search link--opened">
               Stores
               <svg class="nav__icon nav__icon--search" width="14" height="14" viewbox="0 0 14 14">
                 <use xlink:href="#search"></use>
@@ -323,58 +323,121 @@
 
   <main>
     <div class="main-container">
-      <section class="content rules">
+      <section class="stores">
         <div class="container">
-          <div class="content__frame content__frame--1 rules__frame rules__frame--1">
+          <h1 class="stores__heading">
+            Stores
+          </h1>
+          <a href="#" class="stores__back">
+            <svg class="stores__icon-back" width="6" height="12" viewbox="0 0 8 14">
+              <use xlink:href="#back"></use>
+            </svg>
+            Back
+          </a>
+          <ul class="stores__list">
+            <li class="stores__item stores__item--ukr stores__item--active">
+              <dl class="stores__contacts">
+                <dt class="stores__location stores__location--city">
+                  <span class="stores__country">
+                    Ukraine
+                    <svg class="stores__icon" width="19" height="29" viewbox="0 0 19 29">
+                      <use xlink:href="#pin"></use>
+                    </svg>
+                  </span>
+                  <span class="stores__city">
+                    Kyiv
+                  </span>
+                </dt>
+                <dd class="stores__address">
+                  <p class="stores__contact">
+                    Saksaganskogo Str 37
+                  </p>
+                  <p class="stores__contact">
+                    tel: +38 063 298 5988
+                  </p>
+                </dd>
+              </dl>
+            </li>
+            <li class="stores__item stores__item--rus">
+              <dl class="stores__contacts">
+                <dt class="stores__location stores__location--city">
+                  <span class="stores__country">
+                    Russia
+                    <svg class="stores__icon" width="19" height="29" viewbox="0 0 19 29">
+                      <use xlink:href="#pin"></use>
+                    </svg>
+                  </span>
+                  <span class="stores__city">
+                    Moscow
+                  </span>
+                </dt>
+                <dd class="stores__address">
+                  <p class="stores__contact">
+                    Stoleshnikov lane 11
+                  </p>
+                  <p class="stores__contact">
+                    tel: +7 964 799 02 05
+                  </p>
+                </dd>
+              </dl>
+            </li>
+            <li class="stores__item stores__item--crimea">
+              <dl class="stores__contacts">
+                <dt class="stores__location stores__location--city">
+                  <span class="stores__country">
+                    Crimea
+                    <svg class="stores__icon" width="19" height="29" viewbox="0 0 19 29">
+                      <use xlink:href="#pin"></use>
+                    </svg>
+                  </span>
+                  <span class="stores__city">
+                    Sevastopol
+                  </span>
+                </dt>
+                <dd class="stores__address">
+                  <p class="stores__contact">
+                    Stone store
+                  </p>
+                  <p class="stores__contact">
+                    pr. Nakhimov, 19
+                  </p>
+                </dd>
+              </dl>
+            </li>
+            <li class="stores__item stores__item--eng">
+              <dl class="stores__contacts">
+                <dt class="stores__location">
+                  <span class="stores__country">
+                    England
+                    <svg class="stores__icon" width="19" height="29" viewbox="0 0 19 29">
+                      <use xlink:href="#pin"></use>
+                    </svg>
+                  </span>
+                </dt>
+                <dd class="stores__address">
+                  <a class="stores__contact" href="mailto:support@followmyeyes.co.uk">
+                    support@followmyeyes.co.uk
+                  </a>
+                  <a class="stores__contact" href="https://www.followmyeyes.co.uk">
+                    www.followmyeyes.co.uk
+                  </a>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+          <div class="stores__frame">
             <picture>
-              <img src="img/faq__item--4@1x.jpg" srcset="img/faq__item--4@1x.jpg 1x, img/faq__item--4@2x.jpg 2x" alt="Photo of Circul shoes" class="content__img rules__img">
+              <img class="stores__img" src="img/stores__img@1x.jpg" alt="Photo of Circul shoes">
             </picture>
           </div>
-          <div class="content__wrapper rules__wrapper">
-            <h1 class="content__heading rules__heading">
-              5&nbsp;rules to&nbsp;prolong the life of&nbsp;your shoes
-            </h1>
-            <p class="content__descriptor rules__descriptor">
-              Experienced lovers of&nbsp;grooming shoes agree that a&nbsp;full-fledged care consists of&nbsp;only a&nbsp;small number of&nbsp;stages.
-            </p>
-            <ol class="content__list rules__list">
-              <li class="content__item rules__item">
-                Cleaning
-                <p class="content__descriptor rules__descriptor">
-                  Minimise the contact of&nbsp;your shoes with water and dirt. It&nbsp;is&nbsp;understandable that in&nbsp;the city reality this seems difficult. Nevertheless, this must be&nbsp;kept in&nbsp;mind. This is&nbsp;especially true while talking about suede. Salts and reagents spread all over the streets in&nbsp;winter do&nbsp;not allow you to&nbsp;wear shoes with leather soles. For this time of&nbsp;year it&nbsp;is&nbsp;better to&nbsp;wear a&nbsp;pair with a&nbsp;rubberized bottom.
-                </p>
-              </li>
-              <li class="content__item rules__item">
-                Alternation
-                <p class="content__descriptor rules__descriptor">
-                  One of&nbsp;the fundamental rules is&nbsp;to&nbsp;have at&nbsp;least two or&nbsp;three pairs of&nbsp;shoes. You should wear them one after another every other time. The fact is&nbsp;that one night is&nbsp;not enough for the shoe leather to&nbsp;dry completely and restore its former shape. As&nbsp;a&nbsp;result of&nbsp;long wear, the shoes stretch and lose their attractiveness.
-                </p>
-              </li>
-              <li class="content__item rules__item">
-                Maintenance
-                <p class="content__descriptor rules__descriptor">
-                  It&nbsp;is&nbsp;better to&nbsp;use wooden pads for leaving shoes for the night, and furthermore to&nbsp;store them for the whole season. This action will avoid the formation of&nbsp;creases. Preferred materials for pads are cedar, beech or&nbsp;mahogany. These kinds of&nbsp;wood can absorbs wet in&nbsp;the best way. In&nbsp;any case, never wear not-dried-enough shoes: the damp skin is&nbsp;very easily stretched and as&nbsp;a&nbsp;result loses its shape. In&nbsp;addition, it&nbsp;is&nbsp;simply dangerous for health.
-                </p>
-              </li>
-              <li class="content__item rules__item">
-                Drying
-                <p class="content__descriptor rules__descriptor">
-                  Drying leather shoes is&nbsp;highly discouraged near or&nbsp;on&nbsp;the heater, as&nbsp;well as&nbsp;under the sun. It&nbsp;is&nbsp;better to&nbsp;clean shoes for a&nbsp;whole season by&nbsp;packing it&nbsp;in&nbsp;a&nbsp;box and, preferably, in&nbsp;a&nbsp;soft cloth bag. Do&nbsp;not dispose the desiccants. Never store shoes in&nbsp;a&nbsp;plastic bag.
-                </p>
-              </li>
-              <li class="content__item rules__item">
-                Care
-                <p class="content__descriptor rules__descriptor">
-                  Here are some more general tips on&nbsp;how to&nbsp;take care of&nbsp;your shoes. Try not to&nbsp;use constantly colourless creams. After some time, the colour of&nbsp;shoes will fade. Better buy the tone which is&nbsp;the closest to&nbsp;your shoe. When purchasing care solutions for the first time, it&nbsp;is&nbsp;better to&nbsp;test it&nbsp;on&nbsp;a&nbsp;small inconspicuous site.&nbsp;it&nbsp;is&nbsp;better to&nbsp;buy a&nbsp;shoe care agent only in&nbsp;trusted stores that take care of&nbsp;their reputation, not to&nbsp;buy a&nbsp;fake product.
-                </p>
-              </li>
-            </ol>
+          <div class="stores__frame stores__frame--map stores__frame--ukr stores__frame--active">
+            <iframe class="stores__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1270.6457613070856!2d30.51186116190187!3d50.43567039478281!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cefc9689e48f%3A0x7cfc923f7ee72990!2z0YPQuy4g0KHQsNC60YHQsNCz0LDQvdGB0LrQvtCz0L4sIDM3LCDQmtC40LXQsiwg0KPQutGA0LDQuNC90LAsIDAyMDAw!5e0!3m2!1sru!2sru!4v1552643684308" allowfullscreen></iframe>
           </div>
-          <div class="content__frame content__frame--2 rules__frame rules__frame--2 rules__frame--high">
-            <picture>
-              <source media="(min-width: 768px)" srcset="img/faq__item--7@1x.jpg 1x, img/faq__item--7@2x.jpg 2x">
-              <img src="img/faq__item--7mobile@1x.jpg" srcset="img/faq__item--7mobile@1x.jpg 1x, img/faq__item--7mobile@2x.jpg 2x" alt="Photo of Circul shoes" class="content__img rules__img">
-            </picture>
+          <div class="stores__frame stores__frame--map stores__frame--rus">
+            <iframe class="stores__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1079.9614540911573!2d37.61573376188797!3d55.76336865213276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a439984a809%3A0xea14661d034d198!2z0L_QtdGALiDQodGC0L7Qu9C10YjQvdC40LrQvtCyLCAxMSwg0JzQvtGB0LrQstCwLCAxMjUwMDk!5e0!3m2!1sru!2sru!4v1552655583294" allowfullscreen></iframe>
+          </div>
+          <div class="stores__frame stores__frame--map stores__frame--crimea">
+            <iframe class="stores__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2365.471146867366!2d33.519442025147086!3d44.612422113079695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409524ce88a8f44b%3A0xbd76b3cac6d34b8e!2zMTkg0L_RgNC-0YHQvy4g0J3QsNGF0LjQvNC-0LLQsCwg0KHQtdCy0LDRgdGC0L7Qv9C-0LvRjA!5e0!3m2!1sru!2sru!4v1552655702867" allowfullscreen></iframe>
           </div>
         </div>
       </section>
@@ -472,6 +535,7 @@
 
   <script src="js/menu-operation.js"></script>
   <script src="js/accordeon-footer-mobile.js"></script>
+  <script src="js/maps.js"></script>
 </body>
 
 </html>

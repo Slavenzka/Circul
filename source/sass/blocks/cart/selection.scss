@@ -1,0 +1,116 @@
+.selection {
+  position: relative;
+}
+
+.selection:not(:first-of-type) {
+  margin-top: 24px;
+}
+
+.selection__method {
+  position: relative;
+  display: block;
+  padding: 11px 42px 10px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: $color__placeholder;
+  text-transform: uppercase;
+  background-color: $color__products-bg;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 16px;
+    width: 13px;
+    height: 1px;
+    background-color: $color__icons;
+    transition-duration: 0.3s;
+    transform: rotate(0);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 16px;
+    width: 13px;
+    height: 1px;
+    background-color: $color__icons;
+    transition-duration: 0.3s;
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+  }
+}
+
+.selection__method--selected {
+  color: $color__lightest;
+  background-color: $color__filter-active;
+
+  &::before,
+  &::after {
+    background-color: $color__lightest;
+  }
+}
+
+.selection[open] .selection__method {
+  color: $color__lightest;
+  background-color: $color__filter-active;
+
+  &::before {
+    opacity: 0;
+  }
+
+  &::after {
+    background-color: $color__lightest;
+    transform: rotate(0);
+  }
+}
+
+.selection__method::-webkit-details-marker {
+  display: none;
+}
+
+.selection__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-top: 24px;
+  width: 100%;
+  background-color: $color__lightest;
+  list-style: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.selection__item:not(:first-of-type) {
+  margin-top: 12px;
+}
+
+.selection__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.selection__input + label {
+  display: block;
+  padding: 11px 42px 10px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: $color__placeholder;
+  text-transform: uppercase;
+  background-color: $color__products-bg;
+  cursor: pointer;
+}

@@ -36,6 +36,10 @@
   order: 3;
 }
 
+.header svg use {
+  transition-duration: 0.5s;
+}
+
 @media (min-width: $width__tablet) {
   .header > .container {
     align-items: stretch;
