@@ -31,7 +31,7 @@
 
 html {
   box-sizing: border-box;
-  // overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 *,
@@ -42,7 +42,7 @@ html {
 
 body {
   font-family: $font__main;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 a {
@@ -92,6 +92,11 @@ a {
   text-align: center;
   background-color: $color__filter-active;
   border: none;
+}
+
+.btn--active {
+  color: $color__lightest;
+  background-color: $color__filter-active;
 }
 
 a.link--opened:not([href]) {

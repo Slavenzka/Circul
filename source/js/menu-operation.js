@@ -153,6 +153,24 @@
         item.addEventListener('click', toggleSubmenus);
       });
     }
+
+    this.toggleBag = function () {
+      const trigger = header.querySelector('.nav-shop__link--cart');
+      const content = header.querySelector('.bag');
+      const button = header.querySelector('.bag__close');
+
+      function toggleClass () {
+        content.classList.toggle('bag--opened');
+        trigger.classList.toggle('link--active');
+      }
+
+      trigger.addEventListener('click', toggleClass);
+      content.addEventListener('click', function (evt) {
+        if (evt.target === button || evt.target.classList.contains('bag__btn')) {
+          toggleClass();
+        }
+      });
+    }
   }
 
   var mainMenu = new OperateMenu;
@@ -165,4 +183,6 @@
   if (mobileMin.matches) {
     mainMenu.adaptToTabletPlus();
   }
+
+  mainMenu.toggleBag();
 })();

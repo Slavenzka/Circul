@@ -1,0 +1,157 @@
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(2, auto);
+  grid-row-gap: 32px;
+  padding: 36px 0 16px 0;
+  border-top: 1px solid $color__underline;
+}
+
+.item__description {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.item__name {
+  max-width: 70%;
+}
+
+.item__price {
+  margin: 0;
+}
+
+.item__frame {
+  grid-column: 2 / 3;
+  margin-left: auto;
+  width: 128px;
+  height: 88px;
+  background-color: $color__products-bg;
+}
+
+.item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item__wrapper {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.item__increment,
+.item__decrement {
+  display: none;
+}
+
+.item__key {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: normal;
+  color: $color__placeholder;
+  text-transform: uppercase;
+}
+
+.item__key:not(:first-of-type) {
+  margin-top: 21px;
+}
+
+.item__value {
+  font-weight: 300;
+  color: $color__black;
+}
+
+.item__remove {
+  margin-top: 22px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: normal;
+  color: #333333;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+}
+
+@media (min-width: $width__tablet) {
+  .item {
+    grid-row-gap: 0;
+    padding: 36px 0;
+  }
+
+  .item__description,
+  .item__wrapper {
+    padding-left: 23px;
+  }
+
+  .item__description {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .item__name {
+    max-width: 100%;
+  }
+
+  .item__price {
+    display: none;
+  }
+
+  .item__frame {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    margin-left: 0;
+    width: 100%;
+    height: 150px;
+  }
+
+  .item__wrapper {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .item__remove {
+    position: absolute;
+    top: 34px;
+    right: 12px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 3px;
+      width: 20px;
+      height: 1px;
+      background-color: $color__underline;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 3px;
+      width: 20px;
+      height: 1px;
+      background-color: $color__underline;
+      transform: rotate(-45deg);
+      transform-origin: 100% 0;
+    }
+  }
+}
