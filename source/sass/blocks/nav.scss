@@ -26,6 +26,7 @@
 }
 
 .nav__link {
+  position: relative;
   font-size: 0;
   background-color: transparent;
   cursor: pointer;
@@ -41,44 +42,6 @@ a.link--active {
 
 li.nav__item--selected > .nav__link {
   color: $color__lightest;
-}
-
-.nav__item:not(.nav__item--selected) .nav__link {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    background-color: transparent;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    height: 2px;
-    width: 100%;
-    transform: translateX(-100%);
-    background-color: transparent;
-  }
-}
-
-.nav__item:not(.nav__item--selected):hover > .nav__link {
-  &::before {
-    background-color: $color__underline;
-  }
-
-  &::after {
-    background-color: $color__footer-bg;
-    transform: translateX(0);
-    transition-duration: 1s;
-    transition-property: transform;
-  }
 }
 
 .nav__icon use,
@@ -140,6 +103,46 @@ li.nav__item--selected > .nav__link {
 
   .nav__link--menu {
     display: none;
+  }
+
+  .nav__item:not(.nav__item--selected) > .nav__link {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: transparent;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      transform: translateX(-100%);
+      background-color: transparent;
+      pointer-events: none;
+    }
+  }
+
+  .nav__item:not(.nav__item--selected):hover > .nav__link {
+    &::before {
+      background-color: $color__underline;
+      pointer-events: none;
+    }
+
+    &::after {
+      background-color: $color__footer-bg;
+      transform: translateX(0);
+      transition-duration: 1s;
+      transition-property: transform;
+      pointer-events: none;
+    }
   }
 }
 

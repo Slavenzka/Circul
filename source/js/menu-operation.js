@@ -4,6 +4,7 @@
   const mobileMax = window.matchMedia('(max-width: 767px)');
   const mobileMin = window.matchMedia('(min-width: 768px)');
   const notebookMin = window.matchMedia('(min-width: 1260px)');
+  const esc_key = 27;
 
   function OperateMenu () {
     const header = document.querySelector('.header');
@@ -83,29 +84,37 @@
         });
       }
 
+      function closeSubmenu () {
+        let contentActive = header.querySelector('.submenu--open');
+        if (contentActive) {
+          contentActive.classList.remove('submenu--open');
+          restoreTriggerColor();
+          restoreImages();
+          document.removeEventListener('click', checkCloseCondition);
+        }
+      }
+
       function checkCloseCondition (evt) {
-        const esc_key = 27;
+        function processEscKey (evt) {
+          if (evt.keyCode === esc_key) {
+            closeSubmenu();
+            document.removeEventListener('keydown', processEscKey);
+          }
+        }
+
         let contentActive = header.querySelector('.submenu--open');
         if (contentActive) {
           let classString = evt.target.className.split(' ').reduce((total, actual) => total += '.' + actual, '.' + evt.target.className.split(' ')[0]);
           if (!contentActive.querySelector(classString) &&
           (!evt.target.classList.contains('nav__link--men') && (!evt.target.classList.contains('nav__link--women')))) {
-            contentActive.classList.remove('submenu--open');
-            restoreTriggerColor();
-            restoreImages();
-            document.removeEventListener('click', checkCloseCondition);
+            closeSubmenu();
+            document.removeEventListener('keydown', processEscKey);
           }
           if (evt.target.classList.contains('nav__link--men') || (evt.target.classList.contains('nav__link--women'))) {
             restoreImages();
           }
 
-          document.addEventListener('keydown', function (evt) {
-            if (evt.keyCode === esc_key) {
-              contentActive.classList.remove('submenu--open');
-              restoreTriggerColor();
-              restoreImages();
-            }
-          });
+          document.addEventListener('keydown', processEscKey);
         }
       }
 
@@ -132,10 +141,10 @@
         let contentItems = contentActive.querySelectorAll('.submenu__content');
         contentItems.forEach(item => item.classList.add('submenu__content--hidden'));
 
-        if (evt.currentTarget.classList.contains('nav__item--men')) {
+        if (item.classList.contains('nav__item--men')) {
           contentActive.querySelector('.submenu__content--men').classList.remove('submenu__content--hidden');
         }
-        if (evt.currentTarget.classList.contains('nav__item--women')) {
+        if (item.classList.contains('nav__item--women')) {
           contentActive.querySelector('.submenu__content--women').classList.remove('submenu__content--hidden');
         }
 
@@ -164,10 +173,24 @@
         trigger.classList.toggle('link--active');
       }
 
+      function removeClass() {
+        content.classList.remove('bag--opened');
+        trigger.classList.remove('link--active');
+      }
+
       trigger.addEventListener('click', toggleClass);
-      content.addEventListener('click', function (evt) {
-        if (evt.target === button || evt.target.classList.contains('bag__btn')) {
-          toggleClass();
+      document.addEventListener('click', function (evt) {
+        if (evt.target === button ||
+          evt.target.classList.contains('bag__btn') || evt.target.classList.contains('bag--opened') ||
+          evt.target.classList.contains('nav__link') ||
+          evt.target.classList.contains('nav-shop__link--fav')) {
+          removeClass();
+        }
+      });
+
+      document.addEventListener('keydown', function (evt) {
+        if (evt.keyCode === esc_key) {
+          removeClass();
         }
       });
     }

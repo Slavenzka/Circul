@@ -114,3 +114,77 @@
   background-color: $color__products-bg;
   cursor: pointer;
 }
+
+@media (min-width: $width__tablet) {
+  .selection__method {
+    background-color: transparent;
+    border: 1px solid $color__placeholder;
+  }
+
+  .selection__method--selected {
+    color: $color__black;
+    background-color: $color__filter-bg--notebook;
+
+    &::before,
+    &::after {
+      background-color: $color__icons;
+    }
+  }
+
+  .selection[open] .selection__method {
+    color: $color__placeholder;
+    background-color: transparent;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      background-color: $color__placeholder;
+      transform: rotate(0);
+    }
+  }
+
+  .selection__list {
+    position: relative;
+    padding: 0;
+  }
+
+  .selection__item {
+    border-right: 1px solid $color__placeholder;
+    border-bottom: 1px solid $color__placeholder;
+    border-left: 1px solid $color__placeholder;
+  }
+
+  .selection__item:not(:first-of-type) {
+    margin-top: 0;
+  }
+
+  .selection__item:hover {
+    background-color: $color__filter-bg--notebook;
+  }
+
+  .selection__item:hover .selection__input + label {
+    color: $color__black;
+  }
+
+  .selection__input + label {
+    background-color: transparent;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .selection__method,
+  .selection__input + label {
+    padding: 12px 25px 14px 25px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .selection__method,
+  .selection__input + label {
+    padding: 16px 33px 18px 33px;
+    font-size: 18px;
+  }
+}

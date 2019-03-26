@@ -6,6 +6,23 @@
   <title>Circul main</title>
   <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-300.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <style>
+  /* Inline svg dimensions to avoid page breaking when no styles applied */
+    .header__logo-icon {
+      width: 88px;
+      height: 16px;
+    }
+
+    .cart__icon {
+      margin-right: 12px;
+      width: 6px;
+      height: 12px;
+    }
+
+    .payment__icon {
+      max-width: 110px;
+    }
+  </style>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/normalize.min.css">
 </head>
@@ -681,6 +698,9 @@
                 Send email
               </button>
             </form>
+            <p class="smm__success">
+              Thank you! You&nbsp;will&nbsp;start to receive your e&nbsp;-&nbsp;mails&nbsp;shortly
+            </p>
           </div>
         </div>
       </section>
