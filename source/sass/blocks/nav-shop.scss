@@ -97,6 +97,7 @@
       height: 2px;
       width: 100%;
       background-color: transparent;
+      pointer-events: none;
     }
 
     &::after {
@@ -108,10 +109,11 @@
       width: 100%;
       transform: translateX(-100%);
       background-color: transparent;
+      pointer-events: none;
     }
   }
 
-  .nav-shop__item:hover > .nav-shop__link {
+  .nav-shop__link:not(.link--active):hover {
     &::before {
       background-color: $color__underline;
     }

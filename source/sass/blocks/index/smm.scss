@@ -80,7 +80,7 @@
   font-size: 12px;
   font-weight: 100;
   line-height: 14px;
-  color: $color__underline;
+  color: $color__black;
   text-transform: uppercase;
   border: none;
   border-bottom: 1px solid $color__underline;
@@ -97,9 +97,9 @@
 
 .smm__success {
   margin: 20px auto 0 auto;
-  padding: 10px 0;
-  width: 290px;
-  font-size: 20px;
+  padding: 10px 0%;
+  width: 343px;
+  font-size: 28px;
   font-weight: 300;
   line-height: normal;
   color: $color__black;
@@ -121,6 +121,17 @@
 
   .smm--tablet-plus {
     display: block;
+  }
+
+  .smm--subscribe-only .smm__instagram {
+    display: none;
+  }
+
+  .smm--subscribe-only .smm__newsletter {
+    margin: 0;
+    padding-top: 62px;
+    padding-bottom: 74px;
+    border-top: 1px solid $color__underline;
   }
 
   .smm__invitation--instagram {
@@ -214,6 +225,11 @@
     padding-bottom: 85px;
   }
 
+  .smm--subscribe-only .smm__newsletter {
+    padding-top: 124px;
+    padding-bottom: 148px;
+  }
+
   .smm__newsletter {
     margin-top: 80px;
     padding-bottom: 149px;
@@ -240,7 +256,7 @@
 
   .smm__success {
     margin: 0 auto;
-    padding: 16px 63px;
+    padding: 16px 40px;
     width: 805px;
     font-size: 36px;
   }

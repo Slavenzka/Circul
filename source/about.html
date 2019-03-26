@@ -6,6 +6,23 @@
   <title>About us</title>
   <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-300.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <style>
+  /* Inline svg dimensions to avoid page breaking when no styles applied */
+    .header__logo-icon {
+      width: 88px;
+      height: 16px;
+    }
+
+    .cart__icon {
+      margin-right: 12px;
+      width: 6px;
+      height: 12px;
+    }
+
+    .payment__icon {
+      max-width: 110px;
+    }
+    </style>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/normalize.min.css">
 </head>
@@ -87,7 +104,7 @@
                     </a>
                   </li>
                   <li class="submenu__item">
-                    <a class="submenu__link">
+                    <a href="about.html" class="submenu__link">
                       <picture>
                         <img src="img/submenu__img--3@1x.jpg" srcset="img/submenu__img--3@1x.jpg 1x, img/submenu__img--3@2x.jpg 2x" alt="Illustration for about us link" class="submenu__img">
                       </picture>
@@ -302,6 +319,202 @@
                 <use xlink:href="#cart"></use>
               </svg>
             </a>
+            <div class="bag">
+              <div class="container">
+                <button class="bag__close">
+                  Close side bag
+                </button>
+                <h2 class="bag__heading">
+                  shopping bag
+                  <span class="bag__counter">
+                    (1)
+                  </span>
+                </h2>
+                <ul class="bag__list">
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                </ul>
+                <dl class="bag__subtotal">
+                  <dt class="bag__descriptor">
+                    Celebration derby
+                  </dt>
+                  <dd class="bag__sum">
+                    <span class="bag__currency">
+                      &#8364;
+                    </span>
+                    151
+                  </dd>
+                </dl>
+                <a href="#" class="bag__btn bag__btn--checkout">
+                  Proceed to checkout
+                </a>
+                <a href="#" class="bag__btn bag__btn--continue">
+                  Continue shopping
+                </a>
+              </div>
+            </div>
           </li>
           <li class="nav-shop__item nav-shop__item--faq nav-shop__item--tablet-plus">
             <a href="faq.html" class="nav-shop__link">
@@ -310,7 +523,7 @@
           </li>
           <li class="nav-shop__item nav-shop__item--sign nav-shop__item--tablet-plus">
             <a class="nav-shop__link">
-              Sign in
+              My account
             </a>
           </li>
         </ul>
@@ -394,7 +607,7 @@
                 </button>
               </form>
               <p class="smm__success">
-                Thank you! You will start to receive your e-mails shortly
+                Thank you! You&nbsp;will&nbsp;start to receive your e&nbsp;-&nbsp;mails&nbsp;shortly
               </p>
             </div>
           </div>

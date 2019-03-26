@@ -33,12 +33,6 @@
   text-transform: uppercase;
 }
 
-.cart__icon {
-  margin-right: 12px;
-  width: 6px;
-  height: 12px;
-}
-
 .cart__icon use {
   fill: none;
   stroke: $color__placeholder;
@@ -70,7 +64,7 @@
   text-transform: uppercase;
 }
 
-.cart__error--hide {
+.cart__error--hidden {
   display: none;
 }
 
@@ -86,6 +80,10 @@
   letter-spacing: 1px;
 }
 
+.cart__value--empty {
+  color: $color__placeholder;
+}
+
 .cart__btn {
   padding: 11px 20% 10px 20%;
   background-color: $color__social;
@@ -99,6 +97,10 @@
   margin-top: 20px;
 }
 
+.cart__payment {
+  display: none;
+}
+
 .cart__options {
   margin-top: 48px;
   border-bottom: 1px solid $color__underline;
@@ -107,8 +109,9 @@
 @media (min-width: $width__tablet) {
   .cart > .container {
     display: grid;
-    grid-template-columns: 57% auto;
+    grid-template-columns: 57.33% auto;
     grid-template-rows: auto auto auto;
+    padding-bottom: 64px;
   }
 
   .cart__wrapper {
@@ -137,9 +140,17 @@
     height: 14px;
   }
 
+  .cart__content {
+    grid-row: 2 / 4;
+  }
+
   .cart__form {
     display: flex;
     flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    width: 250px;
+    height: auto;
   }
 
   .cart__key--subtotal {
@@ -153,27 +164,75 @@
 
   .cart__data {
     order: 3;
+    margin: 0;
   }
 
   .cart__key--total {
     order: 4;
+    margin-top: 65px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $color__underline;
   }
 
   .cart__btn--checkout {
     order: 5;
+    margin-top: 48px;
   }
 
   .cart__btn--continue {
     order: 6;
   }
 
-  .cart__options {
-    grid-column: 2 / 3;
+  ul.cart__payment {
+    order: 7;
+    margin-top: 37px;
   }
 
-  .cart__form,
   .cart__options {
-    margin: 0 auto;
-    width: 250px;
+    order: 7;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    border-bottom: 1px solid $color__underline;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .cart__form {
+    width: 424px;
+  }
+
+  .cart__data {
+    padding-top: 48px;
+  }
+
+  .cart__error {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .cart__key--total {
+    margin-top: 37px;
+  }
+
+  .cart__btn {
+    padding: 17px 15%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .cart__btn--continue {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .cart__key {
+    font-size: 24px;
+  }
+
+  .cart__key--delivery {
+    margin-top: 20px;
   }
 }

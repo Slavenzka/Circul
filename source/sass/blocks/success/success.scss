@@ -1,0 +1,64 @@
+.success > .container {
+  display: block;
+  padding-bottom: 64px;
+}
+
+.success__wrapper {
+  border-bottom: 1px solid $color__underline;
+}
+
+.success__announcement {
+  margin: 0;
+  margin-top: 48px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: normal;
+  color: $color__black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.success__btn,
+.success__payment,
+.success__options {
+  display: none;
+}
+
+@media (min-width: $width__tablet) {
+  .success__announcement br {
+    display: none;
+  }
+
+  .success__info {
+    margin: 0 auto;
+    width: 423px;
+  }
+
+  .success__btn,
+  .success__options {
+    display: block;
+  }
+
+  .success__payment {
+    display: flex;
+  }
+
+  .success__payment .payment__item {
+    width: 104px;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .success > .container {
+    padding-bottom: 278px;
+  }
+
+  .success__announcement {
+    margin-top: 92px;
+    font-size: 24px;
+  }
+
+  .success__btn {
+    margin-top: 104px;
+  }
+}

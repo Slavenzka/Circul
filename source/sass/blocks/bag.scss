@@ -4,15 +4,7 @@
   top: var(--offset-top);
   right: 0;
   width: 100vw;
-  background-color: $color__lightest;
-  transform: translateX(100%);
-  transition-duration: 0.5s;
   pointer-events: none;
-}
-
-.bag--opened {
-  transform: translateX(0);
-  pointer-events: all;
 }
 
 .bag > .container {
@@ -26,6 +18,19 @@
   height: calc(100vh - var(--offset-top));
   overflow: scroll;
   scrollbar-width: thin;
+  background-color: $color__lightest;
+  transform: translateX(100%);
+  transition-duration: 0.4s;
+  pointer-events: none;
+}
+
+.bag--opened {
+  pointer-events: all;
+}
+
+.bag--opened > .container {
+  transform: translateX(0);
+  pointer-events: all;
 }
 
 .bag > .container::-webkit-scrollbar-track,
@@ -213,15 +218,13 @@ span.bag__value {
 }
 
 @media (min-width: $width__tablet) {
-  .bag {
-    width: 514px;
-  }
-
   .bag > .container {
     --padding-top: 36px;
     --padding-bottom: 58px;
+    margin-left: auto;
     padding-right: 46px;
     padding-left: 44px;
+    width: 514px;
   }
 
   .bag__heading {
