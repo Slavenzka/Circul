@@ -1,0 +1,52 @@
+.whishlist--empty .whishlist__list {
+  display: none;
+}
+
+.whishlist > .container {
+  padding-top: 24px;
+}
+
+.whishlist__wrapper {
+  padding-bottom: 12px;
+  border-bottom: 1px solid $color__underline;
+}
+
+.whishlist__heading {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 46px;
+  color: $color__black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.whishlist__back {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  width: 140px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: $color__placeholder;
+  text-transform: uppercase;
+}
+
+.whishlist__icon use {
+  fill: none;
+  stroke: $color__placeholder;
+}
+
+.whishlist__empty {
+  margin: 0;
+  margin-top: 36px;
+  margin-bottom: 94px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: $color__black;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.35px;
+}

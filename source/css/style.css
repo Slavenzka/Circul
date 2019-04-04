@@ -1160,37 +1160,6 @@ li.nav__item--selected > .nav__link {
     font-size: 18px;
     line-height: 22px; } }
 
-.bag {
-  --offset-top: 50px;
-  position: absolute;
-  top: var(--offset-top);
-  right: 0;
-  width: 100vw;
-  pointer-events: none; }
-
-.bag > .container {
-  --padding-top: 24px;
-  --padding-bottom: 36px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-top: var(--padding-top);
-  padding-bottom: var(--padding-bottom);
-  height: calc(100vh - var(--offset-top));
-  overflow: scroll;
-  scrollbar-width: thin;
-  background-color: white;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  pointer-events: none; }
-
 .bag--opened {
   pointer-events: all; }
 
@@ -5323,3 +5292,53 @@ span.bag__value {
     font-size: 24px; }
   .success__btn {
     margin-top: 104px; } }
+
+.whishlist--empty .whishlist__list {
+  display: none; }
+
+.whishlist > .container {
+  padding-top: 24px; }
+
+.whishlist__wrapper {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #707070; }
+
+.whishlist__heading {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 46px;
+  color: black;
+  text-transform: uppercase;
+  text-align: center; }
+
+.whishlist__back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 32px;
+  width: 140px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: #a2a2a2;
+  text-transform: uppercase; }
+
+.whishlist__icon use {
+  fill: none;
+  stroke: #a2a2a2; }
+
+.whishlist__empty {
+  margin: 0;
+  margin-top: 36px;
+  margin-bottom: 94px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.35px; }

@@ -38,15 +38,20 @@
       const topLvlLinks = header.querySelectorAll('.submenu__link--trigger');
       const backBtns = header.querySelectorAll('.submenu__back');
 
-      topLvlLinks.forEach((item, index) => {
-        item.addEventListener('click', function () {
-          topLvl.classList.add('submenu__content--hidden');
-          submenus.forEach(item => {
-            item.classList.add('submenu__content--hidden');
+      function openActiveSubmenu () {
+        // Catch top level menu link click -> apply hidden class to top level content -> remove hidden class from required low level submenu
+        topLvlLinks.forEach((item, index) => {
+          item.addEventListener('click', function () {
+            topLvl.classList.add('submenu__content--hidden');
+            submenus.forEach(item => {
+              item.classList.add('submenu__content--hidden');
+            });
+            submenus[index].classList.remove('submenu__content--hidden');
           });
-          submenus[index].classList.remove('submenu__content--hidden');
         });
-      });
+      }
+
+      openActiveSubmenu();
 
       backBtns.forEach(btn => {
         btn.addEventListener('click', function () {

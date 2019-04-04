@@ -22,6 +22,32 @@
     .payment__icon {
       max-width: 110px;
     }
+
+    .bag {
+      --offset-top: 50px;
+      position: absolute;
+      top: var(--offset-top);
+      right: 0;
+      width: 100vw;
+      pointer-events: none;
+    }
+
+    .bag > .container {
+      --padding-top: 24px;
+      --padding-bottom: 36px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--padding-top);
+      padding-bottom: var(--padding-bottom);
+      height: calc(100vh - var(--offset-top));
+      overflow: scroll;
+      scrollbar-width: thin;
+      background-color: #fff;
+      transform: translateX(100%);
+      transition-duration: 0.4s;
+      pointer-events: none;
+    }
   </style>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/normalize.min.css">
@@ -80,7 +106,7 @@
                 <h2 class="submenu__title">
                   Menu
                 </h2>
-                <button class="submenu__btn">
+                <button class="submenu__btn" type="button">
                   Close menu
                 </button>
               </div>
@@ -796,13 +822,13 @@
     </div>
   </footer>
 
-  <script src="js/menu-operation.js"></script>
+  <script src="js/menu-operation.js" defer></script>
   <script src="jQuery/jquery-3.3.1.min.js"></script>
   <script src="jQuery/jquery-migrate-1.4.1.min.js"></script>
   <script src="jQuery/slick/slick.min.js"></script>
   <script src="js/jquery-init.js"></script>
   <script src="js/intersection-init.js"></script>
-  <script src="js/accordeon-footer-mobile.js"></script>
+  <script src="js/accordeon-footer-mobile.js" defer></script>
 </body>
 
 </html>
