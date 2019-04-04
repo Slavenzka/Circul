@@ -22,6 +22,32 @@
     .payment__icon {
       max-width: 110px;
     }
+  /* Initial cart side menu styles */
+    .bag {
+      --offset-top: 50px;
+      position: absolute;
+      top: var(--offset-top);
+      right: 0;
+      width: 100vw;
+      pointer-events: none;
+    }
+
+    .bag > .container {
+      --padding-top: 24px;
+      --padding-bottom: 36px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--padding-top);
+      padding-bottom: var(--padding-bottom);
+      height: calc(100vh - var(--offset-top));
+      overflow: scroll;
+      scrollbar-width: thin;
+      background-color: #fff;
+      transform: translateX(100%);
+      transition-duration: 0.4s;
+      pointer-events: none;
+    }
     </style>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/normalize.min.css">
