@@ -17,9 +17,9 @@
       const footerContainer = document.querySelector('.footer');
 
       function shiftBodyRight () {
-        headerContainer.style.transform = "translateX(324px)";
-        mainContainer.style.transform = "translateX(324px)";
-        footerContainer.style.transform = "translateX(324px)";
+        headerContainer.style.transform = "translateX(32.4em)";
+        mainContainer.style.transform = "translateX(32.4em)";
+        footerContainer.style.transform = "translateX(32.4em)";
       }
 
       function shiftBodyLeft () {
@@ -38,8 +38,8 @@
       const topLvlLinks = header.querySelectorAll('.submenu__link--trigger');
       const backBtns = header.querySelectorAll('.submenu__back');
 
-      function openActiveSubmenu () {
-        // Catch top level menu link click -> apply hidden class to top level content -> remove hidden class from required low level submenu
+      function openSelectedSubmenu () {
+        // Catch top level menu link click -> apply hidden class to top level content & remove hidden class from required low level submenu
         topLvlLinks.forEach((item, index) => {
           item.addEventListener('click', function () {
             topLvl.classList.add('submenu__content--hidden');
@@ -51,45 +51,51 @@
         });
       }
 
-      openActiveSubmenu();
-
-      backBtns.forEach(btn => {
-        btn.addEventListener('click', function () {
-          topLvl.classList.remove('submenu__content--hidden');
-          submenus.forEach(sub => {
-            sub.classList.add('submenu__content--hidden');
+      function switchToTopLevel () {
+        // Catch "back" button click -> remove hidden class from top level menu & apply hidden class to all submenus
+        backBtns.forEach(btn => {
+          btn.addEventListener('click', function () {
+            topLvl.classList.remove('submenu__content--hidden');
+            submenus.forEach(sub => {
+              sub.classList.add('submenu__content--hidden');
+            });
           });
         });
-      });
+      }
+
+      openSelectedSubmenu();
+      switchToTopLevel();
     }
 
     this.adaptToTabletPlus = function () {
       let triggers = header.querySelectorAll('.nav__item--trigger');
       let content = header.querySelector('.submenu');
 
-      function cloneSubmenu (targetParent) {
-        let contentArea = content.cloneNode(true);
-        contentArea.classList.add('submenu--cloned');
-        targetParent.appendChild(contentArea);
-      }
-
-      function hideAllCloned () {
-        let allCloned = header.querySelectorAll('.submenu--cloned');
-        allCloned.forEach(clone => clone.classList.remove('submenu--open'));
-      }
-
       function restoreTriggerColor () {
+        // Remove class for color highlighting of main menu submenu triggers
         triggers.forEach(trigger => trigger.classList.remove('nav__item--selected'));
       }
 
       function restoreImages () {
+        // Hide all images associated with low level menu items and show initial submenu background
         let allImages = header.querySelectorAll('.low-lvl__img');
         allImages.forEach(img => {
           img.style = 'display: none';
         });
       }
 
+      function switchMenuImages (evt) {
+        // Show image associated with hovered low level menu items
+        restoreImages();
+        let targetImage = evt.currentTarget.querySelector('.low-lvl__img');
+
+        if (targetImage) {
+          targetImage.style = 'display: block';
+        }
+      }
+
       function closeSubmenu () {
+        // Search for opened submenue, if found any, remove opening class, color highlightning class and hide all images, associated with low level menu
         let contentActive = header.querySelector('.submenu--open');
         if (contentActive) {
           contentActive.classList.remove('submenu--open');
@@ -98,6 +104,17 @@
           document.removeEventListener('click', checkCloseCondition);
         }
       }
+
+      // function cloneSubmenu (targetParent) {
+      //   let contentArea = content.cloneNode(true);
+      //   contentArea.classList.add('submenu--cloned');
+      //   targetParent.appendChild(contentArea);
+      // }
+      //
+      // function hideAllCloned () {
+      //   let allCloned = header.querySelectorAll('.submenu--cloned');
+      //   allCloned.forEach(clone => clone.classList.remove('submenu--open'));
+      // }
 
       function checkCloseCondition (evt) {
         function processEscKey (evt) {
@@ -123,34 +140,24 @@
         }
       }
 
-      function switchMenuImages (evt) {
-        restoreImages();
-        let targetImage = evt.currentTarget.querySelector('.low-lvl__img');
-
-        if (targetImage) {
-          targetImage.style = 'display: block';
-        }
-      }
 
       function toggleSubmenus (evt) {
-        hideAllCloned();
-        restoreTriggerColor();
+        closeSubmenu();
         let item = evt.currentTarget;
         item.classList.add('nav__item--selected');
 
-        let contentActive = item.querySelector('.submenu');
-        contentActive.classList.add('submenu--open');
+        content.classList.add('submenu--open');
 
-        let subitems = contentActive.querySelectorAll('.low-lvl__item');
+        let subitems = content.querySelectorAll('.low-lvl__item');
 
-        let contentItems = contentActive.querySelectorAll('.submenu__content');
+        let contentItems = content.querySelectorAll('.submenu__content');
         contentItems.forEach(item => item.classList.add('submenu__content--hidden'));
 
         if (item.classList.contains('nav__item--men')) {
-          contentActive.querySelector('.submenu__content--men').classList.remove('submenu__content--hidden');
+          content.querySelector('.submenu__content--men').classList.remove('submenu__content--hidden');
         }
         if (item.classList.contains('nav__item--women')) {
-          contentActive.querySelector('.submenu__content--women').classList.remove('submenu__content--hidden');
+          content.querySelector('.submenu__content--women').classList.remove('submenu__content--hidden');
         }
 
         if (notebookMin.matches) {
@@ -163,7 +170,6 @@
       }
 
       triggers.forEach(item => {
-        cloneSubmenu(item);
         item.addEventListener('click', toggleSubmenus);
       });
     }

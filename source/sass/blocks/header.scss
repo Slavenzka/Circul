@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  font-size: 1rem;
   z-index: 5;
 }
 
@@ -10,13 +11,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
+  min-height: 5em;
   background-color: $color__darkest;
   transition-duration: 0.5s;
 }
 
 .header__logo {
   order: 2;
+  z-index: 5;
 }
 
 .header__logo-icon use {
@@ -47,12 +49,12 @@
 
 @media (min-width: $width__notebook) {
   .header > .container {
-    min-height: 102px;
+    min-height: 10em;
     align-items: stretch;
   }
 
   .header__logo-icon {
-    width: 201px;
-    height: 36px;
+    width: 20.1em;
+    height: 3.6em;
   }
 }

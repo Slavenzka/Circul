@@ -1,8 +1,12 @@
+.products {
+  font-size: 1rem;
+}
+
 .products__list {
   display: grid;
-  grid-auto-rows: 232px;
-  grid-row-gap: 8px;
-  margin: 8px 0;
+  grid-auto-rows: 23.2em;
+  grid-row-gap: 0.8em;
+  margin: 0.8em 0;
   padding: 0;
   list-style: none;
 }
@@ -10,6 +14,7 @@
 .products__item {
   position: relative;
   overflow: hidden;
+  background-size: cover;
 
   &::before {
     content: "";
@@ -98,18 +103,19 @@
 }
 
 .products__name {
+  --name-font-size-em: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 0;
-  padding: 0 21px;
-  width: 98px;
-  min-height: 36px;
+  padding: 0 calc(2.1em / var(--name-font-size-em));
+  width: calc(9.8em / var(--name-font-size-em));
+  min-height: calc(3.6em / var(--name-font-size-em));
   font-family: inherit;
-  font-size: 10px;
+  font-size: calc(1em * var(--name-font-size-em));
   font-weight: 500;
-  line-height: 11px;
+  line-height: 1.1;
   color: $color__black;
   text-align: center;
   text-transform: uppercase;
@@ -130,9 +136,9 @@
 
 @media (min-width: $width__tablet) {
   .products__list {
-    margin: 20px 0;
+    margin: 2em 0;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 2em;
   }
 
   .products__item--3 {
@@ -152,26 +158,28 @@
 
 @media (min-width: $width__notebook) {
   .products__list {
-    margin: 44px 0;
-    grid-auto-rows: 350px;
-    grid-gap: 44px;
+    margin: 4.4em 0;
+    grid-auto-rows: 35em;
+    grid-gap: 4.4em;
   }
 
   .products__link {
     position: relative;
     justify-content: flex-start;
-    padding-top: 90px;
+    padding-top: 9em;
 
     &::before {
-      content: "shop now";
+      --text-content: "shop now";
+      --font-size-em: 2;
+      content: var(--text-content);
       position: absolute;
-      top: 175px;
-      left: calc(50% - 140px);
-      padding: 23px 0;
-      width: 280px;
-      font-size: 20px;
+      top: calc(17.5em / var(--font-size-em));
+      left: calc(50% - 14em / var(--font-size-em));
+      padding: calc(2.3em / var(--font-size-em)) 0;
+      width: calc(28em / var(--font-size-em));
+      font-size: calc(1em * var(--font-size-em));
       font-weight: 300;
-      line-height: 24px;
+      line-height: 1.2;
       letter-spacing: 2.08px;
       text-align: center;
       text-transform: uppercase;
@@ -179,7 +187,7 @@
   }
 
   .products__item--name .products__link {
-    padding-top: calc(90px - 22px);
+    padding-top: calc(9em - 2.2em);
   }
 
   .products__item--light .products__link,
@@ -204,45 +212,46 @@
 
   .products__item--discover .products__link {
     &::before {
-      content: "discover";
+      --text-content: "discover";
     }
   }
 
   .products__name {
+    --name-font-size-em: 1.8;
     width: 80%;
     min-height: 0;
-    font-size: 18px;
     font-weight: 300;
-    line-height: 22px;
+    line-height: calc(2.2 / 1.8);
     background-color: transparent;
   }
 
   .products__highlight {
-    font-size: 50px;
+    --highlight-font-size-em: 5;
+    font-size: calc(1em * var(--highlight-font-size-em) / var(--name-font-size-em));
     font-weight: 300;
-    line-height: 65px;
+    line-height: 1.3;
   }
 }
 
 @media (min-width: $width__desktop) {
   .products__list {
-    grid-auto-rows: 521px;
+    grid-auto-rows: 52.1em;
   }
 
   .products__link {
-    padding-top: 146px;
+    padding-top: 14.6em;
 
     &::before {
-      top: 264px;
+      top: calc(26.4em / var(--font-size-em));
     }
   }
 
   .products__item--name .products__link {
-    padding-top: calc(146px - 22px);
+    padding-top: calc(14.6em - 2.2em);
   }
 
   .products__highlight {
-    font-size: 68px;
-    line-height: 82px;
+    --highlight-font-size-em: 6.8;
+    line-height: calc(82 / 68);
   }
 }

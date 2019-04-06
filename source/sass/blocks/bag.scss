@@ -1,3 +1,7 @@
+.bag {
+  font-size: 1rem;
+}
+
 .bag--opened {
   pointer-events: all;
 }
@@ -9,22 +13,22 @@
 
 .bag > .container::-webkit-scrollbar-track,
 .bag > .container::-webkit-scrollbar {
-  width: 10px;
+  width: 1em;
   background-color: transparent;
 }
 
 .bag > .container::-webkit-scrollbar-thumb {
-  width: 10px;
+  width: 1em;
   background-color: $color__filter-active;
 }
 
 .bag__close {
   position: absolute;
-  top: 35px;
+  top: 3.5rem;
   right: 100% * 16 / 375;
   padding: 0;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   font-size: 0;
   background-color: transparent;
   border: none;
@@ -32,9 +36,9 @@
   &::before {
     content: "";
     position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 17px;
+    top: 0.4rem;
+    left: 0.4rem;
+    width: 1.7rem;
     height: 1px;
     background-color: $color__black;
     transform-origin: 0 0;
@@ -44,9 +48,9 @@
   &::after {
     content: "";
     position: absolute;
-    top: 4px;
-    right: 5px;
-    width: 17px;
+    top: 0.4rem;
+    right: 0.5rem;
+    width: 1.7rem;
     height: 1px;
     background-color: $color__black;
     transform-origin: 100% 0;
@@ -56,16 +60,16 @@
 
 .bag__heading {
   margin: 0;
-  font-size: 28px;
+  font-size: 2.8em;
   font-weight: 300;
-  line-height: 34px;
+  line-height: calc(3.4em / 2.8);
   color: $color__black;
   text-transform: uppercase;
 }
 
 .bag__list {
   margin: 0;
-  margin-top: 24px;
+  margin-top: 2.4em;
   margin-bottom: auto;
   padding: 0;
   list-style: none;
@@ -76,8 +80,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 44px;
-  padding-bottom: 16px;
+  padding-top: 4.4em;
+  padding-bottom: 1.6em;
   border-top: 1px solid $color__underline;
 }
 
@@ -85,12 +89,12 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: calc(3.2em / 1.2);
   padding: 0;
   width: 100%;
-  font-size: 12px;
+  font-size: 1.2em;
   font-weight: 500;
-  line-height: 14px;
+  line-height: calc(1.4em / 1.2);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -100,20 +104,20 @@
 }
 
 .bag__wrapper {
-  width: calc(100% - 128px);
+  width: calc(100% - 12.8em);
 }
 
 .bag__key {
   margin: 0;
-  font-size: 12px;
+  font-size: 1.2em;
   font-weight: 100;
-  line-height: 14px;
+  line-height: calc(1.4em / 1.2);
   color: $color__placeholder;
   text-transform: uppercase;
 }
 
 .bag__key:not(:first-of-type) {
-  margin-top: 21px;
+  margin-top: calc(2.1em / 1.2);
 }
 
 span.bag__value {
@@ -128,8 +132,8 @@ span.bag__value {
 }
 
 .bag__frame {
-  width: 128px;
-  height: 88px;
+  width: 12.8em;
+  height: 8.8em;
   background-color: $color__products-bg;
 }
 
@@ -140,11 +144,11 @@ span.bag__value {
 }
 
 .bag__remove {
-  margin-top: 22px;
+  margin-top: calc(2.2em / 1.2);
   padding: 0;
-  font-size: 12px;
+  font-size: 1.2em;
   font-weight: 100;
-  line-height: 14px;
+  line-height: calc(1.4em / 1.2);
   color: #333333;
   text-transform: uppercase;
   background-color: transparent;
@@ -155,12 +159,12 @@ span.bag__value {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  margin-top: 50px;
+  margin-top: calc(5em / 1.6);
   padding: 0;
-  min-height: 19px;
-  font-size: 16px;
+  min-height: calc(1.9em / 1.6);
+  font-size: 1.6em;
   font-weight: 300;
-  line-height: 19px;
+  line-height: calc(1.9em / 1.6);
   text-transform: uppercase;
   box-sizing: content-box;
 }
@@ -171,99 +175,99 @@ span.bag__value {
 
 .bag__btn {
   display: block;
-  padding: 17px;
+  padding: calc(1.7em / 1.2);
   width: 100%;
-  font-size: 12px;
+  font-size: 1.2em;
   font-weight: 500;
-  line-height: 14px;
+  line-height: calc(1.4em / 1.2);
   color: $color__lightest;
   text-transform: uppercase;
   text-align: center;
 }
 
 .bag__btn--checkout {
-  margin-top: 24px;
+  margin-top: calc(2.4em / 1.2);
   background-color: $color__filter-active;
 }
 
 .bag__btn--continue {
-  margin-top: 15px;
+  margin-top: calc(1.5em / 1.2);
   background-color: $color__social;
 }
 
 @media (min-width: $width__tablet) {
   .bag > .container {
-    --padding-top: 36px;
-    --padding-bottom: 58px;
+    --padding-top: 3.6em;
+    --padding-bottom: 5.8em;
     margin-left: auto;
-    padding-right: 46px;
-    padding-left: 44px;
-    width: 514px;
+    padding-right: 4.6em;
+    padding-left: 4.4em;
+    width: 51.4em;
   }
 
   .bag__heading {
-    font-size: 36px;
-    line-height: 43px;
+    font-size: 3.6em;
+    line-height: calc(4.3em / 3.6);
   }
 
   .bag__close {
-    top: 48px;
-    right: 46px;
+    top: 4.8rem;
+    right: 4.6rem;
 
     &::before {
       content: "";
       position: absolute;
-      top: 2px;
-      left: 4px;
-      width: 20px;
+      top: 0.2rem;
+      left: 0.4rem;
+      width: 2rem;
     }
 
     &::after {
       content: "";
       position: absolute;
-      top: 2px;
-      right: 3px;
-      width: 20px;
+      top: 0.2rem;
+      right: 0.3rem;
+      width: 2rem;
     }
   }
 
   .bag__list {
-    margin-top: 36px;
+    margin-top: 3.6em;
   }
 
   .bag__item {
-    padding-top: 46px;
-    padding-bottom: 23px;
+    padding-top: 4.6em;
+    padding-bottom: 2.3em;
   }
 
   .bag__details {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.8em;
+    line-height: calc(2.2em / 1.8);
   }
 
   .bag__wrapper {
-    width: calc(100% - 156px);
+    width: calc(100% - 15.6em);
   }
 
   .bag__key {
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.8em;
     font-weight: 300;
-    line-height: 22px;
+    line-height: calc(2.2em / 1.8);
   }
 
   .bag__key:not(:first-of-type) {
-    margin-top: 18px;
+    margin-top: calc(1.8em / 1.8);
   }
 
   .bag__key--quantity .bag__value {
-    margin-right: 19px;
-    margin-left: 19px;
+    margin-right: calc(1.9em / 1.8);
+    margin-left: calc(1.9em / 1.8);
   }
 
   .bag__key--size .bag__value {
-    margin-left: 5px;
+    margin-left: calc(0.5em / 1.8);
   }
 
   .bag__increment,
@@ -271,15 +275,15 @@ span.bag__value {
     position: relative;
     display: inline-block;
     padding: 0;
-    width: 22px;
-    height: 22px;
-    font-size: 0;
+    width: calc(2.2em / 1.8);
+    height: calc(2.2em / 1.8);
+    color: transparent;
     background-color: transparent;
     border: none;
   }
 
   .bag__decrement {
-    margin-left: 15px;
+    margin-left: calc(1.5em / 1.8);
 
     &::before {
       content: "-";
@@ -287,10 +291,11 @@ span.bag__value {
       top: 0;
       left: 0;
       width: 100%;
-      font-size: 18px;
+      font-size: calc(1.8em / 1.8);
       font-weight: 300;
-      line-height: 22px;
+      line-height: calc(2.2em / 1.8);
       text-align: center;
+      color: $color__black;
     }
   }
 
@@ -301,36 +306,37 @@ span.bag__value {
       top: 0;
       left: 0;
       width: 100%;
-      font-size: 18px;
+      font-size: calc(1.8em / 1.8);
       font-weight: 300;
-      line-height: 22px;
+      line-height: calc(2.2em / 1.8);
       text-align: center;
+      color: $color__black;
     }
   }
 
   .bag__frame {
-    width: 156px;
-    height: 108px;
+    width: 15.6em;
+    height: 10.8em;
   }
 
   .bag__remove {
-    margin-top: 18px;
-    font-size: 18px;
+    margin-top: calc(1.8em / 1.8);
+    font-size: 1.8em;
     font-weight: 300;
-    line-height: 22px;
+    line-height: calc(2.2em / 1.8);
   }
 
   .bag__subtotal {
     margin-top: 100px;
-    min-height: 29px;
-    font-size: 24px;
-    line-height: 29px;
+    min-height: calc(2.9em / 2.4);
+    font-size: 2.4em;
+    line-height: calc(2.9em / 2.4);
   }
 
   .bag__btn {
-    font-size: 18px;
+    font-size: 1.8em;
     font-weight: 700;
-    line-height: 21px;
+    line-height: calc(2.1em / 1.8);
   }
 
   .bag__btn--checkout {
@@ -344,6 +350,6 @@ span.bag__value {
 
 @media (min-width: $width__notebook) {
   .bag {
-    --offset-top: 102px;
+    --offset-top: 10em;
   }
 }
