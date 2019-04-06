@@ -1,33 +1,35 @@
 .submenu {
+  --title-font-size-em: 1.4;
+  --item-font-size-em: 1.2;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
-  width: 324px;
+  padding: 0 1.6em;
+  width: 32.4em;
   height: 100vh;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: white;
-  transform: translate(-324px);
+  transform: translate(-32.4em);
   overflow-y: auto;
 }
 
 .submenu__header {
   display: flex;
   align-items: center;
-  padding-top: 17px;
-  padding-bottom: 15px;
+  padding-top: 1.7em;
+  padding-bottom: 1.5em;
   border-bottom: 1px solid $color__separators;
-  min-height: 50px;
+  min-height: 5em;
 }
 
 .submenu__title {
   margin: 0;
   font-family: $font__main;
-  font-size: 14px;
+  font-size: calc(1em * var(--title-font-size-em));
   font-weight: 300;
-  line-height: 17px;
+  line-height: normal;
   color: $color__black;
   text-transform: uppercase;
 }
@@ -36,8 +38,8 @@
   position: relative;
   margin-left: auto;
   padding: 0;
-  width: 12px;
-  height: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
   font-size: 0;
   background-color: transparent;
   border: none;
@@ -46,7 +48,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: -1px;
+    top: -0.1rem;
     left: 0;
     width: 150%;
     height: 1px;
@@ -69,9 +71,9 @@
 }
 
 .submenu__content:not(.submenu__content--top):not(.submenu__content--lang) {
-  padding-bottom: 243px;
+  padding-bottom: 24.3em;
   background-repeat: no-repeat;
-  background-size: 100% 180px;
+  background-size: 100% 18em;
   background-position: 0 100%;
 }
 
@@ -92,10 +94,10 @@
 }
 
 .submenu__content--lang {
-  padding-bottom: 395px;
+  padding-bottom: 39.5em;
   background-image: url("../img/submenu__bg--lang@1x.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 347px;
+  background-size: 100% 34.7em;
   background-position: 0 100%;
 
   @media (min-resolution: $retina__dpi), (min-resolution: $retina__dppx) {
@@ -108,13 +110,13 @@
 }
 
 .submenu__content {
-  margin-top: 36px;
+  margin-top: 3.6em;
 }
 
 .submenu__list {
   display: grid;
-  grid-template-columns: repeat(2, 132px);
-  grid-auto-rows: calc(198px + 24px);
+  grid-template-columns: repeat(2, 13.2em);
+  grid-auto-rows: calc(19.8em + 2.4em);
   justify-content: space-between;
   margin: 0;
   padding: 0;
@@ -124,20 +126,24 @@
 .submenu__content:not(.submenu__content--top) .submenu__list {
   display: flex;
   flex-direction: column;
-  margin-top: 36px;
+  margin-top: 3.6em;
 }
 
 .submenu__link {
   display: block;
 }
 
+.submenu__img {
+  width: 100%;
+}
+
 .submenu__category {
   display: block;
-  margin-top: 16px;
+  margin-top: calc(1.6em / var(--item-font-size-em));
   font-family: $font__main;
-  font-size: 12px;
+  font-size: calc(1em * var(--item-font-size-em));
   font-weight: 700;
-  line-height: 14px;
+  line-height: normal;
   color: $color__font-submenu;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -149,9 +155,9 @@
   align-items: center;
   padding: 0;
   font-family: $font__main;
-  font-size: 12px;
+  font-size: calc(1em * var(--item-font-size-em));
   font-weight: 700;
-  line-height: 12px;
+  line-height: 1;
   color: $color__font-submenu;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -160,7 +166,7 @@
 }
 
 .submenu__icon {
-  margin-right: 12px;
+  margin-right: calc(1.2em / var(--item-font-size-em));
 }
 
 .submenu__icon use {
@@ -174,11 +180,11 @@
 
 @media (min-width: $width__tablet) {
   .submenu {
-    top: 50px;
+    top: 5em;
     left: 0;
     padding: 0 100% * 15 / 768;
     height: auto;
-    min-height: 476px;
+    min-height: 47.6em;
     width: 100%;
     transform: translateY(-130%);
     transition-duration: 0.4s;
@@ -194,10 +200,10 @@
   }
 
   .submenu__content:not(.submenu__content--top):not(.submenu__content--lang) {
-    padding-bottom: 69px;
+    padding-bottom: 6.9em;
     background-repeat: no-repeat;
-    background-size: 303px 455px;
-    background-position: 0 36px;
+    background-size: 30.3em 45.5em;
+    background-position: 0 3.6em;
   }
 
   .submenu__content--men {
@@ -227,9 +233,9 @@
   }
 
   .submenu__list {
-    margin-top: 36px;
+    margin-top: 3.6em;
     margin-left: auto;
-    padding-top: 48px;
+    padding-top: 4.8em;
     width: 100% * 582 / 1920;
     border-top: 1px solid $color__underline;
   }
@@ -237,7 +243,7 @@
 
 @media (min-width: $width__notebook) {
   .submenu {
-    top: 102px;
+    top: 10em;
     padding: 0 100% * 46 / 1920;
   }
 }

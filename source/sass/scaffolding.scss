@@ -32,6 +32,7 @@
 html {
   box-sizing: border-box;
   overflow-y: scroll;
+  font-size: calc(62.5% * 1);
 }
 
 *,
@@ -71,22 +72,23 @@ a {
 }
 
 .page-container--shift {
-  transform: translateX(324px);
+  transform: translateX(32.4em);
 }
 
 .main-container {
-  padding-top: 50px;
+  padding-top: 5em;
   transition-duration: 0.5s;
 }
 
 .btn {
+  --btn-font-size: 1.2;
   display: block;
   margin: 0;
-  padding: 15px 30px 14px 30px;
+  padding: calc(1.5em / var(--btn-font-size)) calc(3em / var(--btn-font-size)) calc(1.4em / var(--btn-font-size)) calc(3em / var(--btn-font-size));
   width: 100%;
-  font-size: 12px;
+  font-size: calc(1em * var(--btn-font-size));
   font-weight: 500;
-  line-height: 14px;
+  line-height: calc(1.4em / var(--btn-font-size));
   color: $color__lightest;
   text-transform: uppercase;
   text-align: center;
@@ -116,7 +118,7 @@ a.link--opened:not([href]) {
 
 @media (min-width: $width__notebook) {
   .main-container {
-    padding-top: 102px;
+    padding-top: 10em;
   }
 
   .container {
@@ -129,7 +131,7 @@ a.link--opened:not([href]) {
     left: 0;
     width: 100vw;
     height: 150vh;
-    padding-top: 102px;
+    padding-top: 10em;
     background-color: rgba(0, 0, 0, 0.5);
     animation-duration: 0.6s;
     animation-fill-mode: both;
@@ -137,7 +139,7 @@ a.link--opened:not([href]) {
   }
 
   .modal__wrapper--hidden {
-    transform: translateY(-300px);
+    transform: translateY(-30em);
     opacity: 0;
     pointer-events: none;
   }
@@ -145,21 +147,21 @@ a.link--opened:not([href]) {
   .modal__container {
     position: relative;
     margin: 0 auto;
-    margin-top: 20px;
-    padding: 40px 81px;
-    width: 526px;
-    max-height: calc(100vh - 102px - 20px * 2);
+    margin-top: 2em;
+    padding: 4em 8.1em;
+    width: 52.6em;
+    max-height: calc(100vh - 10.2em - 2em * 2);
     background-color: $color__lightest;
     overflow: auto;
   }
 
   .modal__btn {
     position: absolute;
-    top: 24px;
-    right: 24px;
-    padding: 2px;
-    width: 18px;
-    height: 20px;
+    top: 2.4rem;
+    right: 2.4rem;
+    padding: 0.2rem;
+    width: 1.8rem;
+    height: 2rem;
     font-size: 0;
     background-color: transparent;
     border: none;
@@ -168,9 +170,9 @@ a.link--opened:not([href]) {
     &::before {
       content: "";
       position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 20px;
+      top: 0.2rem;
+      left: 0.2rem;
+      width: 2rem;
       height: 1px;
       transform-origin: 0 0;
       transform: rotate(45deg);
@@ -180,9 +182,9 @@ a.link--opened:not([href]) {
     &::after {
       content: "";
       position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 20px;
+      top: 0.2rem;
+      right: 0.2rem;
+      width: 2rem;
       height: 1px;
       transform-origin: 100% 0;
       transform: rotate(-45deg);
@@ -191,10 +193,11 @@ a.link--opened:not([href]) {
   }
 
   .modal__title {
+    --font-size-em: 3;
     margin: 0;
-    font-size: 30px;
+    font-size: calc(1em * var(--font-size-em));
     font-weight: 300;
-    line-height: 38px;
+    line-height: normal;
     color: $color__black;
     text-transform: uppercase;
     text-align: center;
@@ -204,13 +207,12 @@ a.link--opened:not([href]) {
 
 @media (min-width: $width__desktop) {
   .modal__container {
-    margin-top: 35px;
-    padding: 40px 81px;
-    max-height: calc(100vh - 102px - 35px * 2);
+    margin-top: 3.5em;
+    padding: 4em 8.1em;
+    max-height: calc(100vh - 10.2em - 3.5em * 2);
   }
 
   .modal__title {
-    font-size: 40px;
-    line-height: 48px;
+    --font-size-em: 4;
   }
 }

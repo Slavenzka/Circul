@@ -1,8 +1,12 @@
+.promo {
+  font-size: 1rem;
+}
+
 .promo__list {
   position: relative;
   margin: 0;
   padding: 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 5em);
   list-style: none;
 }
 
@@ -38,12 +42,13 @@
 }
 
 .promo__slogan {
+  --promo-font-size-em: 3.2;
   margin: 0 auto;
-  margin-top: 64px;
-  width: 286px;
-  font-size: 32px;
+  margin-top: calc(6.4em / var(--promo-font-size-em));
+  width: calc(28.6em / var(--promo-font-size-em));
+  font-size: calc(1em * var(--promo-font-size-em));
   font-weight: 300;
-  line-height: 46px;
+  line-height: 1.4375;
   color: $color__lightest;
   text-align: center;
   text-transform: uppercase;
@@ -55,21 +60,21 @@
 
 @media (min-width: $width__tablet) {
   .promo__slogan {
-    width: 800px;
-    font-size: 80px;
-    line-height: 100px;
+    --promo-font-size-em: 8;
+    width: calc(76.8em / var(--promo-font-size-em));
+    line-height: calc(10em / var(--promo-font-size-em));
   }
 }
 
 @media (min-width: $width__notebook) {
   .promo__list {
-    height: calc(100vh - 102px);
+    height: calc(100vh - 10em);
   }
 
   .promo__slogan {
-    width: 950px;
-    font-size: 100px;
-    line-height: 130px;
+    --promo-font-size-em: 10;
+    width: calc(95em / var(--promo-font-size-em));
+    line-height: 1.3;
   }
 
   .promo__item--1 .promo__slogan {
@@ -77,18 +82,18 @@
   }
 
   .promo__item--3 .promo__slogan {
-    width: 1000px;
+    width: calc(100em / var(--promo-font-size-em));
   }
 }
 
 @media (min-width: $width__desktop) {
   .promo__slogan {
-    width: 1155px;
-    font-size: 120px;
-    line-height: 170px;
+    --promo-font-size-em: 12;
+    width: calc(115.5em / var(--promo-font-size-em));
+    line-height: calc(17 / 12);
   }
 
   .promo__item--3 .promo__slogan {
-    width: 1155px;
+    width: calc(115.5em / var(--promo-font-size-em));
   }
 }

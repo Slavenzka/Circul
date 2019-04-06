@@ -1,3 +1,7 @@
+.nav {
+  font-size: 1rem;
+}
+
 .nav__list {
   display: flex;
   align-items: center;
@@ -10,11 +14,12 @@
 .nav__item {
   display: flex;
   align-items: center;
-  font-size: 0;
+  line-height: 0;
+  color: transparent;
 }
 
 .nav__item:not(:first-of-type) {
-  margin-left: 24px;
+  margin-left: 2.4em;
 }
 
 .nav__item--tablet-plus {
@@ -51,6 +56,7 @@ li.nav__item--selected > .nav__link {
 
 @media (min-width: $width__tablet) {
   .nav {
+    --nav-font-size-em: 1;
     display: flex;
     align-items: center;
     width: 41%;
@@ -82,7 +88,7 @@ li.nav__item--selected > .nav__link {
 
   .nav__item--tablet-plus {
     display: block;
-    margin-left: 24px;
+    margin-left: 2.4em;
   }
 
   .nav__item--search + .nav__item--tablet-plus {
@@ -93,7 +99,7 @@ li.nav__item--selected > .nav__link {
     position: relative;
     display: block;
     font-family: inherit;
-    font-size: 10px;
+    font-size: calc(1em * var(--nav-font-size-em));
     font-weight: 300;
     line-height: normal;
     color: $color__icons;
@@ -109,7 +115,7 @@ li.nav__item--selected > .nav__link {
     &::before {
       content: "";
       position: absolute;
-      bottom: -3px;
+      bottom: calc(-0.3em / var(--nav-font-size-em));
       left: 0;
       height: 2px;
       width: 100%;
@@ -120,7 +126,7 @@ li.nav__item--selected > .nav__link {
     &::after {
       content: "";
       position: absolute;
-      bottom: -3px;
+      bottom: calc(-0.3em / var(--nav-font-size-em));
       left: 0;
       height: 2px;
       width: 100%;
@@ -148,6 +154,7 @@ li.nav__item--selected > .nav__link {
 
 @media (min-width: $width__notebook) {
   .nav__item {
+    --nav-font-size-em: 1.8;
     height: auto;
   }
 
@@ -157,11 +164,7 @@ li.nav__item--selected > .nav__link {
   }
 
   .nav__item--tablet-plus .nav__link {
-    font-size: 18px;
     font-weight: 700;
-    line-height: normal;
-    color: $color__icons;
     letter-spacing: 1.42px;
-    text-transform: uppercase;
   }
 }

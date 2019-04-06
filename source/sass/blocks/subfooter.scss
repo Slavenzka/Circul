@@ -1,5 +1,6 @@
 .subfooter {
-  padding: 16px 0 21px 0;
+  padding: 1.6em 0 2.1em 0;
+  font-size: 1rem;
   border-top: 1px solid $color__separators;
 }
 
@@ -12,10 +13,11 @@
 }
 
 .subfooter__link {
+  --font-size-em: 1;
   font-family: inherit;
-  font-size: 10px;
+  font-size: calc(1em * var(--font-size-em));
   font-weight: 500;
-  line-height: 11px;
+  line-height: 1.1;
   color: $color__font-submenu;
   text-transform: uppercase;
   letter-spacing: 1px;

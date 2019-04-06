@@ -1,3 +1,7 @@
+.nav-shop {
+  font-size: 1rem;
+}
+
 .nav-shop__list {
   display: flex;
   align-items: center;
@@ -7,7 +11,7 @@
 }
 
 .nav-shop__item:not(:first-of-type) {
-  margin-left: 23px;
+  margin-left: 2.3em;
 }
 
 .nav-shop__item--tablet-plus {
@@ -54,7 +58,7 @@
   }
 
   .nav-shop__item:not(.nav-shop__item--faq) {
-    margin-left: 23px;
+    margin-left: 2.3em;
   }
 
   .nav-shop__item--faq {
@@ -75,9 +79,10 @@
   }
 
   .nav-shop__link {
+    --font-size-em: 1;
     display: block;
     font-family: inherit;
-    font-size: 10px;
+    font-size: calc(1em * var(--font-size-em));
     font-weight: 300;
     line-height: normal;
     color: $color__icons;
@@ -137,11 +142,8 @@
 
 @media (min-width: $width__notebook) {
   .nav-shop__link {
-    font-size: 18px;
+    --font-size-em: 1.8;
     font-weight: 700;
-    line-height: normal;
-    color: $color__icons;
     letter-spacing: 1.42px;
-    text-transform: uppercase;
   }
 }

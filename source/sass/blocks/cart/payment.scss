@@ -1,3 +1,7 @@
+.payment {
+  font-size: 1rem;
+}
+
 @media (min-width: $width__tablet) {
   .payment {
     display: flex;
@@ -14,7 +18,11 @@
 }
 
 @media (min-width: $width__notebook) {
+  .payment {
+    font-size: 1rem;
+  }
+
   .payment__item {
-    width: 104px;
+    width: 10.4em;
   }
 }

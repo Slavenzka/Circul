@@ -1,7 +1,8 @@
 .gender {
   position: relative;
   display: none;
-  padding-bottom: 68px;
+  padding-bottom: 6.8em;
+  font-size: 1rem;
 
   &::before {
     content: "";
@@ -20,7 +21,7 @@
   justify-content: space-around;
   align-items: baseline;
   margin: 0;
-  margin-bottom: 44px;
+  margin-bottom: 4.4em;
   padding: 0;
   width: 100%;
   list-style: none;

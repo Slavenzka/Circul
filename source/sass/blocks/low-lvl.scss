@@ -1,15 +1,20 @@
+.low-lvl {
+  --link-font-size-em: 1.4;
+  font-size: 1rem;
+}
+
 .low-lvl__item:not(:last-of-type) {
-  margin-bottom: 16px;
+  margin-bottom: 1.6em;
 }
 
 .low-lvl__item--sale {
-  margin-top: 36px;
+  margin-top: 3.6em;
 }
 
 .low-lvl__link {
-  font-size: 14px;
+  font-size: calc(1em * var(--link-font-size-em));
   font-weight: 300;
-  line-height: 17px;
+  line-height: normal;
   color: $color__black;
   text-transform: uppercase;
 }
@@ -51,31 +56,30 @@
 }
 
 @media (min-width: $width__tablet) {
+  .low-lvl {
+    --link-font-size-em: 1.8;
+  }
+
   .low-lvl__item:not(:last-of-type) {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
   }
 
   .low-lvl__item--sale {
-    margin-top: 52px;
-  }
-
-  .low-lvl__link {
-    font-size: 18px;
-    line-height: 22px;
+    margin-top: 5.2em;
   }
 }
 
 @media (min-width: $width__notebook) {
   .low-lvl__item:not(:last-of-type) {
-    margin-bottom: 36px;
+    margin-bottom: 3.6em;
   }
 
   .low-lvl__img {
     position: absolute;
-    top: 36px;
+    top: 3.6em;
     left: 100% * 46 / 1920;
-    width: 666px;
-    height: 456px;
+    width: 66.6em;
+    height: 45.6em;
     object-fit: cover;
   }
 
