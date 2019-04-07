@@ -29,6 +29,20 @@
   }
 }
 
+@mixin fontSizeHeight ($size, $height: normal) {
+  $font-size-mixin: $size / 10;
+
+  @if $height != normal {
+    $line-height-mixin: $height / $size;
+    line-height: $line-height-mixin;
+  }
+
+  @else {
+    line-height: normal;
+  }
+  font-size: 1rem * $font-size-mixin;
+}
+
 html {
   --projectScale: 1;
   box-sizing: border-box;
