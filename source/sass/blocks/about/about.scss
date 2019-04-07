@@ -1,15 +1,20 @@
 @mixin font($weight) {
-  font-size: 12px;
+  --font-size-em: 1.2;
+  font-size: calc(1em * var(--font-size-em));
   font-weight: $weight;
-  line-height: 18px;
+  line-height: calc(18 / 12);
   font-style: normal;
   color: $color__black;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.about {
+  font-size: 1rem;
+}
+
 .about__contacts {
-  margin-top: 24px;
+  margin-top: 2.4em;
 }
 
 .about__email {
@@ -18,14 +23,14 @@
 
 .about__owner {
   margin: 0;
-  margin-top: 5px;
+  margin-top: calc(0.5em / var(--font-size-em));
 
   @include font(700);
 }
 
 .about__frame {
-  margin-top: 48px;
-  height: 278px;
+  margin-top: 4.8rem;
+  height: 27.8rem;
 }
 
 .about__img {
@@ -42,7 +47,7 @@
   .about > .container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    padding-top: 48px;
+    padding-top: 4.8em;
   }
 
   .about__wrapper {
@@ -60,50 +65,52 @@
     grid-column: 1 / 2;
     grid-row: 1  / 2;
     margin: 0;
-    height: 450px;
+    height: 45rem;
   }
 }
 
 @media (min-width: $width__notebook) {
   .about > .container {
-    padding-top: 124px;
-    padding-bottom: 124px;
+    padding-top: 12.4em;
+    padding-bottom: 12.4em;
   }
 
   .about__heading {
-    font-size: 50px;
+    --font-size-em: 5;
+    font-size: calc(1em * var(--font-size-em));
     line-height: normal;
   }
 
   .about p.about__descriptor {
-    margin-top: 48px;
-    font-size: 18px;
+    --font-size-em: 1.8;
+    margin-top: calc(4.8em / var(--font-size-em));
+    font-size: calc(1em * var(--font-size-em));
   }
 
   .about__frame--1 {
     width: 97.6%;
-    height: 664px;
+    height: 66.4rem;
   }
 
   .about__contacts {
     display: flex;
     flex-direction: column;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 3em;
   }
 
   .about__email {
+    --font-size-em: 1.8;
     order: 2;
-    margin-top: 16px;
-    font-size: 18px;
-    line-height: 24px;
+    margin-top: calc(1.6em / var(--font-size-em));
+    line-height: calc(24 / 18);
     letter-spacing: 1px;
   }
 
   .about__owner {
+    --font-size-em: 3;
     order: 1;
     margin: 0;
-    font-size: 30px;
     line-height: normal;
     letter-spacing: 2px;
   }
@@ -111,7 +118,7 @@
 
 @media (min-width: $width__desktop) {
   .about > .container {
-    padding-bottom: 231px;
+    padding-bottom: 23.1em;
   }
 
   .about__wrapper {
@@ -119,19 +126,19 @@
   }
 
   .about__heading {
-    font-size: 68px;
+    --font-size-em: 6.8;
   }
 
   .about p.about__descriptor {
-    margin-top: 64px;
+    margin-top: calc(6.4em / var(--font-size-em));
   }
 
   .about__contacts {
-    margin-top: 59px;
+    margin-top: 5.9em;
   }
 
   .about__owner {
+    --font-size-em: 4;
     margin-top: 0;
-    font-size: 40px;
   }
 }
