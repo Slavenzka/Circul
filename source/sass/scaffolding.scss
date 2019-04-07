@@ -30,9 +30,10 @@
 }
 
 html {
+  --projectScale: 1;
   box-sizing: border-box;
   overflow-y: scroll;
-  font-size: calc(62.5% * 0.8);
+  font-size: calc(62.5% * var(--projectScale));
 }
 
 *,
