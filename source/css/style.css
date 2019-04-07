@@ -121,7 +121,7 @@
     pointer-events: none; } }
 
 html {
-  --projectScale: 1;
+  --projectScale: 0.8;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: scroll;
