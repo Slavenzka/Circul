@@ -1,5 +1,5 @@
 .chukka__wrapper {
-  padding-bottom: 48px;
+  padding-bottom: 4.8rem;
 }
 
 .chukka__list {
@@ -7,11 +7,11 @@
 }
 
 .chukka__frame {
-  height: 232px;
+  height: 23.2rem;
 }
 
 .chukka__frame--2 {
-  height: 356px;
+  height: 35.6rem;
 }
 
 .chukka__frame .chukka__img {
@@ -20,13 +20,13 @@
 
 @media (min-width: $width__tablet) {
   .chukka > .container {
-    --image-height: 600px;
+    --image-height: 60rem;
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: var(--image-height) 1fr;
-    grid-row-gap: 50px;
-    padding-top: 45px;
-    padding-bottom: 60px;
+    grid-row-gap: 5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 6rem;
   }
 
   .chukka__frame {
@@ -48,10 +48,10 @@
 
 @media (min-width: $width__notebook) {
   .chukka > .container {
-    --image-height: 667px;
+    --image-height: 66.7rem;
     grid-template-columns: 38.24% calc(100% - 38.24%);
-    grid-row-gap: 80px;
-    padding-bottom: 124px;
+    grid-row-gap: 8rem;
+    padding-bottom: 12.4rem;
   }
 
   .chukka__wrapper {
@@ -59,6 +59,6 @@
   }
 
   .chukka__descriptor:not(:first-of-type) {
-    margin-top: 24px;
+    margin-top: 2.4rem;
   }
 }

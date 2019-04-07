@@ -1,8 +1,8 @@
 .terms {
-  --small-indent: 20px;
-  --regular-margin: 24px;
-  --regular-font-size: 12px;
-  --regular-line-height: 14px;
+  --small-indent: 2rem;
+  --regular-margin: 2.4rem;
+  --regular-font-size: 1.2rem;
+  --regular-line-height: 1.4rem;
 }
 
 .terms__frame {
@@ -12,7 +12,7 @@
 
 .terms__img {
   width: 100%;
-  height: 232px;
+  height: 23.2rem;
   object-fit: cover;
   object-position: center center;
 }
@@ -26,9 +26,9 @@
 }
 
 .terms__heading {
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 300;
-  line-height: 46px;
+  line-height: 4.6rem;
   color: $color__black;
   text-align: center;
   text-transform: uppercase;
@@ -93,16 +93,16 @@
 
 @media (min-width: $width__tablet) {
   .terms {
-    --small-indent: 20px;
-    --regular-margin: 24px;
-    --regular-font-size: 14px;
-    --regular-line-height: 18px;
+    --small-indent: 2rem;
+    --regular-margin: 2.4rem;
+    --regular-font-size: 1.4rem;
+    --regular-line-height: 1.8rem;
   }
 
   .terms > .container {
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: auto calc(300px + 2 * var(--regular-margin)) auto;
+    grid-template-rows: auto calc(30rem + 2 * var(--regular-margin)) auto;
     padding-top: calc(2 * var(--regular-margin));
     padding-bottom: calc(2 * var(--regular-margin));
   }
@@ -153,35 +153,35 @@
 
 @media (min-width: $width__notebook) {
   .terms {
-    --small-indent: 30px;
-    --regular-margin: 64px;
-    --regular-font-size: 16px;
-    --regular-line-height: 19px;
+    --small-indent: 3rem;
+    --regular-margin: 6.4rem;
+    --regular-font-size: 1.6rem;
+    --regular-line-height: 1.9rem;
   }
 
   .terms > .container {
-    grid-template-rows: auto calc(563px + 2 * 80px) auto;
+    grid-template-rows: auto calc(56.3rem + 2 * 8rem) auto;
     padding-top: var(--regular-margin);
     padding-bottom: calc(2 * var(--regular-margin));
   }
 
   .terms__item {
-    width: 550px;
+    width: 55rem;
   }
 
   .terms__heading {
     margin: 0;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 4rem;
+    line-height: 4.8rem;
   }
 
   .terms__frame--large .terms__img {
-    height: 563px;
+    height: 56.3rem;
   }
 
   .terms__frame--small .terms__img {
-    width: 892px;
-    height: 639px;
+    width: 89.2rem;
+    height: 63.9rem;
   }
 
   .terms__item--return .terms__heading {
@@ -191,6 +191,6 @@
 
 @media (min-width: $width__desktop) {
   .terms__item {
-    width: 624px;
+    width: 62.4rem;
   }
 }
