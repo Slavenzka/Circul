@@ -1,6 +1,6 @@
 .success > .container {
   display: block;
-  padding-bottom: 64px;
+  padding-bottom: 6.4rem;
 }
 
 .success__wrapper {
@@ -9,8 +9,8 @@
 
 .success__announcement {
   margin: 0;
-  margin-top: 48px;
-  font-size: 14px;
+  margin-top: 4.8rem;
+  font-size: 1.4rem;
   font-weight: 300;
   line-height: normal;
   color: $color__black;
@@ -31,7 +31,7 @@
 
   .success__info {
     margin: 0 auto;
-    width: 423px;
+    width: 42.3rem;
   }
 
   .success__btn,
@@ -44,21 +44,21 @@
   }
 
   .success__payment .payment__item {
-    width: 104px;
+    width: 10.4rem;
   }
 }
 
 @media (min-width: $width__notebook) {
   .success > .container {
-    padding-bottom: 278px;
+    padding-bottom: 27.8rem;
   }
 
   .success__announcement {
-    margin-top: 92px;
-    font-size: 24px;
+    margin-top: 9.2rem;
+    font-size: 2.4rem;
   }
 
   .success__btn {
-    margin-top: 104px;
+    margin-top: 10.4rem;
   }
 }

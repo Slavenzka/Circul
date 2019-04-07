@@ -1,5 +1,5 @@
 .rules__frame--high {
-  height: 520px;
+  height: 52rem;
 }
 
 .rules__frame--high .rules__img {
@@ -13,13 +13,13 @@
 
 @media (min-width: $width__tablet) {
   .rules > .container {
-    --block1-height: 300px;
+    --block1-height: 30rem;
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: var(--block1-height) 1fr;
-    grid-row-gap: 25px;
-    padding-top: 46px;
-    padding-bottom: 100px;
+    grid-row-gap: 2.5rem;
+    padding-top: 4.6rem;
+    padding-bottom: 10rem;
   }
 
   .rules__frame--1 {
@@ -53,16 +53,16 @@
 
 @media (min-width: $width__notebook) {
   .rules > .container {
-    --block1-height: 450px;
-    grid-row-gap: 80px;
+    --block1-height: 45rem;
+    grid-row-gap: 8rem;
   }
 }
 
 @media (min-width: $width__desktop) {
   .rules > .container {
-    --block1-height: 563px;
-    grid-template-columns: 1fr 736px;
-    grid-row-gap: 80px;
+    --block1-height: 56.3rem;
+    grid-template-columns: 1fr 73.6rem;
+    grid-row-gap: 8rem;
   }
 
   .rules__wrapper {

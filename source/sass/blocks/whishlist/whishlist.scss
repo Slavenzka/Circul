@@ -3,19 +3,19 @@
 }
 
 .whishlist > .container {
-  padding-top: 24px;
+  padding-top: 2.4rem;
 }
 
 .whishlist__wrapper {
-  padding-bottom: 12px;
+  padding-bottom: 1.2rem;
   border-bottom: 1px solid $color__underline;
 }
 
 .whishlist__heading {
   margin: 0;
-  font-size: 32px;
+  font-size: 3.2rem;
   font-weight: 300;
-  line-height: 46px;
+  line-height: 4.6rem;
   color: $color__black;
   text-transform: uppercase;
   text-align: center;
@@ -24,11 +24,11 @@
 .whishlist__back {
   display: flex;
   align-items: center;
-  margin-top: 32px;
-  width: 140px;
-  font-size: 12px;
+  margin-top: 3.2rem;
+  width: 14rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__placeholder;
   text-transform: uppercase;
 }
@@ -40,11 +40,11 @@
 
 .whishlist__empty {
   margin: 0;
-  margin-top: 36px;
-  margin-bottom: 94px;
-  font-size: 14px;
+  margin-top: 3.6rem;
+  margin-bottom: 9.4rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  line-height: 17px;
+  line-height: 1.7rem;
   color: $color__black;
   text-transform: uppercase;
   text-align: center;

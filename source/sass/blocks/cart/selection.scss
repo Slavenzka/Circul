@@ -1,16 +1,17 @@
 .selection {
   position: relative;
+  font-size: 1rem;
 }
 
 .selection:not(:first-of-type) {
-  margin-top: 24px;
+  margin-top: 2.4em;
 }
 
 .selection__method {
   position: relative;
   display: block;
-  padding: 11px 42px 10px 16px;
-  font-size: 12px;
+  padding: 1.1rem 4.2rem 1rem 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: normal;
   color: $color__placeholder;
@@ -22,8 +23,8 @@
     content: "";
     position: absolute;
     top: calc(50% - 1px);
-    right: 16px;
-    width: 13px;
+    right: 1.6rem;
+    width: 1.3rem;
     height: 1px;
     background-color: $color__icons;
     transition-duration: 0.3s;
@@ -34,8 +35,8 @@
     content: "";
     position: absolute;
     top: calc(50% - 1px);
-    right: 16px;
-    width: 13px;
+    right: 1.6rem;
+    width: 1.3rem;
     height: 1px;
     background-color: $color__icons;
     transition-duration: 0.3s;
@@ -78,7 +79,7 @@
   left: 0;
   margin: 0;
   padding: 0;
-  padding-top: 24px;
+  padding-top: 2.4rem;
   width: 100%;
   background-color: $color__lightest;
   list-style: none;
@@ -87,7 +88,7 @@
 }
 
 .selection__item:not(:first-of-type) {
-  margin-top: 12px;
+  margin-top: 1.2rem;
 }
 
 .selection__input {
@@ -105,8 +106,8 @@
 
 .selection__input + label {
   display: block;
-  padding: 11px 42px 10px 16px;
-  font-size: 12px;
+  padding: 1.1rem 4.2rem 1rem 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: normal;
   color: $color__placeholder;
@@ -176,15 +177,15 @@
 @media (min-width: $width__notebook) {
   .selection__method,
   .selection__input + label {
-    padding: 12px 25px 14px 25px;
-    font-size: 16px;
+    padding: 1.2rem 2.5rem 1.4rem 2.5rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (min-width: $width__desktop) {
   .selection__method,
   .selection__input + label {
-    padding: 16px 33px 18px 33px;
-    font-size: 18px;
+    padding: 1.6rem 3.3rem 1.8rem 3.3rem;
+    font-size: 1.8rem;
   }
 }
