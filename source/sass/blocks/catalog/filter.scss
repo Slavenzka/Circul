@@ -1,6 +1,10 @@
+.filter {
+  font-size: 1rem;
+}
+
 .filter > .container {
   position: relative;
-  padding-bottom: 24px;
+  padding-bottom: 2.4em;
 }
 
 .filter__element {
@@ -16,13 +20,14 @@
 }
 
 .filter__element + label {
+  --font-size-em: 1.2;
   position: relative;
   display: block;
-  padding: 11px 16px 10px 16px;
+  padding: calc(1.1em / var(--font-size-em)) calc(1.6em / var(--font-size-em)) calc(1em / var(--font-size-em)) calc(1.6em / var(--font-size-em));
   font-family: inherit;
-  font-size: 12px;
+  font-size: calc(1em * var(--font-size-em));
   font-weight: 500;
-  line-height: 14px;
+  line-height: calc(14 / 12);
   color: $color__placeholder;
   text-transform: uppercase;
   background-color: $color__products-bg;
@@ -30,9 +35,9 @@
   &::before {
     content: "";
     position: absolute;
-    top: 18px;
-    right: 16px;
-    width: 13px;
+    top: calc(1.8em / var(--font-size-em));
+    right: calc(1.6em / var(--font-size-em));
+    width: calc(1.3em / var(--font-size-em));
     height: 1px;
     background-color: $color__placeholder;
     transform-origin: 50%;
@@ -43,9 +48,9 @@
   &::after {
     content: "";
     position: absolute;
-    top: 18px;
-    right: 16px;
-    width: 13px;
+    top: calc(1.8em / var(--font-size-em));
+    right: calc(1.6em / var(--font-size-em));
+    width: calc(1.3em / var(--font-size-em));
     height: 1px;
     background-color: $color__placeholder;
     transform-origin: 50%;
@@ -55,7 +60,7 @@
 }
 
 .filter__element--trigger + label {
-  margin-top: 24px;
+  margin-top: calc(2.4em / var(--font-size-em));
 }
 
 .filter__element--trigger:checked + label {
@@ -88,13 +93,13 @@
 .filter__list {
   display: none;
   margin: 0;
-  margin-top: 24px;
+  margin-top: 2.4em;
   padding: 0;
   list-style: none;
 }
 
 .filter__item:not(:first-of-type) {
-  margin-top: 12px;
+  margin-top: 1.2em;
 }
 
 .filter__element--trigger:checked ~ .filter__list {
@@ -126,17 +131,17 @@
   }
 
   .filter__element + label {
+    --font-size-em: 1.8;
     padding: 16px 16px 18px 16px;
-    font-size: 18px;
     font-weight: 300;
-    line-height: 22px;
+    line-height: calc(22 / 18);
     letter-spacing: 1px;
     border: 1px solid $color__filter-border;
 
     &::before,
     &::after {
-      top: 26px;
-      width: 16px;
+      top: calc(2.6em / var(--font-size-em));
+      width: calc(1.6em / var(--font-size-em));
     }
   }
 
@@ -145,7 +150,7 @@
   }
 
   .filter__element--trigger:checked + label {
-    padding-bottom: 53px;
+    padding-bottom: calc(5.3em / var(--font-size-em));
     color: $color__black;
     background-color: $color__lightest;
 
