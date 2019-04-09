@@ -194,7 +194,7 @@
         if (evt.target === button ||
           evt.target.classList.contains('bag__btn') || evt.target.classList.contains('bag--opened') ||
           evt.target.classList.contains('nav__link') ||
-          evt.target.classList.contains('nav-shop__link--fav')) {
+          evt.target.getAttribute('data-trigger')) {
           removeClass();
         }
       });

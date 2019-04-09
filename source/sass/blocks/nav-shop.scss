@@ -24,6 +24,10 @@
   background-color: transparent;
 }
 
+.nav-shop__icon {
+  pointer-events: none;
+}
+
 .nav-shop__icon use {
   fill: none;
   stroke: $color__icons;

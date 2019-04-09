@@ -2,6 +2,11 @@
   0% {
     transform: translateY(-300px);
     opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  45% {
+    background-color: rgba(0, 0, 0, 0);
   }
 
   60% {
@@ -10,7 +15,7 @@
 
   100% {
     transform: translateY(0);
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
     pointer-events: all;
   }
 }
@@ -44,7 +49,7 @@
 }
 
 html {
-  --projectScale: 0.8;
+  --projectScale: 1;
   box-sizing: border-box;
   overflow-y: scroll;
   font-size: calc(62.5% * var(--projectScale));
@@ -139,94 +144,9 @@ a.link--opened:not([href]) {
   .container {
     padding: 0 100% * 46 / 1920;
   }
-
-  .modal__wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 150vh;
-    padding-top: 10em;
-    background-color: rgba(0, 0, 0, 0.5);
-    animation-duration: 0.6s;
-    animation-fill-mode: both;
-    overflow: scroll;
-  }
-
-  .modal__wrapper--hidden {
-    transform: translateY(-30em);
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .modal__container {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 2em;
-    padding: 4em 8.1em;
-    width: 52.6em;
-    max-height: calc(100vh - 10.2em - 2em * 2);
-    background-color: $color__lightest;
-    overflow: auto;
-  }
-
-  .modal__btn {
-    position: absolute;
-    top: 2.4rem;
-    right: 2.4rem;
-    padding: 0.2rem;
-    width: 1.8rem;
-    height: 2rem;
-    font-size: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0.2rem;
-      left: 0.2rem;
-      width: 2rem;
-      height: 1px;
-      transform-origin: 0 0;
-      transform: rotate(45deg);
-      background-color: $color__underline;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0.2rem;
-      right: 0.2rem;
-      width: 2rem;
-      height: 1px;
-      transform-origin: 100% 0;
-      transform: rotate(-45deg);
-      background-color: $color__underline;
-    }
-  }
-
-  .modal__title {
-    --font-size-em: 3;
-    margin: 0;
-    font-size: calc(1em * var(--font-size-em));
-    font-weight: 300;
-    line-height: normal;
-    color: $color__black;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 2px;
-  }
 }
 
 @media (min-width: $width__desktop) {
-  .modal__container {
-    margin-top: 3.5em;
-    padding: 4em 8.1em;
-    max-height: calc(100vh - 10.2em - 3.5em * 2);
-  }
-
   .modal__title {
     --font-size-em: 4;
   }
