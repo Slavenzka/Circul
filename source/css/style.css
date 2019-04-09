@@ -1733,7 +1733,8 @@ span.bag__value {
     padding: 1.7rem 15%;
     font-size: 1.8rem;
     font-weight: 700;
-    line-height: calc(21 / 18); }
+    line-height: calc(21 / 18);
+    cursor: pointer; }
   .modal__content:first-of-type .modal__selection {
     margin-top: 5.6rem; }
   .modal__content--sign .modal__selection {
