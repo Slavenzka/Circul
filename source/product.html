@@ -19,6 +19,11 @@
       height: 12px;
     }
 
+    .modal__icon {
+      width: 33px;
+      height: 32px;
+    }
+
     .payment__icon {
       max-width: 110px;
     }
@@ -89,6 +94,12 @@
     </symbol>
     <symbol id="facebook">
       <path d="M35.3535 3.42857V28.5714C35.3535 30.4643 33.6933 32 31.647 32H25.0603V19.3429H29.7397L30.4115 14.5143H25.0603V11.4286C25.0603 10.0286 25.4773 9.07857 27.6471 9.07857H30.4115V4.76429C29.9328 4.70714 28.2957 4.57143 26.3807 4.57143C22.3963 4.57143 19.6628 6.82143 19.6628 10.9571V14.5214H14.9679V19.35H19.6705V32H4.46624C2.41996 32 0.759766 30.4643 0.759766 28.5714V3.42857C0.759766 1.53571 2.41996 0 4.46624 0H31.647C33.6933 0 35.3535 1.53571 35.3535 3.42857Z"/>
+    </symbol>
+    <symbol id="twitter">
+      <path d="M31.0345 6.91358C31.0345 7.25926 31.0345 7.60494 31.0345 7.77778C31.0345 17.1111 23.9655 28 10.8621 28C6.89655 28 3.10345 26.7901 0 24.8889C0.517241 24.8889 1.03448 25.0617 1.72414 25.0617C5 25.0617 8.10345 24.0247 10.5172 21.9506C7.41379 21.9506 4.82759 19.8765 3.96552 17.1111C4.48276 17.1111 4.82759 17.284 5.34483 17.284C6.03448 17.284 6.55172 17.1111 7.24138 17.1111C3.96552 16.4198 1.55172 13.6543 1.55172 10.1975V9.85185C2.41379 10.3704 3.62069 10.716 4.82759 10.716C2.93103 9.50617 1.72414 7.25926 1.72414 4.83951C1.72414 3.45679 2.06897 2.24691 2.75862 1.20988C6.2069 5.53086 11.5517 8.2963 17.4138 8.64197C17.2414 8.12346 17.2414 7.60494 17.2414 7.08642C17.2414 3.11111 20.3448 0 24.3103 0C26.3793 0 28.1034 0.864197 29.4828 2.24691C31.0345 1.90123 32.5862 1.38272 33.9655 0.518518C33.4483 2.24691 32.2414 3.62963 30.8621 4.49383C32.2414 4.32099 33.6207 3.97531 35 3.45679C33.6207 4.66667 32.4138 5.87654 31.0345 6.91358Z"/>
+    </symbol>
+    <symbol id="google">
+      <path d="M31 16.3137C31 25.4118 24.8 32 15.81 32C6.975 32 0 24.9412 0 16C0 7.05882 6.975 0 15.81 0C19.995 0 23.56 1.56863 26.35 4.23529L22.01 8.47059C16.43 2.82353 6.045 7.05882 6.045 16C6.045 21.6471 10.385 26.1961 15.81 26.1961C22.01 26.1961 24.335 21.6471 24.8 19.2941H15.81V13.8039H30.845C30.845 14.5882 31 15.3725 31 16.3137Z"/>
     </symbol>
   </svg>
 
@@ -299,7 +310,7 @@
                     </a>
                   </li>
                   <li class="subfooter__item">
-                    <a href="#" class="subfooter__link">
+                    <a href="#" class="subfooter__link" data-trigger="sign-in">
                       Sign in
                     </a>
                   </li>
@@ -558,7 +569,7 @@
             </a>
           </li>
           <li class="nav-shop__item nav-shop__item--sign nav-shop__item--tablet-plus">
-            <a class="nav-shop__link">
+            <a class="nav-shop__link" data-trigger="sign-in">
               My account
             </a>
           </li>
@@ -1099,6 +1110,235 @@
       </div>
     </div>
   </footer>
+
+  <div class="modal__wrapper modal__wrapper--registration modal__wrapper--hidden" data-modal="sign-in">
+    <div class="modal__container">
+      <button class="modal__btn" type="button">
+        Close modal
+      </button>
+      <div class="modal__item modal__item--intro">
+        <h2 class="modal__title">
+          Sign in
+        </h2>
+        <p class="modal__descriptor">
+          Already have an account?
+        </p>
+        <!-- Remove .modal__selection--passive to switch button to active state-->
+        <a class="btn modal__selection modal__selection modal__selection--passive" data-link="modal__item--sign">
+          Login
+        </a>
+        <h2 class="modal__title">
+          Create account
+        </h2>
+        <p class="modal__descriptor">
+          By&nbsp;creating an&nbsp;account, you can go&nbsp;through the process of&nbsp;placing an&nbsp;order faster, store stop loss, take part in&nbsp;the loyalty program and much more
+        </p>
+        <a class="btn modal__selection modal__selection--passive" data-link="modal__item--create-step1">
+          Create account
+        </a>
+      </div>
+      <div class="modal__item modal__item--sign">
+        <div class="modal__content modal__content--sign">
+          <h2 class="modal__title">
+            Sign in
+          </h2>
+          <form action="#" class="modal__form modal__form--sign">
+            <input class="modal__input modal__input--email" type="email" placeholder="E-mail address">
+            <input class="modal__input modal__input--pass" type="password" placeholder="Password">
+            <a class="modal__forgotten" data-link="modal__item--forgotten">
+              Forgotten your password?
+            </a>
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <button class="btn modal__selection modal__selection modal__selection--passive" type="submit">
+              Login
+            </button>
+          </form>
+          <h3 class="modal__title">
+            Sign in with
+          </h3>
+          <ul class="modal__socials">
+            <li class="modal__social modal__social--instagram">
+              <a href="#" class="modal__social-reg">
+                Registration via Instagram account
+                <svg class="modal__icon" viewBox="0 0 33 32">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--twitter">
+              <a href="#" class="modal__social-reg">
+                Registration via Twitter account
+                <svg class="modal__icon" viewBox="0 0 35 28">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--facebook">
+              <a href="#" class="modal__social-reg">
+                Registration via Facebook account
+                <svg class="modal__icon" viewBox="0 0 36 32">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--google">
+              <a href="#" class="modal__social-reg">
+                Registration via Google account
+                <svg class="modal__icon" viewBox="0 0 31 32">
+                  <use xlink:href="#google"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="modal__content modal__content--create">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <p class="modal__descriptor">
+            By&nbsp;creating an&nbsp;account, you can go&nbsp;through the process of&nbsp;placing an&nbsp;order faster, store stop loss, take part in&nbsp;the loyalty program and much more
+          </p>
+          <a class="btn modal__selection modal__selection--passive" data-link="modal__item--create-step1">
+            Create account
+          </a>
+        </div>
+      </div>
+      <div class="modal__item modal__item--create-step1">
+        <div class="modal__content modal__content--info">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <form action="#" class="modal__form modal__form--create1">
+            <input class="modal__input modal__input--name" type="text" placeholder="First name">
+            <input class="modal__input modal__input--family" type="text" placeholder="Last name">
+            <input class="modal__input modal__input--email" type="email" placeholder="E-mail address">
+            <input class="modal__input modal__input--pass" type="password" placeholder="Password">
+            <input class="modal__input modal__input--pass" type="password" placeholder="Re-enter Password">
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <a class="btn modal__selection modal__selection modal__selection--passive" data-link="modal__item--create-step2">
+              Next step
+            </a>
+          </form>
+        </div>
+        <div class="modal__content modal__content--social">
+          <h3 class="modal__title">
+            Sign in with
+          </h3>
+          <ul class="modal__socials">
+            <li class="modal__social modal__social--instagram">
+              <a href="#" class="modal__social-reg">
+                Registration via Instagram account
+                <svg class="modal__icon" viewBox="0 0 33 32">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--twitter">
+              <a href="#" class="modal__social-reg">
+                Registration via Twitter account
+                <svg class="modal__icon" viewBox="0 0 35 28">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--facebook">
+              <a href="#" class="modal__social-reg">
+                Registration via Facebook account
+                <svg class="modal__icon" viewBox="0 0 36 32">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--google">
+              <a href="#" class="modal__social-reg">
+                Registration via Google account
+                <svg class="modal__icon" viewBox="0 0 31 32">
+                  <use xlink:href="#google"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal__item modal__item--create-step2">
+        <div class="modal__content modal__content--info">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <form action="#" class="modal__form modal__form--create1">
+            <input class="modal__input modal__input--phone" type="tel" placeholder="Phone number">
+            <input class="modal__input modal__input--country" type="text" placeholder="Country">
+            <input class="modal__input modal__input--city" type="text" placeholder="City">
+            <input class="modal__input modal__input--address" type="text" placeholder="Address & postcode">
+            <input class="modal__input modal__input--office" type="text" placeholder="Post office number">
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <button class="btn modal__selection modal__selection modal__selection--passive" type="submit">
+              Create account
+            </button>
+          </form>
+        </div>
+        <div class="modal__content modal__content--social">
+          <h3 class="modal__title">
+            Contact us
+          </h3>
+          <ul class="modal__socials">
+            <li class="modal__social modal__social--instagram">
+              <a href="#" class="modal__social-reg">
+                Visit our Instagram
+                <svg class="modal__icon" viewBox="0 0 33 32">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--twitter">
+              <a href="#" class="modal__social-reg">
+                Visit our Telegram
+                <svg class="modal__icon" viewBox="0 0 37 29">
+                  <use xlink:href="#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--facebook">
+              <a href="#" class="modal__social-reg">
+                Visito our Facebook
+                <svg class="modal__icon" viewBox="0 0 36 32">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal__item modal__item--forgotten">
+        <div class="modal__content modal__content--reset">
+          <h2 class="modal__title">
+            Password reset
+          </h2>
+          <p class="modal__hint">
+            Please submit your email address to receive a password reset link
+          </p>
+          <form action="#" class="modal__form modal__form--sign">
+            <input class="modal__input modal__input--email" type="email" placeholder="E-mail address">
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <button class="btn modal__selection modal__selection modal__selection--passive" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="modal__content modal__content--create">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <p class="modal__descriptor">
+            By&nbsp;creating an&nbsp;account, you can go&nbsp;through the process of&nbsp;placing an&nbsp;order faster, store stop loss, take part in&nbsp;the loyalty program and much more
+          </p>
+          <a class="btn modal__selection modal__selection--passive" data-link="modal__item--create-step1">
+            Create account
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/menu-operation.js" defer></script>
   <script src="jQuery/jquery-3.3.1.min.js"></script>
