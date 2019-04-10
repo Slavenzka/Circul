@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account page</title>
+  <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-300.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/exljbris%20-%20MuseoSansCyrl-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <style>
+  /* Inline svg dimensions to avoid page breaking when no styles applied */
+    .header__logo-icon {
+      width: 88px;
+      height: 16px;
+    }
+
+    .cart__icon {
+      margin-right: 12px;
+      width: 6px;
+      height: 12px;
+    }
+
+    .modal__icon {
+      width: 33px;
+      height: 32px;
+    }
+
+    .payment__icon {
+      max-width: 110px;
+    }
+
+    .cabinet__icon {
+      width: 6px;
+      height: 12px;
+    }
+    /* Initial cart side menu styles */
+    .bag {
+      --offset-top: 50px;
+      position: absolute;
+      top: var(--offset-top);
+      right: 0;
+      width: 100vw;
+      pointer-events: none;
+    }
+
+    .bag > .container {
+      --padding-top: 24px;
+      --padding-bottom: 36px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--padding-top);
+      padding-bottom: var(--padding-bottom);
+      height: calc(100vh - var(--offset-top));
+      overflow: scroll;
+      scrollbar-width: thin;
+      background-color: #fff;
+      transform: translateX(100%);
+      transition-duration: 0.4s;
+      pointer-events: none;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+</head>
+
+<body>
+  <svg style="display: none">
+    <symbol id="search">
+      <path d="M13.7846 12.9231L10.0154 9.15385C10.7692 8.18462 11.2 7 11.2 5.6C11.2 2.47692 8.72308 0 5.6 0C2.47692 0 0 2.47692 0 5.6C0 8.72308 2.47692 11.2 5.6 11.2C6.89231 11.2 8.18462 10.7692 9.15385 9.90769L13.0308 13.7846L13.7846 12.9231ZM5.6 1.18462C8.07692 1.18462 10.0154 3.12308 10.0154 5.6C10.0154 8.07692 8.07692 10.0154 5.6 10.0154C3.12308 10.0154 1.18462 8.07692 1.18462 5.6C1.18462 3.12308 3.12308 1.18462 5.6 1.18462ZM12.9231 13.7846L13.7846 12.9231L12.9231 13.7846Z"/>
+    </symbol>
+    <symbol id="burger">
+      <rect width="16" height="1"/>
+      <rect y="5.47168" width="16" height="1"/>
+      <rect y="10.9438" width="16" height="1"/>
+    </symbol>
+    <symbol id="logo">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M29.267 7.51129L29.2806 3.14341L32.7358 3.15551C33.7633 3.15261 35.4978 3.43915 35.4918 5.27023C35.4865 6.93916 34.0478 7.52847 32.7035 7.52363L29.267 7.51129ZM38.1777 5.25915C38.1802 3.99463 37.7628 2.85256 37.0017 2.04327C36.0466 1.0285 34.5652 0.471866 32.8562 0.459765L26.6216 0.4375L26.5737 15.7248L29.2417 15.7234L29.258 10.0982L32.1164 10.1779L35.9045 15.5738L39.2075 15.5849L35.0173 9.66043C37.0067 8.97553 38.1704 7.38259 38.1777 5.25915Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M53.949 11.1739C52.8056 12.3071 51.7523 13.0083 50.0369 13.0026C50.0257 13.0026 50.0142 13.0024 50.0025 13.0024C47.4084 12.9741 45.4635 10.7637 45.4726 7.84616C45.482 4.91541 47.458 2.71167 50.0687 2.72022C51.497 2.72877 52.6266 3.25131 53.8573 4.47789L54.2996 4.91859L56.1254 2.88047L55.6896 2.44881C54.4236 1.19365 52.8777 0.0303375 50.1668 0.000534099C50.1441 0.000289809 50.1209 4.55187e-05 50.0978 4.55187e-05C48.0503 -0.0070389 46.1639 0.813044 44.7869 2.30883C43.4434 3.76871 42.7002 5.73207 42.6934 7.83737C42.6866 9.97393 43.4182 11.9556 44.753 13.4174C46.0925 14.8842 47.9303 15.7018 49.9328 15.7238C49.9517 15.7238 49.9709 15.7238 49.9899 15.724C52.3488 15.7326 54.0826 14.9714 55.7865 13.1798L56.1984 12.7469L54.3904 10.7364L53.949 11.1739Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1992 11.1841C10.0615 12.3063 9.01348 13.0006 7.30672 12.9951C7.29555 12.9951 7.28414 12.9948 7.27249 12.9948C4.69141 12.9667 2.75623 10.778 2.76531 7.88883C2.77463 4.98664 4.74077 2.80438 7.33839 2.81285C8.75944 2.82131 9.88339 3.33876 11.1079 4.55338L11.548 4.98979L13.3647 2.97154L12.9311 2.54408C11.6714 1.30115 10.1332 0.149182 7.43595 0.11967C7.41337 0.119428 7.39031 0.119186 7.36726 0.119186C5.3301 0.11217 3.45314 0.92426 2.08308 2.40547C0.746315 3.85112 0.00679907 5.79535 4.65636e-05 7.88012C-0.00670594 9.99586 0.721168 11.9582 2.04932 13.4058C3.38212 14.8582 5.21065 15.6679 7.20311 15.6897C7.22197 15.6897 7.24106 15.6897 7.25992 15.6899C9.607 15.6984 11.3321 14.9446 13.0275 13.1704L13.4373 12.7418L11.6383 10.7509L11.1992 11.1841Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M69.5454 0.469576L69.5163 9.11985C69.512 10.428 69.1909 11.4298 68.5613 12.0959C67.9668 12.7256 67.1062 13.0425 66.0038 13.0384H65.9635C64.8551 13.0266 63.9905 12.6846 63.3941 12.0221C62.7779 11.3376 62.4546 10.2912 62.4589 8.99637L62.4868 0.446182L59.7123 0.4375L59.6841 9.08681C59.6775 11.1314 60.2777 12.8283 61.4204 13.9941C62.5121 15.1074 64.0561 15.705 65.8903 15.7243C65.9115 15.7245 65.9332 15.7245 65.9547 15.7248C67.8403 15.7315 69.422 15.137 70.5292 14.0064C71.6746 12.837 72.2834 11.109 72.2903 9.0094L72.3178 0.479222L69.5454 0.469576Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2969 15.7166L21.2908 15.7248L21.3464 0.446932L18.3532 0.4375L18.2969 15.7166Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M88 12.6437L80.0039 12.6176L80.0461 0.446284L77.1595 0.4375L77.1089 15.2536L87.9914 15.288L88 12.6437Z"/>
+    </symbol>
+    <symbol id="fav">
+      <path d="M140,20C 73,20 20,74 20,140 20,275 156,310 248,443 336,311 477,270 477,140 477,74 423,20 357,20 309,20 267,48 248,89 229,48 188,20 140,20Z"/>
+    </symbol>
+    <symbol id="cart">
+      <path d="M11.1243 5.6V15.2H0.891892V5.6H1.94595H2.75676H9.24324H10.0541H11.1243ZM6 0C3.76216 0 2.3 2.144 2.3 4.8H0V7.6V9V10.4V16H12V10.4V4.8H9.7C9.7 2.144 8.23784 0 6 0ZM3 4.8C3 2.512 4.11892 0.64 6 0.64C7.88108 0.64 9 2.512 9 4.8H3Z"/>
+    </symbol>
+    <symbol id="back">
+      <path d="M7 13L1 6.99971L7 1"/>
+    </symbol>
+    <symbol id="instagram">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.50775C0 3.3485 3.45805 0 7.75341 0H25.1986C29.4939 0 32.952 3.3485 32.952 7.50775V24.4002C32.952 28.5594 29.4939 31.9079 25.1986 31.9079H7.75341C3.45805 31.9079 0 28.5594 0 24.4002V7.50775ZM28.1062 6.56927C28.1062 5.53264 27.2383 4.69233 26.1678 4.69233C25.0973 4.69233 24.2295 5.53264 24.2295 6.56927C24.2295 7.60585 25.0973 8.44621 26.1678 8.44621C27.2383 8.44621 28.1062 7.60585 28.1062 6.56927ZM16.4758 7.97693C21.014 7.97693 24.7138 11.5595 24.7138 15.9539C24.7138 20.3484 21.014 23.9309 16.4758 23.9309C11.9375 23.9309 8.23779 20.3484 8.23779 15.9539C8.23779 11.5595 11.9375 7.97693 16.4758 7.97693ZM10.1768 15.9539C10.1768 12.5739 12.9857 9.85387 16.4764 9.85387C19.9671 9.85387 22.776 12.5739 22.776 15.9539C22.776 19.334 19.9671 22.054 16.4764 22.054C12.9857 22.054 10.1768 19.334 10.1768 15.9539Z"/>
+    </symbol>
+    <symbol id="telegram">
+      <path d="M36.7275 3.44428L31.3028 26.7566C30.8935 28.4019 29.8262 28.8114 28.3096 28.0363L20.0441 22.4861L16.0558 25.9815C15.6144 26.3837 15.2453 26.72 14.3947 26.72L14.9885 19.0492L30.3077 6.4351C30.9738 5.89398 30.1633 5.59416 29.2725 6.13529L10.3342 17.0017L2.18102 14.6763C0.407554 14.1717 0.375455 13.0602 2.55016 12.2851L34.4405 1.08965C35.917 0.58509 37.209 1.38947 36.7275 3.44428Z"/>
+    </symbol>
+    <symbol id="facebook">
+      <path d="M35.3535 3.42857V28.5714C35.3535 30.4643 33.6933 32 31.647 32H25.0603V19.3429H29.7397L30.4115 14.5143H25.0603V11.4286C25.0603 10.0286 25.4773 9.07857 27.6471 9.07857H30.4115V4.76429C29.9328 4.70714 28.2957 4.57143 26.3807 4.57143C22.3963 4.57143 19.6628 6.82143 19.6628 10.9571V14.5214H14.9679V19.35H19.6705V32H4.46624C2.41996 32 0.759766 30.4643 0.759766 28.5714V3.42857C0.759766 1.53571 2.41996 0 4.46624 0H31.647C33.6933 0 35.3535 1.53571 35.3535 3.42857Z"/>
+    </symbol>
+    <symbol id="twitter">
+      <path d="M31.0345 6.91358C31.0345 7.25926 31.0345 7.60494 31.0345 7.77778C31.0345 17.1111 23.9655 28 10.8621 28C6.89655 28 3.10345 26.7901 0 24.8889C0.517241 24.8889 1.03448 25.0617 1.72414 25.0617C5 25.0617 8.10345 24.0247 10.5172 21.9506C7.41379 21.9506 4.82759 19.8765 3.96552 17.1111C4.48276 17.1111 4.82759 17.284 5.34483 17.284C6.03448 17.284 6.55172 17.1111 7.24138 17.1111C3.96552 16.4198 1.55172 13.6543 1.55172 10.1975V9.85185C2.41379 10.3704 3.62069 10.716 4.82759 10.716C2.93103 9.50617 1.72414 7.25926 1.72414 4.83951C1.72414 3.45679 2.06897 2.24691 2.75862 1.20988C6.2069 5.53086 11.5517 8.2963 17.4138 8.64197C17.2414 8.12346 17.2414 7.60494 17.2414 7.08642C17.2414 3.11111 20.3448 0 24.3103 0C26.3793 0 28.1034 0.864197 29.4828 2.24691C31.0345 1.90123 32.5862 1.38272 33.9655 0.518518C33.4483 2.24691 32.2414 3.62963 30.8621 4.49383C32.2414 4.32099 33.6207 3.97531 35 3.45679C33.6207 4.66667 32.4138 5.87654 31.0345 6.91358Z"/>
+    </symbol>
+    <symbol id="google">
+      <path d="M31 16.3137C31 25.4118 24.8 32 15.81 32C6.975 32 0 24.9412 0 16C0 7.05882 6.975 0 15.81 0C19.995 0 23.56 1.56863 26.35 4.23529L22.01 8.47059C16.43 2.82353 6.045 7.05882 6.045 16C6.045 21.6471 10.385 26.1961 15.81 26.1961C22.01 26.1961 24.335 21.6471 24.8 19.2941H15.81V13.8039H30.845C30.845 14.5882 31 15.3725 31 16.3137Z"/>
+    </symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="header__logo">
+        <svg class="header__logo-icon" viewbox="0 0 88 16">
+          <use xlink:href="#logo"></use>
+        </svg>
+      </a>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--menu">
+            <a class="nav__link nav__link--menu">
+              Toggle menu
+              <svg class="nav__icon nav__icon--menu" width="16" height="12" viewbox="0 0 16 12">
+                <use xlink:href="#burger"></use>
+              </svg>
+            </a>
+            <div class="nav__submenu submenu">
+              <div class="submenu__header">
+                <h2 class="submenu__title">
+                  Menu
+                </h2>
+                <button class="submenu__btn">
+                  Close menu
+                </button>
+              </div>
+              <div class="submenu__content submenu__content--top">
+                <ul class="submenu__list submenu__list--topLvl">
+                  <li class="submenu__item">
+                    <a class="submenu__link submenu__link--trigger">
+                      <picture>
+                        <img src="img/submenu__img--1@1x.jpg" srcset="img/submenu__img--1@1x.jpg 1x, img/submenu__img--1@2x.jpg 2x" alt="Illustration for women catalog" class="submenu__img">
+                      </picture>
+                      <span class="submenu__category">
+                        women
+                      </span>
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a class="submenu__link submenu__link--trigger">
+                      <picture>
+                        <img src="img/submenu__img--2@1x.jpg" srcset="img/submenu__img--2@1x.jpg 1x, img/submenu__img--2@2x.jpg 2x" alt="Illustration for men catalog" class="submenu__img">
+                      </picture>
+                      <span class="submenu__category">
+                        men
+                      </span>
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="about.html" class="submenu__link">
+                      <picture>
+                        <img src="img/submenu__img--3@1x.jpg" srcset="img/submenu__img--3@1x.jpg 1x, img/submenu__img--3@2x.jpg 2x" alt="Illustration for about us link" class="submenu__img">
+                      </picture>
+                      <span class="submenu__category">
+                        about us
+                      </span>
+                    </a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="faq.html" class="submenu__link">
+                      <picture>
+                        <img src="img/submenu__img--4@1x.jpg" srcset="img/submenu__img--4@1x.jpg 1x, img/submenu__img--4@2x.jpg 2x" alt="Illustration for FAQ link" class="submenu__img">
+                      </picture>
+                      <span class="submenu__category">
+                        faq
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__content submenu__content--low submenu__content--women submenu__content--hidden">
+                <button class="submenu__back" type="button">
+                  <svg class="submenu__icon" width="6" height="12" viewbox="0 0 8 14">
+                    <use xlink:href="#back"></use>
+                  </svg>
+                  Back
+                </button>
+                <ul class="submenu__list submenu__list--lowLvl low-lvl">
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      All
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Shoes
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--women@1x.jpg" srcset="img/low-lvl__img--women@1x.jpg 1x, img/low-lvl__img--women@2x.jpg 2x" alt="Photo of Circul product for women">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Boots
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--men@1x.jpg" srcset="img/low-lvl__img--men@1x.jpg 1x, img/low-lvl__img--men@2x.jpg 2x" alt="Photo of Circul product for women">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Sneakers
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--women@1x.jpg" srcset="img/low-lvl__img--women@1x.jpg 1x, img/low-lvl__img--women@2x.jpg 2x" alt="Photo of Circul product for women">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Slippers
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--women@1x.jpg" srcset="img/low-lvl__img--women@1x.jpg 1x, img/low-lvl__img--women@2x.jpg 2x" alt="Photo of Circul product for women">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item low-lvl__item--sale">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Sale
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--sale@1x.jpg" srcset="img/low-lvl__img--sale@1x.jpg 1x, img/low-lvl__img--sale@2x.jpg 2x" alt="Photo of Circul product for men">
+                    </picture>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__content submenu__content--low submenu__content--men submenu__content--hidden">
+                <button class="submenu__back" type="button">
+                  <svg class="submenu__icon" width="6" height="12" viewbox="0 0 8 14">
+                    <use xlink:href="#back"></use>
+                  </svg>
+                  Back
+                </button>
+                <ul class="submenu__list submenu__list--lowLvl low-lvl">
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      All
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Shoes
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--men@1x.jpg" srcset="img/low-lvl__img--men@1x.jpg 1x, img/low-lvl__img--men@2x.jpg 2x" alt="Photo of Circul product for men">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Boots
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--women@1x.jpg" srcset="img/low-lvl__img--women@1x.jpg 1x, img/low-lvl__img--women@2x.jpg 2x" alt="Photo of Circul product for men">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Sneakers
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--men@1x.jpg" srcset="img/low-lvl__img--men@1x.jpg 1x, img/low-lvl__img--men@2x.jpg 2x" alt="Photo of Circul product for men">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Slippers
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--women@1x.jpg" srcset="img/low-lvl__img--women@1x.jpg 1x, img/low-lvl__img--women@2x.jpg 2x" alt="Photo of Circul product for men">
+                    </picture>
+                  </li>
+                  <li class="low-lvl__item low-lvl__item--sale">
+                    <a href="catalog.html" class="low-lvl__link">
+                      Sale
+                    </a>
+                    <picture>
+                      <img class="low-lvl__img" src="img/low-lvl__img--sale@1x.jpg" srcset="img/low-lvl__img--sale@1x.jpg 1x, img/low-lvl__img--sale@2x.jpg 2x" alt="Photo of Circul product for men">
+                    </picture>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__content submenu__content--low submenu__content--lang submenu__content--hidden">
+                <button class="submenu__back" type="button">
+                  <svg class="submenu__icon" width="6" height="12" viewbox="0 0 8 14">
+                    <use xlink:href="#back"></use>
+                  </svg>
+                  Back
+                </button>
+                <ul class="submenu__list submenu__list--lowLvl low-lvl">
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      English
+                    </a>
+                  </li>
+                  <li class="low-lvl__item">
+                    <a href="#" class="low-lvl__link">
+                      Russian
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__footer subfooter">
+                <ul class="subfooter__list">
+                  <li class="subfooter__item">
+                    <a href="#" class="subfooter__link submenu__link--trigger">
+                      English
+                    </a>
+                  </li>
+                  <li class="subfooter__item">
+                    <a href="#" class="subfooter__link" data-trigger="sign-in">
+                      Sign in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item nav__item--search nav__item--tablet-plus">
+            <a href="stores.html" class="nav__link nav__link--search">
+              Stores
+              <svg class="nav__icon nav__icon--search" width="14" height="14" viewbox="0 0 14 14">
+                <use xlink:href="#search"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item nav__item--tablet-plus nav__item--men nav__item--trigger">
+            <a class="nav__link nav__link--men">
+              Men
+            </a>
+          </li>
+          <li class="nav__item nav__item--tablet-plus nav__item--women nav__item--trigger">
+            <a class="nav__link nav__link--women">
+              Women
+            </a>
+          </li>
+          <li class="nav__item nav__item--about nav__item--tablet-plus">
+            <a href="about.html" class="nav__link">
+              About us
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__nav-shop nav-shop">
+        <ul class="nav-shop__list">
+          <li class="nav-shop__item nav-shop__item--whishlist">
+            <a class="nav-shop__link nav-shop__link--fav">
+              Whishlist
+              <span class="nav-shop__counter nav-shop__counter--wish">
+                (99)
+              </span>
+              <svg class="nav-shop__icon nav-shop__icon--fav" width="16" height="16" viewbox="0 0 497 470">
+                <use xlink:href="#fav"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="nav-shop__item nav-shop__item--bag">
+            <a class="nav-shop__link nav-shop__link--cart">
+              Bag
+              <span class="nav-shop__counter nav-shop__counter--bag">
+                (99)
+              </span>
+              <svg class="nav-shop__icon nav-shop__icon--cart" width="12" height="16" viewbox="0 0 12 16">
+                <use xlink:href="#cart"></use>
+              </svg>
+            </a>
+            <div class="bag">
+              <div class="container">
+                <button class="bag__close">
+                  Close side bag
+                </button>
+                <h2 class="bag__heading">
+                  shopping bag
+                  <span class="bag__counter">
+                    (1)
+                  </span>
+                </h2>
+                <ul class="bag__list">
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                  <li class="bag__item">
+                    <dl class="bag__details">
+                      <dt class="bag__name">
+                        Celebration derby
+                      </dt>
+                      <dd class="bag__price">
+                        <span class="bag__currency">
+                          &#8364;
+                        </span>
+                        151
+                      </dd>
+                    </dl>
+                    <div class="bag__wrapper">
+                      <p class="bag__key bag__key--quantity">
+                        Quantity:
+                        <button class="bag__decrement">
+                          Decrease quantity by 1
+                        </button>
+                        <span class="bag__value">
+                          1
+                        </span>
+                        <button class="bag__increment">
+                          Increase quantity by 1
+                        </button>
+                      </p>
+                      <p class="bag__key bag__key--size">
+                        Size:
+                        <span class="bag__value">
+                          1
+                        </span>
+                      </p>
+                      <button class="bag__remove">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="bag__frame">
+                      <picture>
+                        <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Photo of selected item to order" class="bag__img">
+                      </picture>
+                    </div>
+                  </li>
+                </ul>
+                <dl class="bag__subtotal">
+                  <dt class="bag__descriptor">
+                    Celebration derby
+                  </dt>
+                  <dd class="bag__sum">
+                    <span class="bag__currency">
+                      &#8364;
+                    </span>
+                    151
+                  </dd>
+                </dl>
+                <a href="#" class="bag__btn bag__btn--checkout">
+                  Proceed to checkout
+                </a>
+                <a href="#" class="bag__btn bag__btn--continue">
+                  Continue shopping
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-shop__item nav-shop__item--faq nav-shop__item--tablet-plus">
+            <a href="faq.html" class="nav-shop__link">
+              FAQ
+            </a>
+          </li>
+          <li class="nav-shop__item nav-shop__item--sign nav-shop__item--tablet-plus">
+            <a class="nav-shop__link" data-trigger="sign-in">
+              Sign in
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-container">
+      <section class="cabinet">
+        <div class="container">
+          <h1 class="visually-hidden">
+            User's account details and order history
+          </h1>
+          <input type="radio" class="cabinet__selector cabinet__selector--account" name="cabinet-selection" id="select-account" checked>
+          <label for="select-account">
+            Account
+          </label>
+          <input type="radio" class="cabinet__selector cabinet__selector--orders" name="cabinet-selection" id="select-orders">
+          <label for="select-orders">
+            Orders
+          </label>
+          <div class="cabinet__controls">
+            <a href="#" class="cabinet__back">
+              <svg class="cabinet__icon" viewbox="0 0 8 14">
+                <use xlink:href="#back"></use>
+              </svg>
+              Back to shopping
+            </a>
+            <button class="cabinet__logout" type="button">
+              Log out
+            </button>
+          </div>
+          <div class="cabinet__content cabinet__content--account">
+            <form action="#" class="cabinet__form">
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-name">
+                  Name
+                </label>
+                <input type="text" class="cabinet__input cabinet__input--name" value="Ryan" id="cabinet-name">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-family">
+                  Last name
+                </label>
+                <input type="text" class="cabinet__input cabinet__input--family" value="Gosling" id="cabinet-family">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-email">
+                  E-mail address
+                </label>
+                <input type="email" class="cabinet__input cabinet__input--email" value="lovelygosling@gmail.com" id="cabinet-email">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-phone">
+                  Phone number
+                </label>
+                <input type="email" class="cabinet__input cabinet__input--phone" value="+380987654564" id="cabinet-phone">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-country">
+                  Country
+                </label>
+                <input type="text" class="cabinet__input cabinet__input--country" value="USA" id="cabinet-country">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-city">
+                  City
+                </label>
+                <input type="text" class="cabinet__input cabinet__input--city" value="New York" id="cabinet-city">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-address">
+                  Address & postcode
+                </label>
+                <input type="text" class="cabinet__input cabinet__input--address" value="345 str app 45 18006" id="cabinet-address">
+              </fieldset>
+              <fieldset>
+                <label class="cabinet__label" for="cabinet-post">
+                  Post office number
+                </label>
+                <input type="text" class="cabinet__input cabinet__input--address" value="Nova poshta #56" id="cabinet-post">
+              </fieldset>
+              <div class="filter__block filter__block--gender cabinet__gender">
+                <details class="selection cabinet__dropdown">
+                  <summary class="selection__method cabinet__selection">
+                    Select your gender
+                  </summary>
+                  <ul class="selection__list cabinet__genders">
+                    <li class="selection__item selection__item--1 cabinet__gender-item">
+                      <input type="radio" class="selection__input selection__input--1 cabinet__choice" name="account-gender" id="gender-male" value="Male">
+                      <label for="gender-male">
+                        Male
+                      </label>
+                    </li>
+                    <li class="selection__item selection__item--1 cabinet__gender-item">
+                      <input type="radio" class="selection__input selection__input--1 cabinet__choice" name="account-gender" id="gender-female" value="Female">
+                      <label for="gender-female">
+                        Female
+                      </label>
+                    </li>
+                  </ul>
+              </div>
+              <button class="btn cabinet__update" type="submit">
+                Update
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer slide-up">
+    <div class="container">
+      <dl class="footer__list">
+        <dt class="footer__item footer__item--1">
+          Shop
+        </dt>
+        <dd class="footer__content">
+          <ul class="footer__submenu">
+            <li class="footer__subitem">
+              <a href="catalog.html" class="footer__link">
+                Man
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="catalog.html" class="footer__link">
+                Woman
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="about.html" class="footer__link">
+                About us
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="stores.html" class="footer__link">
+                Shops
+              </a>
+            </li>
+          </ul>
+        </dd>
+        <dt class="footer__item footer__item--2">
+          Customer services
+        </dt>
+        <dd class="footer__content">
+          <ul class="footer__submenu">
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Wishlist
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Sign in
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="faq.html" class="footer__link">
+                FAQ
+              </a>
+            </li>
+          </ul>
+        </dd>
+        <dt class="footer__item footer__item--3">
+          Social
+        </dt>
+        <dd class="footer__content">
+          <ul class="footer__submenu">
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Instagram
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Facebook
+              </a>
+            </li>
+            <li class="footer__subitem">
+              <a href="#" class="footer__link">
+                Telegram
+              </a>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="footer__credits">
+        <p class="footer__copyright">
+          © CIRCUL mark 2016
+          <span class="footer__origin">
+            Made in Ukraine
+          </span>
+        </p>
+        <p class="footer__designer">
+          Design Blablabla
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal__wrapper modal__wrapper--registration modal__wrapper--hidden" data-modal="sign-in">
+    <div class="modal__container">
+      <button class="modal__btn" type="button">
+        Close modal
+      </button>
+      <div class="modal__item modal__item--intro">
+        <h2 class="modal__title">
+          Sign in
+        </h2>
+        <p class="modal__descriptor">
+          Already have an account?
+        </p>
+        <!-- Remove .modal__selection--passive to switch button to active state-->
+        <a class="btn modal__selection modal__selection modal__selection--passive" data-link="modal__item--sign">
+          Login
+        </a>
+        <h2 class="modal__title">
+          Create account
+        </h2>
+        <p class="modal__descriptor">
+          By&nbsp;creating an&nbsp;account, you can go&nbsp;through the process of&nbsp;placing an&nbsp;order faster, store stop loss, take part in&nbsp;the loyalty program and much more
+        </p>
+        <a class="btn modal__selection modal__selection--passive" data-link="modal__item--create-step1">
+          Create account
+        </a>
+      </div>
+      <div class="modal__item modal__item--sign">
+        <div class="modal__content modal__content--sign">
+          <h2 class="modal__title">
+            Sign in
+          </h2>
+          <form action="#" class="modal__form modal__form--sign">
+            <input class="modal__input modal__input--email" type="email" placeholder="E-mail address">
+            <input class="modal__input modal__input--pass" type="password" placeholder="Password">
+            <a class="modal__forgotten" data-link="modal__item--forgotten">
+              Forgotten your password?
+            </a>
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <button class="btn modal__selection modal__selection modal__selection--passive" type="submit">
+              Login
+            </button>
+          </form>
+          <h3 class="modal__title">
+            Sign in with
+          </h3>
+          <ul class="modal__socials">
+            <li class="modal__social modal__social--instagram">
+              <a href="#" class="modal__social-reg">
+                Registration via Instagram account
+                <svg class="modal__icon" viewBox="0 0 33 32">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--twitter">
+              <a href="#" class="modal__social-reg">
+                Registration via Twitter account
+                <svg class="modal__icon" viewBox="0 0 35 28">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--facebook">
+              <a href="#" class="modal__social-reg">
+                Registration via Facebook account
+                <svg class="modal__icon" viewBox="0 0 36 32">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--google">
+              <a href="#" class="modal__social-reg">
+                Registration via Google account
+                <svg class="modal__icon" viewBox="0 0 31 32">
+                  <use xlink:href="#google"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="modal__content modal__content--create">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <p class="modal__descriptor">
+            By&nbsp;creating an&nbsp;account, you can go&nbsp;through the process of&nbsp;placing an&nbsp;order faster, store stop loss, take part in&nbsp;the loyalty program and much more
+          </p>
+          <a class="btn modal__selection modal__selection--passive" data-link="modal__item--create-step1">
+            Create account
+          </a>
+        </div>
+      </div>
+      <div class="modal__item modal__item--create-step1">
+        <div class="modal__content modal__content--info">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <form action="#" class="modal__form modal__form--create1">
+            <input class="modal__input modal__input--name" type="text" placeholder="First name">
+            <input class="modal__input modal__input--family" type="text" placeholder="Last name">
+            <input class="modal__input modal__input--email" type="email" placeholder="E-mail address">
+            <input class="modal__input modal__input--pass" type="password" placeholder="Password">
+            <input class="modal__input modal__input--pass" type="password" placeholder="Re-enter Password">
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <a class="btn modal__selection modal__selection modal__selection--passive" data-link="modal__item--create-step2">
+              Next step
+            </a>
+          </form>
+        </div>
+        <div class="modal__content modal__content--social">
+          <h3 class="modal__title">
+            Sign in with
+          </h3>
+          <ul class="modal__socials">
+            <li class="modal__social modal__social--instagram">
+              <a href="#" class="modal__social-reg">
+                Registration via Instagram account
+                <svg class="modal__icon" viewBox="0 0 33 32">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--twitter">
+              <a href="#" class="modal__social-reg">
+                Registration via Twitter account
+                <svg class="modal__icon" viewBox="0 0 35 28">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--facebook">
+              <a href="#" class="modal__social-reg">
+                Registration via Facebook account
+                <svg class="modal__icon" viewBox="0 0 36 32">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--google">
+              <a href="#" class="modal__social-reg">
+                Registration via Google account
+                <svg class="modal__icon" viewBox="0 0 31 32">
+                  <use xlink:href="#google"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal__item modal__item--create-step2">
+        <div class="modal__content modal__content--info">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <form action="#" class="modal__form modal__form--create1">
+            <input class="modal__input modal__input--phone" type="tel" placeholder="Phone number">
+            <input class="modal__input modal__input--country" type="text" placeholder="Country">
+            <input class="modal__input modal__input--city" type="text" placeholder="City">
+            <input class="modal__input modal__input--address" type="text" placeholder="Address & postcode">
+            <input class="modal__input modal__input--office" type="text" placeholder="Post office number">
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <button class="btn modal__selection modal__selection modal__selection--passive" type="submit">
+              Create account
+            </button>
+          </form>
+        </div>
+        <div class="modal__content modal__content--social">
+          <h3 class="modal__title">
+            Contact us
+          </h3>
+          <ul class="modal__socials">
+            <li class="modal__social modal__social--instagram">
+              <a href="#" class="modal__social-reg">
+                Visit our Instagram
+                <svg class="modal__icon" viewBox="0 0 33 32">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--twitter">
+              <a href="#" class="modal__social-reg">
+                Visit our Telegram
+                <svg class="modal__icon" viewBox="0 0 37 29">
+                  <use xlink:href="#telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="modal__social modal__social--facebook">
+              <a href="#" class="modal__social-reg">
+                Visito our Facebook
+                <svg class="modal__icon" viewBox="0 0 36 32">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal__item modal__item--forgotten">
+        <div class="modal__content modal__content--reset">
+          <h2 class="modal__title">
+            Password reset
+          </h2>
+          <p class="modal__hint">
+            Please submit your email address to receive a password reset link
+          </p>
+          <form action="#" class="modal__form modal__form--sign">
+            <input class="modal__input modal__input--email" type="email" placeholder="E-mail address">
+            <!-- Remove .modal__selection--passive to switch button to active state-->
+            <button class="btn modal__selection modal__selection modal__selection--passive" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="modal__content modal__content--create">
+          <h2 class="modal__title">
+            Create account
+          </h2>
+          <p class="modal__descriptor">
+            By&nbsp;creating an&nbsp;account, you can go&nbsp;through the process of&nbsp;placing an&nbsp;order faster, store stop loss, take part in&nbsp;the loyalty program and much more
+          </p>
+          <a class="btn modal__selection modal__selection--passive" data-link="modal__item--create-step1">
+            Create account
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/menu-operation.js" defer></script>
+  <script src="js/accordeon-footer-mobile.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/selection.js" defer></script>
+</body>
+
+</html>

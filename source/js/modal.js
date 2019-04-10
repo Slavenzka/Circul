@@ -152,7 +152,6 @@
 
       function hideAll (exceptionClassName) {
         // Access to next pannels of modal is performed via data attributes of .modal__selection elements. These attributes contain the specific class name of the pannel to be revealed on click. This function hides all modal pannels except the one which contains the parameter class.
-        console.log(exceptionClassName);
         items.forEach(item => {
           if (item.className.indexOf(exceptionClassName) < 0) {
             item.style = 'display: none';
@@ -189,6 +188,8 @@
     }
   }
 
-  operateModal.size();
+  if (document.querySelector('.options__content--size')) {
+    operateModal.size();
+  }
   operateModal.sign();
 })();
