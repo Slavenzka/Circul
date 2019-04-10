@@ -1,0 +1,280 @@
+.cabinet {
+  position: relative;
+  font-size: 1rem;
+}
+
+.cabinet > .container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding-top: 2.4em;
+  padding-bottom: 3.6em;
+}
+
+.cabinet__selector {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  background-color: transparent;
+  opacity: 0;
+  border: none;
+  pointer-events: none;
+}
+
+.cabinet__selector + label {
+  font-size: 3.2em;
+  font-weight: 300;
+  line-height: calc(46 / 32);
+  color: $color__social;
+  text-transform: uppercase;
+}
+
+.cabinet__selector:checked + label {
+  color: $color__black;
+}
+
+.cabinet__selector--orders + label {
+  text-align: right;
+}
+
+.cabinet__controls {
+  grid-column: 1 / 3;
+  display: flex;
+  align-items: center;
+  margin-top: 3.2em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid $color__underline;
+}
+
+.cabinet__back,
+.cabinet__logout {
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: normal;
+  color: $color__placeholder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cabinet__back {
+  display: flex;
+  align-items: center;
+}
+
+.cabinet__icon {
+  margin-right: 1.2rem;
+  fill: none;
+  stroke: $color__placeholder;
+}
+
+.cabinet__logout {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.cabinet__content {
+  display: none;
+}
+
+.cabinet__selector--account:checked ~ .cabinet__content--account,
+.cabinet__selector--orders:checked ~ .cabinet__content--orders {
+  grid-column: 1 / 3;
+  display: block;
+}
+
+.cabinet__content--account {
+  padding-top: 3.6em;
+}
+
+.cabinet__form fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.cabinet__form fieldset:not(:first-of-type) {
+  margin-top: 1.6rem;
+}
+
+.cabinet__label {
+  display: inline-block;
+  padding-left: 2rem;
+  font-size: 1.2em;
+  font-weight: 100;
+  line-height: normal;
+  color: $color__placeholder;
+  text-transform: uppercase;
+}
+
+.cabinet__input {
+  display: block;
+  margin-top: 0.8rem;
+  padding: 1.1rem 2rem 1rem 2rem;
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: 100;
+  line-height: normal;
+  text-transform: uppercase;
+  border: 1px solid $color__placeholder;
+}
+
+.cabinet__gender {
+  position: relative;
+  margin-top: 3.9em;
+
+  &::before {
+    content: "Gender";
+    position: absolute;
+    top: -2.2rem;
+    left: 2rem;
+    font-size: 1.2em;
+    font-weight: 100;
+    line-height: normal;
+    color: $color__placeholder;
+    text-transform: uppercase;
+  }
+}
+
+.cabinet__genders {
+  position: static;
+}
+
+.cabinet__update {
+  margin-top: 1.6rem;
+  padding: 1.1rem 15% 1rem 15%;
+  color: $color__lightest;
+  background-color: $color__social;
+  transition-duration: 0.3s;
+}
+
+.cabinet__update:hover {
+  background-color: $color__filter-active;
+}
+
+@media (min-width: $width__tablet) {
+  .cabinet > .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 8em;
+    padding-top: 5.6em;
+    padding-bottom: 29.6em;
+  }
+
+  .cabinet__selector + label {
+    font-size: 4em;
+    line-height: normal;
+  }
+
+  .cabinet__selector--account + label {
+    text-align: right;
+  }
+
+  .cabinet__selector--orders + label {
+    text-align: left;
+  }
+
+  .cabinet__controls {
+    margin-top: 5.6em;
+    padding-bottom: 3.6em;
+  }
+
+  .cabinet__back,
+  .cabinet__logout {
+    font-size: 1.8em;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+
+  .cabinet__icon {
+    margin-right: 1.6rem;
+    width: 0.9rem;
+    height: 1.4rem;
+  }
+
+  .cabinet__content--account {
+    padding: 9.2em 0 0 0;
+  }
+
+  .cabinet__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 11.2em;
+    grid-row-gap: 3.2em;
+  }
+
+  .cabinet__form fieldset:not(:first-of-type) {
+    margin-top: 0;
+  }
+
+  .cabinet__label {
+    padding-left: 2.8rem;
+    font-size: 1.8em;
+    font-weight: 300;
+  }
+
+  .cabinet__input {
+    padding: 1.6rem 2.8rem 1.8rem 2.8rem;
+    font-size: 1.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .cabinet__selection,
+  .cabinet__choice + label {
+    padding: 1.6rem 2.8rem 1.8rem 2.8rem;
+    font-size: 1.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .cabinet__gender {
+    grid-column: 2 / 3;
+    margin-top: 3.1rem;
+    width: auto;
+
+    &::before {
+      content: "Gender";
+      position: absolute;
+      top: -3rem;
+      left: 2.8rem;
+      font-size: 1.8em;
+      font-weight: 300;
+    }
+  }
+
+  .cabinet__genders {
+    width: 100%;
+  }
+
+  .cabinet__update {
+    grid-column: 2 / 3;
+    margin: 0;
+    padding: 1.7rem 15%;
+    font-size: 1.8em;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .cabinet__form {
+    grid-template-columns: repeat(auto-fit, minmax(364px, 1fr));
+  }
+
+  .cabinet__gender {
+    grid-column: -2 / -1;
+  }
+
+  .cabinet__update {
+    grid-column: -2 / -1;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .cabinet__content--account {
+    padding: 9.2em 100% * 250 / 1828 0 100% * 250 / 1828;
+  }
+}
