@@ -7,7 +7,6 @@
   display: grid;
   grid-template-columns: repeat(2, 50%);
   padding-top: 2.4em;
-  padding-bottom: 3.6em;
 }
 
 .cabinet__selector {
@@ -87,6 +86,7 @@
 
 .cabinet__content--account {
   padding-top: 3.6em;
+  padding-bottom: 3.6em;
 }
 
 .cabinet__form fieldset {
@@ -159,7 +159,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 8em;
     padding-top: 5.6em;
-    padding-bottom: 29.6em;
   }
 
   .cabinet__selector + label {
@@ -194,7 +193,7 @@
   }
 
   .cabinet__content--account {
-    padding: 9.2em 0 0 0;
+    padding: 9.2em 0 29.6em 0;
   }
 
   .cabinet__form {
@@ -270,11 +269,13 @@
 
   .cabinet__update {
     grid-column: -2 / -1;
+    align-self: end;
+    cursor: pointer;
   }
 }
 
 @media (min-width: $width__desktop) {
   .cabinet__content--account {
-    padding: 9.2em 100% * 250 / 1828 0 100% * 250 / 1828;
+    padding: 9.2em 100% * 250 / 1828 29.6rem 100% * 250 / 1828;
   }
 }
