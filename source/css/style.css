@@ -5684,6 +5684,10 @@ span.bag__value {
 .whishlist--empty .whishlist__list {
   display: none; }
 
+.whishlist--empty .whishlist__no-items {
+  display: block;
+  padding-bottom: 9.6rem; }
+
 .whishlist > .container {
   padding-top: 2.4rem; }
 
@@ -5708,7 +5712,7 @@ span.bag__value {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 3.2rem;
-  width: 14rem;
+  width: 18rem;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.4rem;
@@ -5730,6 +5734,121 @@ span.bag__value {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: -0.35px; }
+
+.whishlist__list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.whishlist__frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 4.4rem;
+  width: 100%;
+  height: 38.4rem;
+  background-color: #eaeaea; }
+
+.whishlist__img {
+  margin-bottom: 2.4rem;
+  width: 34.3rem; }
+
+.whishlist__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  margin-top: 2.4rem;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: normal;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.whishlist__buttons {
+  margin-top: 2.4rem; }
+
+.whishlist__add {
+  cursor: pointer; }
+
+.whishlist__cancel {
+  display: none;
+  cursor: pointer; }
+
+@media (min-width: 768px) {
+  .whishlist--empty .whishlist__no-items {
+    padding-bottom: 29rem; }
+  .whishlist--empty .whishlist__options {
+    display: block; }
+  .whishlist__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5%; }
+  .whishlist__cancel {
+    margin-top: 1.5rem;
+    display: block;
+    background-color: #bebebe; } }
+
+@media (min-width: 1260px) {
+  .whishlist > .container {
+    padding-top: 5.6rem; }
+  .whishlist__heading {
+    font-size: 4rem;
+    line-height: normal;
+    letter-spacing: 2px; }
+  .whishlist__back {
+    margin-top: 5.6rem;
+    width: 20rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: normal; }
+  .whishlist__list {
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+    padding-top: 6.4rem;
+    padding-bottom: 12.6rem; }
+  .whishlist__frame {
+    margin: 0;
+    width: 100%;
+    height: 39.7rem;
+    font-size: 0; }
+  .whishlist__img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .whishlist__description {
+    margin-top: 1.4rem;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px; }
+  .whishlist__add,
+  .whishlist__cancel {
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s; }
+  .whishlist__add:hover,
+  .whishlist__cancel:hover {
+    opacity: 0.7; }
+  .whishlist__cancel:hover {
+    color: black; } }
+
+@media (min-width: 1920px) {
+  .whishlist__list {
+    grid-template-columns: repeat(3, 58rem);
+    grid-column-gap: 4.4rem; } }
 
 .cabinet {
   position: relative;
@@ -5960,7 +6079,6 @@ span.bag__value {
   padding-bottom: 9.4rem; }
 
 .orders__message {
-  display: none;
   margin: 0;
   margin-top: 3.6rem;
   font-size: 1.4rem;
@@ -5970,10 +6088,16 @@ span.bag__value {
   text-align: center;
   text-transform: uppercase; }
 
-.orders-empty .orders__message {
-  display: block; }
+.orders-empty .orders__list {
+  display: none; }
 
 .orders__no-orders {
+  display: none; }
+
+.orders-empty .orders__no-orders {
+  display: block; }
+
+.orders__options {
   display: none; }
 
 .orders__list {
@@ -6002,7 +6126,7 @@ span.bag__value {
   -o-object-fit: cover;
      object-fit: cover; }
 
-.orders__info {
+.orders__data {
   margin-top: 1.6rem;
   width: 100%;
   border-collapse: collapse; }
@@ -6079,8 +6203,11 @@ span.bag__value {
     margin-top: 9.2rem; }
   .orders__options {
     margin-top: 3rem; }
-  .orders-empty .orders__no-orders {
+  .orders-empty .orders__no-orders,
+  .orders-empty .orders__options {
     display: block; }
+  .orders-empty .orders__list {
+    display: none; }
   .orders__item {
     display: grid;
     grid-template-columns: 34.3rem 40%;
@@ -6091,7 +6218,7 @@ span.bag__value {
   .orders__frame {
     grid-column: 1 / 2;
     grid-row: 1 / -1; }
-  .orders__info {
+  .orders__data {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     margin: 0; }

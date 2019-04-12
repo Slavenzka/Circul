@@ -2,6 +2,11 @@
   display: none;
 }
 
+.whishlist--empty .whishlist__no-items {
+  display: block;
+  padding-bottom: 9.6rem;
+}
+
 .whishlist > .container {
   padding-top: 2.4rem;
 }
@@ -25,7 +30,7 @@
   display: flex;
   align-items: center;
   margin-top: 3.2rem;
-  width: 14rem;
+  width: 18rem;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.4rem;
@@ -49,4 +54,146 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: -0.35px;
+}
+
+.whishlist__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.whishlist__frame {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 4.4rem;
+  width: 100%;
+  height: 38.4rem;
+  background-color: $color__products-bg;
+}
+
+.whishlist__img {
+  margin-bottom: 2.4rem;
+  width: 34.3rem;
+}
+
+.whishlist__description {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-top: 2.4rem;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: normal;
+  color: $color__black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.whishlist__buttons {
+  margin-top: 2.4rem;
+}
+
+.whishlist__add {
+  cursor: pointer;
+}
+
+.whishlist__cancel {
+  display: none;
+  cursor: pointer;
+}
+
+@media (min-width: $width__tablet) {
+  .whishlist--empty {
+    .whishlist__no-items {
+      padding-bottom: 29rem;
+    }
+
+    .whishlist__options {
+      display: block;
+    }
+  }
+
+  .whishlist__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5%;
+  }
+
+  .whishlist__cancel {
+    margin-top: 1.5rem;
+    display: block;
+    background-color: $color__social;
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .whishlist > .container {
+    padding-top: 5.6rem;
+  }
+
+  .whishlist__heading {
+    font-size: 4rem;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
+
+  .whishlist__back {
+    margin-top: 5.6rem;
+    width: 20rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .whishlist__list {
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 4rem;
+    padding-top: 6.4rem;
+    padding-bottom: 12.6rem;
+  }
+
+  .whishlist__frame {
+    margin: 0;
+    width: 100%;
+    height: 39.7rem;
+    font-size: 0;
+  }
+
+  .whishlist__img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .whishlist__description {
+    margin-top: 1.4rem;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .whishlist__add,
+  .whishlist__cancel {
+    transition-duration: 0.3s;
+  }
+
+  .whishlist__add:hover,
+  .whishlist__cancel:hover {
+    opacity: 0.7;
+  }
+
+  .whishlist__cancel:hover {
+    color: $color__black;
+  }
+}
+
+@media (min-width: $width__desktop) {
+  .whishlist__list {
+    grid-template-columns: repeat(3, 58rem);
+    grid-column-gap: 4.4rem;
+  }
 }
