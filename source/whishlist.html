@@ -614,24 +614,91 @@
 
   <main>
     <div class="main-container">
-      <section class="whishlist whishlist--empty">
+      <!-- .whishlist--empty class switches on "empty wishlist" page mode -->
+      <section class="whishlist">
         <div class="container">
           <div class="whishlist__wrapper">
             <h1 class="whishlist__heading">
               My whishlist
             </h1>
             <a href="#" class="whishlist__back">
-              <svg class="whishlist__icon cart__icon" viewbox="0 0 8 14">
+              <svg class="cart__icon whishlist__icon" viewbox="0 0 8 14">
                 <use xlink:href="#back"></use>
               </svg>
               Back to shopping
             </a>
           </div>
-          <p class="whishlist__empty">
-            There are currently no items in your whishlist
-          </p>
+          <div class="orders__no-orders whishlist__no-items">
+            <p class="orders__message">
+              There are currently no items in your whishlist
+            </p>
+            <div class="success__info orders__info">
+              <a href="#" class="btn cart__btn cart__btn--continue success__btn orders__continue">
+                Go shopping
+              </a>
+              <ul class="cart__payment payment orders__payment">
+                <li class="payment__item">
+                  <svg class="payment__icon" viewBox="0 0 104 62">
+                    <use xlink:href="#master"></use>
+                  </svg>
+                </li>
+                <li class="payment__item">
+                  <svg class="payment__icon" viewBox="0 0 104 62">
+                    <use xlink:href="#visa"></use>
+                  </svg>
+                </li>
+                <li class="payment__item">
+                  <svg class="payment__icon" viewBox="0 0 104 62">
+                    <use xlink:href="#paypal"></use>
+                  </svg>
+                </li>
+              </ul>
+              <div class="info__options options orders__options whishlist__options">
+                <input type="checkbox" class="options__trigger options__trigger--payment orders__trigger" id="payment" name="options">
+                <label for="payment">
+                  Delivery & payment
+                </label>
+                <div class="options__content options__content--payment orders__details">
+                  <dl class="options__payment">
+                    <dt class="options__type">
+                      Credit card:
+                    </dt>
+                    <dd class="options__descriptor">
+                      You can pay via your visa/mastercard online right after making order.
+                    </dd>
+                    <dt class="options__type">
+                      Paypal:
+                    </dt>
+                    <dd class="options__descriptor">
+                      You can use your paypal account to pay for your online order too.
+                    </dd>
+                  </dl>
+                </div>
+                <input type="checkbox" class="options__trigger options__trigger--guarantee cart__trigger" id="guarantee" name="options">
+                <label for="guarantee">
+                  Guarantees & returns
+                </label>
+                <div class="options__content options__content--guarantee cart__details">
+                  <p class="options__descriptor options__descriptor--guarantee">
+                    Complimentary ground shipping and returns.
+                  </p>
+                  <p class="options__descriptor options__descriptor--guarantee">
+                    Complimentary express shipping with orders over $500.
+                  </p>
+                  <p class="options__descriptor options__descriptor--guarantee">
+                    Overnight and same day delivery (Manhattan only for same day): $35.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <ul class="whishlist__list">
             <li class="whishlist__item">
+              <div class="whishlist__frame">
+                <picture>
+                  <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Image of item in your cart" class="whishlist__img">
+                </picture>
+              </div>
               <dl class="whishlist__description">
                 <dt class="whishlist__name">
                   Celebration derby
@@ -643,16 +710,89 @@
                   151
                 </dd>
               </dl>
+              <div class="whishlist__buttons">
+                <button class="btn whishlist__add" type="button">
+                  Add to bag
+                </button>
+                <button class="btn whishlist__cancel" type="button">
+                  Cancel wish
+                </button>
+              </div>
+            </li>
+            <li class="whishlist__item">
               <div class="whishlist__frame">
                 <picture>
                   <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Image of item in your cart" class="whishlist__img">
                 </picture>
               </div>
+              <dl class="whishlist__description">
+                <dt class="whishlist__name">
+                  Celebration derby
+                </dt>
+                <dd class="whishlist__price">
+                  <span class="currency whishlist__currency">
+                    &#8364;
+                  </span>
+                  151
+                </dd>
+              </dl>
               <div class="whishlist__buttons">
-                <button class="whishlist__add btn" type="button">
+                <button class="btn whishlist__add" type="button">
                   Add to bag
                 </button>
-                <button class="whishlist__cancel btn" type="button">
+                <button class="btn whishlist__cancel" type="button">
+                  Cancel wish
+                </button>
+              </div>
+            </li>
+            <li class="whishlist__item">
+              <div class="whishlist__frame">
+                <picture>
+                  <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Image of item in your cart" class="whishlist__img">
+                </picture>
+              </div>
+              <dl class="whishlist__description">
+                <dt class="whishlist__name">
+                  Celebration derby
+                </dt>
+                <dd class="whishlist__price">
+                  <span class="currency whishlist__currency">
+                    &#8364;
+                  </span>
+                  151
+                </dd>
+              </dl>
+              <div class="whishlist__buttons">
+                <button class="btn whishlist__add" type="button">
+                  Add to bag
+                </button>
+                <button class="btn whishlist__cancel" type="button">
+                  Cancel wish
+                </button>
+              </div>
+            </li>
+            <li class="whishlist__item">
+              <div class="whishlist__frame">
+                <picture>
+                  <img src="img/catalog__item--1@1x.png" srcset="img/catalog__item--1@1x.png 1x, img/catalog__item--1@2x.png 2x" alt="Image of item in your cart" class="whishlist__img">
+                </picture>
+              </div>
+              <dl class="whishlist__description">
+                <dt class="whishlist__name">
+                  Celebration derby
+                </dt>
+                <dd class="whishlist__price">
+                  <span class="currency whishlist__currency">
+                    &#8364;
+                  </span>
+                  151
+                </dd>
+              </dl>
+              <div class="whishlist__buttons">
+                <button class="btn whishlist__add" type="button">
+                  Add to bag
+                </button>
+                <button class="btn whishlist__cancel" type="button">
                   Cancel wish
                 </button>
               </div>
