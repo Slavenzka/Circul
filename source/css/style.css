@@ -2248,6 +2248,10 @@ span.bag__value {
   color: #a2a2a2;
   text-transform: uppercase; }
 
+.smm__email::-moz-placeholder {
+  color: #a2a2a2;
+  text-transform: uppercase; }
+
 .smm__email:-ms-input-placeholder {
   color: #a2a2a2;
   text-transform: uppercase; }
@@ -4916,6 +4920,11 @@ span.bag__value {
     letter-spacing: 1px; }
   .checkout__input,
   .checkout__input::-webkit-input-placeholder {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.2rem; }
+  .checkout__input,
+  .checkout__input::-moz-placeholder {
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 2.2rem; }
