@@ -127,7 +127,7 @@
     pointer-events: none; } }
 
 html {
-  --projectScale: 0.7;
+  --projectScale: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: scroll;
@@ -3812,8 +3812,8 @@ span.bag__value {
 
 .faq__list {
   display: grid;
-  grid-template-rows: calc(100vh - 5rem);
-  grid-auto-rows: 23.2rem;
+  grid-template-rows: calc(100vw * 444 / 375);
+  grid-auto-rows: 100vw;
   grid-row-gap: 0.8rem;
   margin: 0;
   padding: 0;
@@ -3895,28 +3895,39 @@ span.bag__value {
   height: 100%; }
 
 .faq__topic {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
   margin: 0;
-  padding: 1rem;
-  width: 9.8rem;
-  min-height: 3.6rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.1rem;
+  padding: 0;
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: normal;
   color: black;
   text-transform: uppercase;
-  text-align: center;
-  vertical-align: center;
-  letter-spacing: 1px;
-  background-color: white; }
+  text-align: center; }
+  .faq__topic::after {
+    content: "discover";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+    width: 9.8rem;
+    min-height: 3.6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid white; }
+
+.faq__topic--light {
+  color: white; }
 
 .faq__annex {
   display: none; }
@@ -4031,6 +4042,8 @@ span.bag__value {
     color: black;
     letter-spacing: 2px;
     background-color: transparent; }
+    .faq__topic::after {
+      display: none; }
   .faq__annex {
     display: inline; } }
 
