@@ -64,13 +64,17 @@
   align-items: flex-end;
   height: 38.4em;
   background-color: $color__products-bg;
+  overflow: hidden;
 }
 
 .catalog__img {
   display: block;
   margin: 0 auto;
   margin-bottom: 2.4em;
-  width: 100% * 343 / 375;
+  width: 100%;
+  height: 38.4em;
+  object-fit: contain;
+  object-position: center;
 }
 
 .catalog__info {
@@ -139,6 +143,7 @@
   .catalog__img {
     margin-bottom: 0;
     width: 100%;
+    height: 23.4em;
   }
 
   .catalog__info {
@@ -175,6 +180,10 @@
   }
 
   .catalog__frame {
+    height: 39.7em;
+  }
+
+  .catalog__img {
     height: 39.7em;
   }
 
