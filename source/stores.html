@@ -55,6 +55,10 @@
 
 <body>
   <svg style="display: none">
+    <symbol id="locations">
+      <path d="M0.375 5.70123C0.375 3.99694 1.00739 2.67548 2.00962 1.77668C3.0168 0.873432 4.42294 0.375 5.99956 0.375C7.57652 0.375 8.98289 0.873443 9.99021 1.7767C10.9926 2.6755 11.625 3.99695 11.625 5.70123C11.625 6.51536 11.3018 7.4846 10.7767 8.51144C10.2552 9.53121 9.55301 10.5724 8.83645 11.5211C8.12086 12.4685 7.39666 13.3161 6.8351 13.9487C6.55446 14.2649 6.31487 14.5269 6.13699 14.7211L6.11893 14.7409C6.07534 14.7885 6.03536 14.8321 5.99957 14.8714C5.96385 14.8322 5.92395 14.7886 5.88046 14.7411L5.86219 14.7212C5.68433 14.5269 5.44478 14.2649 5.16417 13.9488C4.6027 13.3161 3.87861 12.4685 3.16313 11.5211C2.44667 10.5724 1.74464 9.53124 1.22318 8.51146C0.698119 7.48463 0.375 6.51537 0.375 5.70123ZM6.21318 15.1166L6.21204 15.115L6.21318 15.1166Z" stroke="#ACACAC" stroke-width="0.75"/>
+      <circle cx="6" cy="6" r="1.75" stroke="#ACACAC" stroke-width="0.5"/>
+    </symbol>
     <symbol id="search">
       <path d="M13.7846 12.9231L10.0154 9.15385C10.7692 8.18462 11.2 7 11.2 5.6C11.2 2.47692 8.72308 0 5.6 0C2.47692 0 0 2.47692 0 5.6C0 8.72308 2.47692 11.2 5.6 11.2C6.89231 11.2 8.18462 10.7692 9.15385 9.90769L13.0308 13.7846L13.7846 12.9231ZM5.6 1.18462C8.07692 1.18462 10.0154 3.12308 10.0154 5.6C10.0154 8.07692 8.07692 10.0154 5.6 10.0154C3.12308 10.0154 1.18462 8.07692 1.18462 5.6C1.18462 3.12308 3.12308 1.18462 5.6 1.18462ZM12.9231 13.7846L13.7846 12.9231L12.9231 13.7846Z"/>
     </symbol>
@@ -303,8 +307,8 @@
           <li class="nav__item nav__item--search nav__item--tablet-plus">
             <a class="nav__link nav__link--search link--opened">
               Stores
-              <svg class="nav__icon nav__icon--search" width="14" height="14" viewbox="0 0 14 14">
-                <use xlink:href="#search"></use>
+              <svg class="nav__icon nav__icon--search" width="12" height="16" viewbox="0 0 12 16">
+                <use xlink:href="#locations"></use>
               </svg>
             </a>
           </li>
@@ -664,11 +668,6 @@
               </dl>
             </li>
           </ul>
-          <div class="stores__frame">
-            <picture>
-              <img class="stores__img" src="img/stores__img@1x.jpg" alt="Photo of Circul shoes">
-            </picture>
-          </div>
           <div class="stores__frame stores__frame--map stores__frame--ukr stores__frame--active">
             <iframe class="stores__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1270.6457613070856!2d30.51186116190187!3d50.43567039478281!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cefc9689e48f%3A0x7cfc923f7ee72990!2z0YPQuy4g0KHQsNC60YHQsNCz0LDQvdGB0LrQvtCz0L4sIDM3LCDQmtC40LXQsiwg0KPQutGA0LDQuNC90LAsIDAyMDAw!5e0!3m2!1sru!2sru!4v1552643684308" allowfullscreen></iframe>
           </div>

@@ -121,7 +121,7 @@
 
   .catalog__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 34.3em);
+    grid-template-columns: repeat(auto-fit, 30%);
     justify-content: space-around;
     grid-gap: 2.4em;
   }
@@ -157,7 +157,7 @@
 
   .catalog__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 58em);
+    grid-template-columns: repeat(auto-fit, 31.7%);
     grid-gap: 4.4em 1em;
     justify-content: space-around;
   }

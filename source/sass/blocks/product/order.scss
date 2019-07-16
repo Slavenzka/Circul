@@ -1,48 +1,93 @@
 .order__size {
   position: relative;
-  margin-top: 24px;
+  margin-top: 2.4rem;
   font-size: 0;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    right: 16px;
-    width: 8px;
-    height: 14px;
-    background-image: url("../img/arrow.svg");
-    background-size: cover;
-    transform: rotate(-90deg);
-    z-index: 2;
-    pointer-events: none;
-  }
 }
 
 .order__select {
-  position: relative;
-  padding: 14px 30px 13px 12px;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 17px;
-  color: $color__placeholder;
-  letter-spacing: 1px;
-  background-color: $color__products-bg;
-  border: 1px solid $color__placeholder;
-  outline: none;
-  appearance: none;
+  summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 4.2rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    color: $color__placeholder;
+    letter-spacing: 1px;
+    background-color: $color__products-bg;
+    outline: none;
+    appearance: none;
+
+    &::before {
+      background-color: $color__icons;
+    }
+
+    &::after {
+      background-color: $color__icons;
+    }
+  }
+
+  .order__selection {
+    background-color: $color__filter-bg--notebook;
+    border: 1px solid $color__placeholder;
+  }
+
+  .order__selection.selection__method--selected {
+    color: $color__black;
+  }
+
+  .order__list {
+    padding-top: 0;
+  }
+
+  .order__list li {
+    margin: 0;
+    height: 4.2rem;
+    border-right: 1px solid $color__placeholder;
+    border-bottom: 1px solid $color__placeholder;
+    border-left: 1px solid $color__placeholder;
+
+    label {
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 100%;
+      background-color: $color__lightest;
+    }
+
+    label:hover {
+      background-color: $color__filter-bg--notebook;
+    }
+  }
+
+  .order__list > li > label {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+    color: $color__placeholder;
+    letter-spacing: 1px;
+  }
 }
 
-.order__select:focus {
-  background-color: white;
+.order__select[open] > summary.order__selection {
+  color: $color__black;
+  background-color: $color__lightest;
+
+  &::after {
+    background-color: $color__black;
+  }
 }
 
 .order__link {
   display: none;
-  margin-left: 48px;
-  font-size: 18px;
+  margin-left: 4.8rem;
+  font-size: 1.8rem;
   font-weight: 500;
-  line-height: 22px;
+  line-height: 2.2rem;
   color: $color__black;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -50,7 +95,8 @@
 }
 
 .order__btn {
-  margin-top: 24px;
+  margin-top: 2.4rem;
+  padding: 1.7rem;
 }
 
 .order__btn--passive {
@@ -73,8 +119,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   font-size: 0;
   background-color: transparent;
   cursor: pointer;
@@ -104,41 +150,77 @@
   pointer-events: none;
 }
 
-@media (min-width: $width__notebook) {
+@media (min-width: $width__tablet) {
   .order__size {
-    margin-top: 74px;
+    margin-top: 4rem;
 
     &::before {
-      content: "";
+      content: "size:";
       position: absolute;
-      top: 22px;
-      left: 180px;
-      width: 8px;
-      height: 14px;
-      background-image: url("../img/arrow.svg");
-      background-size: cover;
-      transform: rotate(-90deg);
-      z-index: 2;
-      pointer-events: none;
+      top: -2.2rem;
+      left: 0;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.2rem;
+      color: #a2a2a2;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (min-width: $width__notebook) {
+  .order__size {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 7.4rem;
+
+    &::before {
+      content: "size:";
+      position: absolute;
+      top: -3.8rem;
+      left: 0;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 2.2rem;
+      color: #a2a2a2;
+      text-transform: uppercase;
     }
   }
 
   .order__select {
     position: relative;
-    padding: 16px 16px 18px 16px;
-    width: 200px;
-    font-size: 18px;
+    width: 20rem;
+  }
+
+  .order__select summary {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 5.4rem;
+    width: 20rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    line-height: 22px;
+    line-height: 2.2rem;
     color: $color__placeholder;
     letter-spacing: 1px;
-    border: 1px solid $color__placeholder;
     outline: none;
     appearance: none;
+    box-sizing: border-box;
+  }
+
+  .order__select .order__list > li > label {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    color: $color__placeholder;
+    letter-spacing: 1px;
   }
 
   .order__link {
     display: inline-block;
+    margin-top: 1.7rem;
   }
 
   .order__buttons {
@@ -149,12 +231,12 @@
   }
 
   .order__btn {
-    margin-top: 48px;
+    margin-top: 4.8rem;
     width: 80%;
-    padding: 16px 30px 18px 30px;
-    font-size: 18px;
+    padding: 1.7rem 3rem 1.9rem 3rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    line-height: 22px;
+    line-height: 2.2rem;
     letter-spacing: 1px;
     transition-duration: 0.3s;
     cursor: pointer;
@@ -162,8 +244,9 @@
 
   .order__like {
     position: static;
-    width: 56px;
-    height: 56px;
+    margin-top: auto;
+    width: 5.6rem;
+    height: 5.6rem;
     border: 1px solid $color__placeholder;
   }
 

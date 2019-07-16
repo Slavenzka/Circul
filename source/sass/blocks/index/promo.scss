@@ -6,7 +6,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  height: calc(100vh - 5em);
+  height: calc(100vw * 444 / 375);
   list-style: none;
 }
 
@@ -59,6 +59,10 @@
 }
 
 @media (min-width: $width__tablet) {
+  .promo__list {
+    height: calc(100vh - 5em);
+  }
+
   .promo__slogan {
     --promo-font-size-em: 8;
     width: calc(76.8em / var(--promo-font-size-em));

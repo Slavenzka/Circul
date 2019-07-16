@@ -1,6 +1,6 @@
 .options {
   position: relative;
-  margin-top: 22px;
+  margin-top: 2.2rem;
 }
 
 .options__trigger {
@@ -18,10 +18,10 @@
 .options__trigger + label {
   position: relative;
   display: block;
-  padding: 12px 0;
-  font-size: 12px;
+  padding: 1.2rem 0;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__placeholder;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -30,9 +30,9 @@
   &::before {
     content: "";
     position: absolute;
-    top: 18px;
-    right: 17px;
-    width: 13px;
+    top: 1.8rem;
+    right: 1.7rem;
+    width: 1.3rem;
     height: 1px;
     background-color: $color__placeholder;
     transition-duration: 0.3s;
@@ -42,10 +42,10 @@
   &::after {
     content: "";
     position: absolute;
-    top: 12px;
-    right: 23px;
+    top: 1.2rem;
+    right: 2.3rem;
     width: 1px;
-    height: 13px;
+    height: 1.3rem;
     background-color: $color__placeholder;
     transition-duration: 0.4s;
     transform: rotate(0);
@@ -74,30 +74,30 @@
 .options__trigger--details:checked ~ .options__content--details,
 .options__trigger--payment:checked ~ .options__content--payment,
 .options__trigger--guarantee:checked ~ .options__content--guarantee {
-  padding-bottom: 12px;
-  max-height: 150px;
+  padding-bottom: 1.2rem;
+  max-height: 15rem;
 }
 
 .options__trigger--size:checked ~ .options__content--size {
-  padding-bottom: 12px;
-  max-height: 500px;
+  padding-bottom: 1.2rem;
+  max-height: 50rem;
 }
 
 .options__trigger--advice:checked ~ .options__content--advice {
-  max-height: 450px;
+  max-height: 45rem;
 }
 
 .options__list {
   margin: 0;
-  margin-top: 4px;
+  margin-top: 0.4rem;
   padding: 0;
-  padding-left: 20px;
+  padding-left: 2rem;
 }
 
 .options__item {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 21px;
+  line-height: 2.1rem;
   color: $color__placeholder;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -106,9 +106,9 @@
 .options__payment {
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__placeholder;
   text-transform: uppercase;
   text-align: left;
@@ -116,15 +116,15 @@
 }
 
 .options__type:not(:first-of-type) {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .options__descriptor {
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__placeholder;
   text-transform: uppercase;
   text-align: left;
@@ -132,11 +132,11 @@
 }
 
 .options__descriptor--guarantee:first-of-type {
-  margin-top: 4px;
+  margin-top: 0.4rem;
 }
 
 .options__descriptor--guarantee:not(:first-of-type) {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 @media (min-width: $width__tablet) {
@@ -145,29 +145,29 @@
   }
 
   .options__content--advice {
-    padding-bottom: 12px;
-    max-height: 1000px;
+    padding-bottom: 1.2rem;
+    max-height: 100rem;
   }
 }
 
 @media (min-width: $width__notebook) {
   .options {
-    margin-top: 64px;
+    margin-top: 6.4rem;
   }
 
   .options__trigger + label {
-    padding: 14px 0;
-    font-size: 18px;
+    padding: 1.4rem 0;
+    font-size: 1.8rem;
     font-weight: 300;
-    line-height: 22px;
+    line-height: 2.2rem;
     cursor: pointer;
 
     &::before {
-      top: 25px;
+      top: 2.5rem;
     }
 
     &::after {
-      top: 19px;
+      top: 1.9rem;
     }
   }
 
@@ -181,23 +181,23 @@
   .options__item,
   .options__type,
   .options__descriptor {
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 300;
-    line-height: 22px;
+    line-height: 2.2rem;
   }
 
   .options__trigger--details:checked ~ .options__content--details,
   .options__trigger--payment:checked ~ .options__content--payment,
   .options__trigger--guarantee:checked ~ .options__content--guarantee {
-    padding-bottom: 25px;
-    max-height: 300px;
+    padding-bottom: 2.5rem;
+    max-height: 30rem;
   }
 
   .options__content--advice {
-    padding-bottom: 25px;
+    padding-bottom: 2.5rem;
   }
 
   .options__content--size {
-    max-height: 800px;
+    max-height: 80rem;
   }
 }

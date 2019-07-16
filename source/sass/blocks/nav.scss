@@ -54,6 +54,10 @@ li.nav__item--selected > .nav__link {
   fill: $color__icons;
 }
 
+.nav__icon--search use {
+  fill: none;
+}
+
 @media (min-width: $width__tablet) {
   .nav {
     --nav-font-size-em: 1;

@@ -1,7 +1,7 @@
 .faq__list {
   display: grid;
-  grid-template-rows: calc(100vh - 5rem);
-  grid-auto-rows: 23.2rem;
+  grid-template-rows: calc(100vw * 444 / 375);
+  grid-auto-rows: 100vw;
   grid-row-gap: 0.8rem;
   margin: 0;
   padding: 0;
@@ -106,22 +106,36 @@
 }
 
 .faq__topic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   margin: 0;
-  padding: 1rem;
-  width: 9.8rem;
-  min-height: 3.6rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.1rem;
+  padding: 0;
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: normal;
   color: $color__black;
   text-transform: uppercase;
   text-align: center;
-  vertical-align: center;
-  letter-spacing: 1px;
-  background-color: $color__lightest;
+
+  &::after {
+    content: "discover";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+    width: 9.8rem;
+    min-height: 3.6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color__lightest;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid $color__lightest;
+  }
+}
+
+.faq__topic--light {
+  color: $color__lightest;
 }
 
 .faq__annex {
@@ -266,6 +280,10 @@
     color: $color__black;
     letter-spacing: 2px;
     background-color: transparent;
+
+    &::after {
+      display: none;
+    }
   }
 
   .faq__annex {
