@@ -2713,7 +2713,7 @@ span.bag__value {
     padding: 0 1.95313%; }
   .catalog__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 34.3em);
+    grid-template-columns: repeat(auto-fit, 30%);
     -ms-flex-pack: distribute;
         justify-content: space-around;
     grid-gap: 2.4em; }
@@ -2738,7 +2738,7 @@ span.bag__value {
     padding: 0 2.39583%; }
   .catalog__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 58em);
+    grid-template-columns: repeat(auto-fit, 31.7%);
     grid-gap: 4.4em 1em;
     -ms-flex-pack: distribute;
         justify-content: space-around; }
