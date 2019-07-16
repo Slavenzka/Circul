@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 6em;
+  min-height: 5em;
   background-color: $color__darkest;
   transition-duration: 0.5s;
 }
@@ -40,6 +40,7 @@
 @media (min-width: $width__tablet) {
   .header > .container {
     align-items: stretch;
+    min-height: 6rem;
   }
 
   .header__logo {

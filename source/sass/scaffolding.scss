@@ -130,6 +130,19 @@ a.link--opened:not([href]) {
   }
 }
 
+@media (max-width: $width__tablet) {
+  html {
+    --projectScale: 1;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    font-size: calc(62.5% * var(--projectScale));
+  }
+
+  .main-container {
+    padding-top: 5em;
+  }
+}
+
 @media (min-width: $width__tablet) {
   .container {
     padding: 0 100% * 15 / 768;
