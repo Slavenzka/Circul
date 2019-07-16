@@ -46,9 +46,7 @@
 
 .stores__list {
   margin: 0;
-  padding: 0;
-  padding-top: 4.8rem;
-  padding-bottom: 5.8rem;
+  padding: 4.8rem 0 5.8rem 0;
   list-style: none;
 }
 
@@ -136,6 +134,8 @@
   .stores__list {
     display: flex;
     justify-content: space-between;
+    padding-top: 8.8rem;
+    padding-bottom: 8.9rem;
   }
 
   .stores__item--active .stores__country,
@@ -258,11 +258,6 @@
     margin: 0 auto;
     padding: 8.8rem 0 12.4rem 0;
     width: 78.959%;
-  }
-
-  .stores__list {
-    padding-top: 8.8rem;
-    padding-bottom: 8.9rem;
   }
 
   .stores__city {
