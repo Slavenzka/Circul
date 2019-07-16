@@ -193,6 +193,10 @@
     max-height: 30rem;
   }
 
+  .options__trigger--advice:checked ~ .options__content--advice {
+    max-height: 100%;
+  }
+
   .options__content--advice {
     padding-bottom: 2.5rem;
   }

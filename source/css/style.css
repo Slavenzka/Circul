@@ -3346,6 +3346,8 @@ span.bag__value {
   .options__trigger--guarantee:checked ~ .options__content--guarantee {
     padding-bottom: 2.5rem;
     max-height: 30rem; }
+  .options__trigger--advice:checked ~ .options__content--advice {
+    max-height: 100%; }
   .options__content--advice {
     padding-bottom: 2.5rem; }
   .options__content--size {
