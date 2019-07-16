@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const tablet = window.matchMedia('(min-width: 768px)');
+  const tablet = window.matchMedia('(min-width: 320px)');
 
   if (tablet.matches) {
     let switchMaps = new function () {
