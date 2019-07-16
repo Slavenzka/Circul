@@ -2583,7 +2583,7 @@ span.bag__value {
     letter-spacing: 1px;
     border: 1px solid #979797; }
     .filter__element + label::before, .filter__element + label::after {
-      top: calc(2.6em / var(--font-size-em));
+      top: calc(3.5em / var(--font-size-em));
       width: calc(1.6em / var(--font-size-em)); }
   .filter__element--trigger + label {
     background-color: #f4f4f4; }
