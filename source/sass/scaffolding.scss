@@ -132,7 +132,7 @@ a.link--opened:not([href]) {
 
 @media (max-width: $width__tablet) {
   html {
-    --projectScale: 1;
+    --projectScale: 0.9;
     box-sizing: border-box;
     overflow-y: scroll;
     font-size: calc(62.5% * var(--projectScale));
