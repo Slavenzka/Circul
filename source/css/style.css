@@ -199,6 +199,16 @@ a.link--opened:not([href]) {
   a.link--opened:not([href])::before {
     display: none; }
 
+@media (max-width: 768px) {
+  html {
+    --projectScale: 1;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    overflow-y: scroll;
+    font-size: calc(62.5% * var(--projectScale)); }
+  .main-container {
+    padding-top: 5em; } }
+
 @media (min-width: 768px) {
   .container {
     padding: 0 1.95313%; } }
@@ -231,7 +241,7 @@ a.link--opened:not([href]) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 6em;
+  min-height: 5em;
   background-color: #1a1a1a;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s; }
@@ -263,7 +273,8 @@ a.link--opened:not([href]) {
   .header > .container {
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
-            align-items: stretch; }
+            align-items: stretch;
+    min-height: 6rem; }
   .header__logo {
     -ms-flex-item-align: center;
         align-self: center; } }
