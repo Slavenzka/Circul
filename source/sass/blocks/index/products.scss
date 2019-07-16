@@ -4,7 +4,7 @@
 
 .products__list {
   display: grid;
-  grid-auto-rows: 23.2em;
+  grid-auto-rows: 100vw;
   grid-row-gap: 0.8em;
   margin: 0.8em 0;
   padding: 0;
@@ -103,24 +103,33 @@
 }
 
 .products__name {
-  --name-font-size-em: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  --name-font-size-em: 2.8;
   margin: 0;
-  padding: 0 calc(2.1em / var(--name-font-size-em));
-  width: calc(9.8em / var(--name-font-size-em));
-  min-height: calc(3.6em / var(--name-font-size-em));
+  padding: 0;
   font-family: inherit;
   font-size: calc(1em * var(--name-font-size-em));
-  font-weight: 500;
-  line-height: 1.1;
-  color: $color__black;
+  font-weight: 300;
+  line-height: normal;
+  color: $color__lightest;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: $color__lightest;
+
+  &::after {
+    content: "shop now";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+    width: 9.8rem;
+    min-height: 3.6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color__lightest;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid $color__lightest;
+  }
 }
 
 .products__hook {
@@ -138,6 +147,7 @@
   .products__list {
     margin: 2em 0;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 23.2em;
     grid-gap: 2em;
   }
 
@@ -218,11 +228,17 @@
 
   .products__name {
     --name-font-size-em: 1.8;
+    display: flex;
+    flex-direction: column;
     width: 80%;
     min-height: 0;
     font-weight: 300;
     line-height: calc(2.2 / 1.8);
     background-color: transparent;
+
+    &::after {
+      display: none;
+    }
   }
 
   .products__highlight {
