@@ -2470,7 +2470,7 @@ span.bag__value {
   .banner {
     overflow: hidden; }
   .banner > .container {
-    height: 404px; }
+    height: 40.4rem; }
   .banner__title {
     --font-size-title-em: 1.8;
     position: relative;
@@ -2739,8 +2739,9 @@ span.bag__value {
   .catalog__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 30%);
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     grid-gap: 2.4em; }
   .catalog__item:not(:first-of-type) {
     margin-top: 0; }
@@ -2766,8 +2767,9 @@ span.bag__value {
     display: grid;
     grid-template-columns: repeat(auto-fit, 31.7%);
     grid-gap: 4.4em 1em;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
   .catalog__fav,
   .catalog__like,
   .catalog__more {
