@@ -1,13 +1,13 @@
 .guide {
-  margin-top: 12px;
+  margin-top: 1.2rem;
   width: 100%;
   border-collapse: collapse;
 }
 
 .guide__headings {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__black;
   text-transform: uppercase;
   text-align: left;
@@ -15,9 +15,9 @@
 }
 
 .guide__row {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__placeholder;
   text-transform: uppercase;
   text-align: left;
@@ -27,38 +27,38 @@
 
 .guide__headings th,
 .guide__row td {
-  padding-top: 16px;
-  padding-bottom: 12px;
+  padding-top: 1.6rem;
+  padding-bottom: 1.2rem;
 }
 
 .guide__headings th:not(:last-of-type) {
-  padding-right: 80px;
+  padding-right: 8rem;
 }
 
 @media (min-width: $width__notebook) {
   .guide {
-    margin-top: 20px;
+    margin-top: 2rem;
   }
 
   .guide__headings th,
   .guide__row td {
-    padding: 12px 0;
-    font-size: 14px;
+    padding: 1.2rem 0;
+    font-size: 1.4rem;
     font-weight: 300;
-    line-height: 18px;
+    line-height: 1.8rem;
     color: $color__placeholder;
   }
 }
 
 @media (min-width: $width__desktop) {
   .guide {
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 
   .guide__headings th,
   .guide__row td {
-    padding: 16px 0;
-    font-size: 18px;
-    line-height: 22px;
+    padding: 1.6rem 0;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
   }
 }

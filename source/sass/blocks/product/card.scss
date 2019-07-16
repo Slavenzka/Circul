@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
-  padding: 12px 0;
+  padding: 1.2rem 0;
   list-style: none;
 }
 
@@ -14,25 +14,25 @@
   position: relative;
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.4rem;
   color: $color__placeholder;
   text-transform: uppercase;
 }
 
 .card__control--back .card__link {
-  padding-left: 18px;
+  padding-left: 1.8rem;
 }
 
 .card__control--next .card__link {
-  padding-right: 18px;
+  padding-right: 1.8rem;
 }
 
 .card__icon {
   position: absolute;
-  width: 6px;
-  height: 12px;
+  width: 0.6rem;
+  height: 1.2rem;
 }
 
 .card__control--back .card__icon {
@@ -53,10 +53,10 @@
   position: relative;
   margin: 0;
   padding: 0;
-  padding-top: 124px;
-  padding-bottom: 24px;
+  padding-top: 12.4rem;
+  padding-bottom: 2.4rem;
   width: 100%;
-  height: 424px;
+  height: 42.4rem;
   background-color: $color__products-bg;
   list-style: none;
 
@@ -74,28 +74,28 @@
 
 .card__img {
   margin: 0 auto;
-  width: 343px;
+  width: 34.3rem;
 }
 
 .card .slick-dots {
   display: flex;
   justify-content: center;
   margin: 0;
-  margin-top: 36px;
+  margin-top: 3.6rem;
   padding: 0;
   font-size: 0;
   list-style: none;
 }
 
 .card .slick-dots li:not(:first-of-type) {
-  margin-left: 24px;
+  margin-left: 2.4rem;
 }
 
 .card .slick-dots button {
   margin: 0;
   padding: 0;
-  width: 6px;
-  height: 6px;
+  width: 0.6rem;
+  height: 0.6rem;
   font-size: 0;
   background-color: transparent;
   border: 1px solid $color__filter-border;
@@ -110,9 +110,9 @@
 @media (min-width: $width__tablet) {
   .card > .container {
     display: grid;
-    grid-template-columns: repeat(2, calc(50% - 25px));
-    grid-column-gap: 50px;
-    padding-bottom: 50px;
+    grid-template-columns: repeat(2, calc(50% - 2.5rem));
+    grid-column-gap: 5rem;
+    padding-bottom: 5rem;
     background-color: $color__products-bg;
   }
 
@@ -124,7 +124,7 @@
   .card__slider {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    padding-top: 20px;
+    padding-top: 2rem;
 
     &::before {
       display: none;
@@ -153,15 +153,15 @@
   }
 
   .card .slick-dots li:not(:first-of-type) {
-    margin-top: 24px;
+    margin-top: 2.4rem;
     margin-left: 0;
   }
 
   .card__list .slick-arrow {
     position: absolute;
-    left: calc(50% - 4px);
-    width: 8px;
-    height: 14px;
+    left: calc(50% - 0.4rem);
+    width: 0.8rem;
+    height: 1.4rem;
     font-size: 0;
     background-color: transparent;
     border: none;
@@ -172,8 +172,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 8px;
-      height: 14px;
+      width: 0.8rem;
+      height: 1.4rem;
       background-image: url("../img/arrow.svg");
       background-size: cover;
     }
@@ -181,11 +181,11 @@
 
   .card__list .slick-prev {
     transform: rotate(90deg);
-    top: calc(124px - 30px);
+    top: calc(12.4rem - 3rem);
   }
 
   .card__list .slick-next {
-    bottom: -30px;
+    bottom: -3rem;
     transform: rotate(-90deg);
   }
 
@@ -198,17 +198,17 @@
 @media (min-width: $width__notebook) {
   .card > .container {
     display: grid;
-    grid-template-columns: [slider] 1fr [details]500px;
-    grid-template-rows: [control] 50px 1fr;
-    grid-column-gap: 50px;
-    padding-top: 88px;
+    grid-template-columns: [slider] 1fr [details]50rem;
+    grid-template-rows: [control] 5rem 1fr;
+    grid-column-gap: 5rem;
+    padding-top: 8.8rem;
   }
 
   .card__controls {
     grid-row: 1 / 2;
     grid-column: slider;
     padding: 0;
-    padding-top: 6px;
+    padding-top: 0.6rem;
   }
 
   .card__control--next {
@@ -216,22 +216,22 @@
   }
 
   .card__link {
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 300;
-    line-height: 22px;
+    line-height: 2.2rem;
   }
 
   .card__control--back .card__link {
-    padding-left: 25px;
+    padding-left: 2.5rem;
   }
 
   .card__icon {
-    width: 9px;
-    height: 14px;
+    width: 0.9rem;
+    height: 1.4rem;
   }
 
   .card__slider {
-    margin-left: 124px;
+    margin-left: 12.4rem;
     width: 71.14%;
   }
 
@@ -245,13 +245,13 @@
 
   .card .slick-dots {
     margin-top: 0;
-    left: -124px;
-    top: 230px;
+    left: -12.4rem;
+    top: 23rem;
   }
 
   .card .slick-dots button {
-    width: 12px;
-    height: 12px;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 
   .card__info {
@@ -260,17 +260,17 @@
   }
 
   .card__list .slick-prev {
-    top: -30px;
+    top: -3rem;
   }
 
   .card__list .slick-next {
-    bottom: -30px;
+    bottom: -3rem;
   }
 }
 
 @media (min-width: $width__desktop) {
   .card > .container {
-    grid-template-columns: [slider] 1fr [details] 618px;
-    padding-bottom: 100px;
+    grid-template-columns: [slider] 1fr [details] 61.8rem;
+    padding-bottom: 10rem;
   }
 }
