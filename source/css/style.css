@@ -331,6 +331,9 @@ li.nav__item--selected > .nav__link {
 .nav__icon use rect {
   fill: #acacac; }
 
+.nav__icon--search use {
+  fill: none; }
+
 @media (min-width: 768px) {
   .nav {
     --nav-font-size-em: 1;
