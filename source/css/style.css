@@ -231,7 +231,7 @@ a.link--opened:not([href]) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 5em;
+  min-height: 6em;
   background-color: #1a1a1a;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s; }
