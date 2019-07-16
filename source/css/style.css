@@ -201,7 +201,7 @@ a.link--opened:not([href]) {
 
 @media (max-width: 768px) {
   html {
-    --projectScale: 1;
+    --projectScale: 0.9;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     overflow-y: scroll;
@@ -3708,7 +3708,7 @@ span.bag__value {
 
 .order__like {
   position: absolute;
-  top: 0;
+  top: 1rem;
   right: 0;
   padding: 0;
   display: -webkit-box;
