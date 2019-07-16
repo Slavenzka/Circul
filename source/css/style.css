@@ -3653,7 +3653,8 @@ span.bag__value {
   cursor: pointer; }
 
 .order__btn {
-  margin-top: 2.4rem; }
+  margin-top: 2.4rem;
+  padding: 1.7rem; }
 
 .order__btn--passive {
   color: white;
@@ -3790,7 +3791,7 @@ span.bag__value {
   .order__btn {
     margin-top: 4.8rem;
     width: 80%;
-    padding: 1.6rem 3rem 1.8rem 3rem;
+    padding: 1.7rem 3rem 1.9rem 3rem;
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 2.2rem;
