@@ -3571,38 +3571,75 @@ span.bag__value {
   position: relative;
   margin-top: 24px;
   font-size: 0; }
-  .order__size::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    right: 16px;
-    width: 8px;
-    height: 14px;
-    background-image: url("../img/arrow.svg");
-    background-size: cover;
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-    z-index: 2;
-    pointer-events: none; }
 
-.order__select {
+.order__select summary {
   position: relative;
-  padding: 14px 30px 13px 12px;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 42px;
   font-size: 14px;
   font-weight: 300;
   line-height: 17px;
   color: #a2a2a2;
   letter-spacing: 1px;
   background-color: #eaeaea;
-  border: 1px solid #a2a2a2;
   outline: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none; }
+  .order__select summary::before {
+    background-color: #acacac; }
+  .order__select summary::after {
+    background-color: #acacac; }
 
-.order__select:focus {
+.order__select .order__selection {
+  background-color: #f4f4f4;
+  border: 1px solid #a2a2a2; }
+
+.order__select .order__selection.selection__method--selected {
+  color: black; }
+
+.order__select .order__list {
+  padding-top: 0; }
+
+.order__select .order__list li {
+  margin: 0;
+  height: 42px;
+  border-right: 1px solid #a2a2a2;
+  border-bottom: 1px solid #a2a2a2;
+  border-left: 1px solid #a2a2a2; }
+  .order__select .order__list li label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    background-color: white; }
+  .order__select .order__list li label:hover {
+    background-color: #f4f4f4; }
+
+.order__select .order__list > li > label {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #a2a2a2;
+  letter-spacing: 1px; }
+
+.order__select[open] > summary.order__selection {
+  color: black;
   background-color: white; }
+  .order__select[open] > summary.order__selection::after {
+    background-color: black; }
 
 .order__link {
   display: none;
@@ -3671,38 +3708,74 @@ span.bag__value {
   opacity: 0;
   pointer-events: none; }
 
+@media (min-width: 768px) {
+  .order__size {
+    margin-top: 40px; }
+    .order__size::before {
+      content: "size:";
+      position: absolute;
+      top: -22px;
+      left: 0;
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 12px;
+      color: #a2a2a2;
+      text-transform: uppercase; } }
+
 @media (min-width: 1260px) {
   .order__size {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     margin-top: 74px; }
     .order__size::before {
-      content: "";
+      content: "size:";
       position: absolute;
-      top: 22px;
-      left: 180px;
-      width: 8px;
-      height: 14px;
-      background-image: url("../img/arrow.svg");
-      background-size: cover;
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg);
-      z-index: 2;
-      pointer-events: none; }
+      top: -38px;
+      left: 0;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 22px;
+      color: #a2a2a2;
+      text-transform: uppercase; }
   .order__select {
     position: relative;
-    padding: 16px 16px 18px 16px;
+    width: 200px; }
+  .order__select summary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 54px;
     width: 200px;
     font-size: 18px;
     font-weight: 500;
     line-height: 22px;
     color: #a2a2a2;
     letter-spacing: 1px;
-    border: 1px solid #a2a2a2;
     outline: none;
     -webkit-appearance: none;
        -moz-appearance: none;
-            appearance: none; }
+            appearance: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .order__select .order__list > li > label {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #a2a2a2;
+    letter-spacing: 1px; }
   .order__link {
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 17px; }
   .order__buttons {
     position: relative;
     display: -webkit-box;

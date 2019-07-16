@@ -667,20 +667,31 @@
               </ul>
               <form action="#" class="info__order order">
                 <div class="order__size">
-                  <select name="size-select" class="order__select">
-                    <option value="36">
-                      36
-                    </option>
-                    <option value="37">
-                      37
-                    </option>
-                    <option value="38">
-                      38
-                    </option>
-                    <option value="39">
-                      39
-                    </option>
-                  </select>
+                  <details class="selection order__select">
+                    <summary class="selection__method order__selection">
+                      Select size
+                    </summary>
+                    <ul class="selection__list order__list">
+                      <li class="selection__item selection__item--1">
+                        <input type="radio" class="selection__input selection__input--1" name="delivery" value="36" id="size-36">
+                        <label for="size-36">
+                          36
+                        </label>
+                      </li>
+                      <li class="selection__item selection__item--3">
+                        <input type="radio" class="selection__input" name="delivery" value="37" id="size-37">
+                        <label for="size-37">
+                          37
+                        </label>
+                      </li>
+                      <li class="selection__item selection__item--3">
+                        <input type="radio" class="selection__input" name="delivery" value="38" id="size-38">
+                        <label for="size-38">
+                          38
+                        </label>
+                      </li>
+                    </ul>
+                  </details>
                   <a class="order__link">
                     Size guide
                   </a>
@@ -1408,6 +1419,7 @@
 
   </script>
   <script src="js/modal.js" defer></script>
+  <script src="js/selection.js" defer></script>
 </body>
 
 </html>
