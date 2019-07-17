@@ -30,7 +30,11 @@
   font-size: 0;
   line-height: 0;
   background-color: $color__lightest;
-  border: none;
+  border: 2px solid $color__lightest;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.promo__list .slick-dots > li:not(.slick-active) > button {
+  background-color: transparent;
 }

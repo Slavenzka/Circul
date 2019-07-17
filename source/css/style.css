@@ -933,9 +933,12 @@ li.nav__item--selected > .nav__link {
   font-size: 0;
   line-height: 0;
   background-color: white;
-  border: none;
+  border: 2px solid white;
   border-radius: 50%;
   cursor: pointer; }
+
+.promo__list .slick-dots > li:not(.slick-active) > button {
+  background-color: transparent; }
 
 .footer {
   --footer-font-em: 1.2;
@@ -2596,7 +2599,10 @@ span.bag__value {
     width: 30%; } }
 
 @media (min-width: 1260px) {
+  .filter > .container {
+    padding-bottom: 4.8rem; }
   .filter__block {
+    margin-top: 10rem;
     width: 357px; }
   .filter__list {
     margin-top: -1px; }
@@ -2604,13 +2610,14 @@ span.bag__value {
     margin-top: -1px; }
   .filter__element + label {
     --font-size-em: 1.8;
-    padding: 16px 16px 18px 16px;
+    margin: 0;
+    padding: 1.6rem 1.6rem 1.8rem 1.6rem;
     font-weight: 300;
     line-height: calc(22 / 18);
     letter-spacing: 1px;
     border: 1px solid #979797; }
     .filter__element + label::before, .filter__element + label::after {
-      top: calc(3.5em / var(--font-size-em));
+      top: calc(2.5em / var(--font-size-em));
       width: calc(1.6em / var(--font-size-em)); }
   .filter__element--trigger + label {
     background-color: #f4f4f4; }
