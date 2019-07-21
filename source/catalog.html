@@ -579,80 +579,19 @@
             Filter and sort options
           </h2>
           <div class="filter__block filter__block--price">
-            <input type="checkbox" class="filter__element filter__element--trigger" id="price" name="filter-price">
-            <label for="price">
-              Sort
-            </label>
-            <ul class="filter__list">
-              <li class="filter__item">
-                <input type="radio" class="filter__element" name="price-options" id="fromMinToMax">
-                <label for="fromMinToMax">
-                  By price, low to high
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="radio" class="filter__element" name="price-options" id="fromMaxToMin">
-                <label for="fromMaxToMin">
-                  By price, hight to low
-                </label>
-              </li>
-            </ul>
+            <select name="filter-price" id="price" class="filter__element filter__element--trigger">
+              <option value="test1">test1</option>
+              <option value="test2">test2</option>
+            </select>
           </div>
           <div class="filter__block filter__block--color">
-            <input type="checkbox" class="filter__element filter__element--trigger" id="color" name="filter-color">
-            <label for="color">
-              Color
-            </label>
-            <ul class="filter__list">
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="black">
-                <label for="black">
-                  Black
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="white">
-                <label for="white">
-                  White
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="transparency">
-                <label for="transparency">
-                  Transparency
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="red">
-                <label for="red">
-                  Red
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="pink">
-                <label for="pink">
-                  Pink
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="blue">
-                <label for="blue">
-                  Blue
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="green">
-                <label for="green">
-                  Green
-                </label>
-              </li>
-              <li class="filter__item">
-                <input type="checkbox" class="filter__element" name="color-options" id="brown">
-                <label for="brown">
-                  Brown
-                </label>
-              </li>
-            </ul>
+            <select name="filter-color" id="color" class="filter__element filter__element--trigger">
+              <option value="red">red</option>
+              <option value="black">black</option>
+              <option value="brown">brown</option>
+              <option value="green">green</option>
+              <option value="white">white</option>
+            </select>
           </div>
         </div>
       </section>

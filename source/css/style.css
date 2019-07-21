@@ -127,7 +127,7 @@
     pointer-events: none; } }
 
 html {
-  --projectScale: 0.69;
+  --projectScale: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: scroll;
@@ -2501,21 +2501,11 @@ span.bag__value {
   padding-bottom: 2.4em; }
 
 .filter__element {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  background-color: transparent;
-  border: none;
-  opacity: 0;
-  pointer-events: none; }
-
-.filter__element + label {
   --font-size-em: 1.2;
   position: relative;
   display: block;
   padding: calc(1.1em / var(--font-size-em)) calc(1.6em / var(--font-size-em)) calc(1em / var(--font-size-em)) calc(1.6em / var(--font-size-em));
+  width: 100%;
   font-family: inherit;
   font-size: calc(1em * var(--font-size-em));
   font-weight: 500;
@@ -2523,69 +2513,24 @@ span.bag__value {
   color: #a2a2a2;
   text-transform: uppercase;
   background-color: #eaeaea; }
-  .filter__element + label::before {
-    content: "";
-    position: absolute;
-    top: calc(1.8em / var(--font-size-em));
-    right: calc(1.6em / var(--font-size-em));
-    width: calc(1.3em / var(--font-size-em));
-    height: 1px;
-    background-color: #a2a2a2;
-    -webkit-transform-origin: 50%;
-            transform-origin: 50%;
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-    -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s; }
-  .filter__element + label::after {
-    content: "";
-    position: absolute;
-    top: calc(1.8em / var(--font-size-em));
-    right: calc(1.6em / var(--font-size-em));
-    width: calc(1.3em / var(--font-size-em));
-    height: 1px;
-    background-color: #a2a2a2;
-    -webkit-transform-origin: 50%;
-            transform-origin: 50%;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-    -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s; }
+  .filter__element option {
+    font-family: inherit;
+    font-size: calc(1em * var(--font-size-em) / var(--font-size-em));
+    font-weight: 500;
+    line-height: calc(14 / 12);
+    color: #a2a2a2;
+    text-transform: uppercase;
+    background-color: #eaeaea; }
 
-.filter__element--trigger + label {
+.filter__element--trigger {
   margin-top: calc(2.4em / var(--font-size-em)); }
 
-.filter__element--trigger:checked + label {
+.filter__element--trigger:checked {
   color: white;
   background-color: #3f3f3f; }
-  .filter__element--trigger:checked + label::before {
-    opacity: 0; }
-  .filter__element--trigger:checked + label::after {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-    background-color: white; }
 
 .filter__element:not(.filter__element--trigger):checked + label {
   color: #292929; }
-  .filter__element:not(.filter__element--trigger):checked + label::before {
-    opacity: 0; }
-  .filter__element:not(.filter__element--trigger):checked + label::after {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-    background-color: #292929; }
-
-.filter__list {
-  display: none;
-  margin: 0;
-  margin-top: 2.4em;
-  padding: 0;
-  list-style: none; }
-
-.filter__item:not(:first-of-type) {
-  margin-top: 1.2em; }
-
-.filter__element--trigger:checked ~ .filter__list {
-  display: block; }
 
 @media (min-width: 768px) {
   .filter > .container {
@@ -2608,25 +2553,16 @@ span.bag__value {
     margin-top: -1px; }
   .filter__item:not(:first-of-type) {
     margin-top: -1px; }
-  .filter__element + label {
+  .filter__element {
     --font-size-em: 1.8;
     margin: 0;
-    padding: 1.6rem 1.6rem 1.8rem 1.6rem;
+    padding: 1.4rem 1.6rem 1.6rem 1.6rem;
     font-weight: 300;
     line-height: calc(22 / 18);
     letter-spacing: 1px;
     border: 1px solid #979797; }
-    .filter__element + label::before, .filter__element + label::after {
-      top: calc(2.5em / var(--font-size-em));
-      width: calc(1.6em / var(--font-size-em)); }
-  .filter__element--trigger + label {
+  .filter__element--trigger {
     background-color: #f4f4f4; }
-  .filter__element--trigger:checked + label {
-    padding-bottom: calc(5.3em / var(--font-size-em));
-    color: black;
-    background-color: white; }
-    .filter__element--trigger:checked + label::after {
-      background-color: #acacac; }
   .filter__element:not(.filter__element--trigger) + label {
     background-color: white; }
   .filter__element:not(.filter__element--trigger):checked + label {
